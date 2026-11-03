@@ -56,13 +56,13 @@ Berikan screenshot, mockup Figma, flow, URL, kode, atau copy deck, lalu ceritaka
 **Claude Code, untuk satu proyek:**
 
 ```bash
-git clone https://github.com/<username>/comprehensive-design-review.git .claude/skills/comprehensive-design-review
+git clone https://github.com/alfidarasi/comprehensive-design-review.git .claude/skills/comprehensive-design-review
 ```
 
 **Claude Code, untuk semua proyek:**
 
 ```bash
-git clone https://github.com/<username>/comprehensive-design-review.git ~/.claude/skills/comprehensive-design-review
+git clone https://github.com/alfidarasi/comprehensive-design-review.git ~/.claude/skills/comprehensive-design-review
 ```
 
 **Claude.ai:** unggah file `comprehensive-design-review.skill` di pengaturan Skills.
