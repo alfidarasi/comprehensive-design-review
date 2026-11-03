@@ -10,8 +10,6 @@
 
 **Claude skill untuk review UI dan UX secara menyeluruh, yang menyesuaikan diri dengan konteks produk dan penggunanya.**
 
-UX psychology · WCAG 2.2 (A, AA, AAA) yang diuji otomatis · Hierarki visual · UX writing · Responsif · Fitur AI
-
 Dibuat untuk product designer, UX researcher, UX writer, product manager, dan developer front-end.
 
 </div>
