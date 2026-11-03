@@ -1,0 +1,73 @@
+{
+  "skill_name": "comprehensive-design-review",
+  "description": "Skenario uji untuk memastikan skill menyesuaikan review dengan konteks, memakai bukti, dan menghasilkan laporan yang mudah dibaca.",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Tolong review form pengajuan ini (file HTML terlampir). Penggunanya dosen yang mengajukan kenaikan jabatan 1 sampai 2 kali setahun, kadang dari ponsel.",
+      "expected_output": "Laporan lengkap mengikuti assets/report-template.md, dengan hasil pemeriksaan otomatis sebagai bukti, temuan berprioritas, dan penilaian yang memperhitungkan pemakaian sesekali dan akses ponsel.",
+      "assertions": [
+        { "name": "runs-automated-checks", "description": "Menjalankan run_all.mjs atau skrip per lensa, lalu merujuk hasilnya sebagai bukti" },
+        { "name": "one-minute-summary", "description": "Laporan dibuka dengan ringkasan satu menit: kesimpulan, status, jumlah temuan per severity, dan tiga prioritas" },
+        { "name": "finding-ids", "description": "Temuan memakai ID K-, T-, S-, R- yang konsisten di semua bagian" },
+        { "name": "mobile-critical", "description": "Masalah tampilan ponsel (tabel lebar, zoom dikunci) dinilai Kritis atau Tinggi karena dosen kadang memakai ponsel" },
+        { "name": "domain-terms-ok", "description": "Singkatan JAD, PAK, SKP, atau NIDN tidak dijadikan temuan untuk pengguna dosen, dan disebut di bagian prinsip yang dikesampingkan atau catatan" },
+        { "name": "before-after-copy", "description": "Temuan copy memberi contoh sebelum dan sesudah" }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Ini screenshot dashboard admin kepegawaian yang dipakai staf HR setiap hari di komputer kantor. Tolong review hierarki visual dan konsistensinya saja.",
+      "expected_output": "Review terbatas pada Lensa 4, dengan bobot untuk aplikasi kerja harian: alignment, spacing, tipografi, konsistensi komponen dan state, serta kepadatan informasi yang wajar.",
+      "assertions": [
+        { "name": "respects-scope", "description": "Hanya mengerjakan Lensa 4 dan menyebut lensa lain tidak dikerjakan di bagian asumsi" },
+        { "name": "context-weighting", "description": "Tidak menilai rule of thirds, golden ratio, atau rule of odds sebagai temuan untuk dashboard" },
+        { "name": "density-not-penalized", "description": "Kepadatan informasi tidak otomatis dianggap masalah, karena pengguna harian ahli" },
+        { "name": "screenshot-limits", "description": "Nilai yang tidak bisa diukur dari screenshot ditandai sebagai perkiraan atau masuk Perlu diverifikasi" }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Cek aksesibilitas halaman pendaftaran ini sampai level AAA: https://example.com/daftar",
+      "expected_output": "Hasil Lensa 3 dipisah menjadi pelanggaran A/AA, peluang AAA, dan kriteria yang perlu diverifikasi manual, dengan nomor kriteria, level, dan bukti terukur.",
+      "assertions": [
+        { "name": "wcag-ids", "description": "Setiap temuan menyebut nomor kriteria, nama, dan level (misalnya WCAG 2.5.8 Target Size (Minimum), AA)" },
+        { "name": "three-groups", "description": "Hasil dipisah menjadi pelanggaran A/AA, peluang AAA, dan perlu verifikasi manual" },
+        { "name": "measured-evidence", "description": "Menyertakan bukti terukur seperti rasio kontras, ukuran px, atau selector" },
+        { "name": "no-false-assurance", "description": "Tidak menyatakan halaman aksesibel hanya karena scan bersih, dan menyebut keterbatasan scan otomatis" }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Review copy untuk alur checkout ini. Ada tombol 'Mulai sekarang', pesan 'Terjadi kesalahan', dan pilihan 'Tidak, saya tidak suka hemat' untuk menolak promo.",
+      "expected_output": "Review Lensa 5 yang menandai label generik, pesan error yang tidak membantu, dan confirmshaming sebagai pola menipu, dengan usulan copy pengganti.",
+      "assertions": [
+        { "name": "confirmshaming-high", "description": "Menandai 'Tidak, saya tidak suka hemat' sebagai confirmshaming dengan severity minimal Tinggi" },
+        { "name": "generic-cta", "description": "Menjelaskan risiko label 'Mulai sekarang' yang tidak menyebut langkah berikutnya" },
+        { "name": "error-guidelines", "description": "Usulan pesan error menjelaskan masalah dan cara memperbaiki tanpa menyalahkan pengguna" },
+        { "name": "alternatives", "description": "Memberi 2 sampai 3 alternatif untuk copy penting yang mengikuti nada produk" }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Ini mockup halaman chatbot asisten layanan akademik kampus. Tolong review UX-nya.",
+      "expected_output": "Review yang mengerjakan Lensa 7 karena ada fitur AI, termasuk antropomorfisme, kepercayaan, batas kemampuan, dan jalur ke petugas manusia.",
+      "assertions": [
+        { "name": "runs-lens-7", "description": "Mengerjakan Lensa 7 untuk fitur AI" },
+        { "name": "anthropomorphism", "description": "Menilai cara AI diposisikan (nama, klaim perasaan, nada) dan kepercayaan pengguna" },
+        { "name": "human-fallback", "description": "Memeriksa jalur alternatif ke petugas manusia atau menu biasa" },
+        { "name": "verification", "description": "Memeriksa dukungan untuk memverifikasi jawaban AI dan penjelasan batas kemampuan" }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Tolong ringkas hasil review ini untuk dibawa ke rapat manajemen besok.",
+      "expected_output": "Ringkasan untuk stakeholder dengan rhetorical triangle (ethos, logos, pathos), memakai bahasa non-teknis dan menautkan temuan ke nilai bisnis atau operasional.",
+      "assertions": [
+        { "name": "stakeholder-section", "description": "Menyertakan ringkasan stakeholder dengan dasar temuan, pola 'Bila kita..., masalah... teratasi dan... meningkat', dan satu skenario pengguna" },
+        { "name": "plain-language", "description": "Istilah teknis dihindari atau dijelaskan" },
+        { "name": "prioritized", "description": "Menonjolkan 3 prioritas dan quick wins, tanpa mengulang semua temuan" }
+      ]
+    }
+  ]
+}

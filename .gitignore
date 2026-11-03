@@ -1,0 +1,4 @@
+node_modules/
+hasil-review/
+*.log
+.DS_Store
