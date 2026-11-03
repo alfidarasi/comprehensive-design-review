@@ -8,7 +8,7 @@
 
 # Comprehensive Design Review
 
-**Claude skill untuk review UI dan UX secara menyeluruh, yang menyesuaikan diri dengan konteks produk dan penggunanya.**
+**Claude skill untuk review UI dan UX secara menyeluruh yang akan menyesuaikan konteks produk dan penggunanya.**
 
 Dibuat untuk product designer, UX researcher, UX writer, product manager, dan developer front-end.
 
