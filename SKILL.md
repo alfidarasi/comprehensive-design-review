@@ -298,8 +298,8 @@ Tulis dalam Bahasa Indonesia, kecuali pengguna menulis dalam bahasa lain. Ikuti 
 Susunan laporan:
 1. **Ringkasan satu menit:** kesimpulan, status (siap dipakai sampai perlu dirancang ulang), jumlah temuan per severity, tiga hal yang paling perlu diperbaiki, dan satu hal yang sudah baik.
 2. **Kondisi per lensa:** status Baik, Perlu perhatian, atau Bermasalah dengan satu kalimat. Skor 1 sampai 5 hanya bila pengguna memintanya.
-3. **Daftar temuan:** tabel yang diurutkan dari severity tertinggi dengan kolom ID, Temuan, Lensa, Prinsip atau kriteria, Severity, Keyakinan, dan Usaha.
-4. **Detail temuan:** kartu untuk setiap temuan Kritis dan Tinggi berisi Masalah, Dampak ke pengguna dalam konteks ini, Bukti, dan Rekomendasi (dengan tabel sebelum dan sesudah untuk temuan copy).
+3. **Daftar temuan:** tabel yang diurutkan dari severity tertinggi dengan kolom ID, Temuan, Lensa, Dasar penilaian (prinsip atau kriteria), Severity, Keyakinan, dan Usaha.
+4. **Detail temuan:** kartu untuk setiap temuan Kritis dan Tinggi berisi Masalahnya apa, Akibatnya bagi pengguna dalam konteks ini, Buktinya, dan Saran perbaikan (dengan tabel sebelum dan sesudah untuk temuan copy).
 5. **Quick wins:** daftar centang perbaikan berdampak besar dengan usaha kecil, siap dijadikan tiket.
 6. **Yang sudah baik:** 2 sampai 4 hal yang perlu dipertahankan supaya tidak hilang saat redesign.
 7. **Perlu diverifikasi:** tabel hal yang dicek, alasan belum bisa dipastikan, dan cara mengeceknya.

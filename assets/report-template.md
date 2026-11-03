@@ -1,67 +1,74 @@
 <!--
 TEMPLATE LAPORAN COMPREHENSIVE DESIGN REVIEW
 
-Aturan pengisian (hapus komentar ini di laporan akhir):
-- Tulis untuk pembaca yang sibuk dan bukan desainer. Bagian 1 harus bisa dipahami dalam satu menit.
-- ID temuan: huruf severity + nomor urut. K = Kritis, T = Tinggi, S = Sedang, R = Rendah. Contoh: K-01, T-03.
-- Kartu detail (bagian 4) wajib untuk Kritis dan Tinggi. Sedang dan Rendah cukup di tabel bagian 3,
-  kecuali butuh contoh sebelum dan sesudah.
-- Satu kartu untuk satu masalah. Masalah yang berulang di banyak tempat digabung menjadi satu kartu dengan beberapa contoh.
-- Hapus bagian opsional yang tidak dipakai. Jangan menyisakan placeholder [ ... ].
-- Istilah teknis yang dipakai di laporan dijelaskan singkat di Glosarium.
+Cara mengisi (hapus komentar ini dari laporan akhir):
+- Anggap pembacanya orang sibuk yang bukan desainer. Bagian 1 harus bisa dibaca dan dipahami dalam satu menit.
+- Pakai kalimat pendek dan kata sehari-hari. Istilah teknis bahasa Inggris (misalnya severity, flow, quick wins)
+  tetap dipakai, lalu dijelaskan singkat di Glosarium.
+- ID temuan = huruf severity + nomor urut. K = Kritis, T = Tinggi, S = Sedang, R = Rendah. Contoh: K-01, T-03.
+- Temuan Kritis dan Tinggi wajib punya kartu detail di bagian 4. Temuan Sedang dan Rendah cukup ditulis di tabel
+  bagian 3, kecuali perlu contoh sebelum dan sesudah.
+- Satu kartu = satu masalah. Kalau masalah yang sama muncul di banyak tempat, jadikan satu kartu dengan beberapa contoh.
+- Hapus bagian opsional yang tidak dipakai. Jangan tinggalkan placeholder [ ... ] di laporan akhir.
 -->
 
 # Design Review: [Nama layar, fitur, atau flow]
 
 | | |
 |---|---|
-| **Yang direview** | [Nama layar atau flow, versi atau tanggal desain] |
-| **Jenis input** | [Screenshot / Figma / URL / kode / copy deck] |
-| **Cakupan** | [Lensa yang dikerjakan, misalnya "Semua lensa (1 sampai 6), Lensa 7 tidak berlaku"] |
+| **Yang direview** | [Nama layar atau flow, plus versi atau tanggal desainnya] |
+| **Bahan yang diterima** | [Screenshot / Figma / URL / kode / copy deck] |
+| **Yang dicek** | [Lensa yang dipakai, misalnya "Lensa 1 sampai 6. Lensa 7 tidak dipakai karena tidak ada fitur AI"] |
 | **Tanggal review** | [Tanggal] |
 
 ---
 
 ## 1. Ringkasan satu menit
 
-**Kesimpulan:** [Satu atau dua kalimat. Contoh: "Alur pengajuan bisa diselesaikan di desktop, tetapi gagal di ponsel dan berisiko membuat dosen menghapus usulan tanpa sengaja."]
+**Kesimpulan:** [Satu atau dua kalimat. Contoh: "Pengajuan bisa diselesaikan di laptop, tetapi sulit di ponsel. Dosen juga bisa tidak sengaja menghapus usulannya."]
 
-**Status:** [Siap dipakai / Siap dengan perbaikan kecil / Perlu perbaikan sebelum rilis / Perlu dirancang ulang]
+**Status:** [Siap dipakai / Siap, tinggal perbaikan kecil / Perlu diperbaiki dulu sebelum rilis / Perlu dirancang ulang]
+
+**Jumlah temuan menurut severity (tingkat keparahan):**
 
 | Kritis | Tinggi | Sedang | Rendah |
 |:---:|:---:|:---:|:---:|
 | [n] | [n] | [n] | [n] |
 
 **Tiga hal yang paling perlu diperbaiki:**
-1. **[K-01] [Judul singkat]:** [dampak ke pengguna dalam satu kalimat].
-2. **[T-01] [Judul singkat]:** [dampak].
-3. **[T-02] [Judul singkat]:** [dampak].
+1. **[K-01] [Judul singkat]:** [akibatnya bagi pengguna, dalam satu kalimat].
+2. **[T-01] [Judul singkat]:** [akibatnya bagi pengguna].
+3. **[T-02] [Judul singkat]:** [akibatnya bagi pengguna].
 
-**Yang sudah baik:** [satu kalimat, misalnya "Label form berada di atas field dan status usulan memakai teks, tidak hanya warna."]
+**Yang sudah baik:** [Satu kalimat. Contoh: "Label form ada di atas kolom isian, dan status usulan ditulis dengan teks, bukan hanya dibedakan warna."]
 
 ---
 
 ## 2. Kondisi per lensa
 
-<!-- Status: Baik / Perlu perhatian / Bermasalah. Tambahkan skor 1 sampai 5 hanya bila pengguna memintanya. -->
+<!-- Isi status dengan: Baik / Perlu perhatian / Bermasalah. Tambahkan skor 1 sampai 5 hanya kalau pengguna memintanya. -->
 
-| Lensa | Status | Catatan singkat |
+| Lensa (sudut pandang yang dicek) | Status | Catatan singkat |
 |---|---|---|
-| 1. Tugas utama | [Status] | [Satu kalimat] |
-| 2. UX psychology | [Status] | [Satu kalimat] |
-| 3. Aksesibilitas (WCAG 2.2) | [Status] | [Contoh: "5 pelanggaran AA, 3 peluang AAA"] |
-| 4. Hierarki visual dan konsistensi | [Status] | [Satu kalimat] |
-| 5. UX writing | [Status] | [Satu kalimat] |
-| 6. Responsif dan konteks penggunaan | [Status] | [Satu kalimat] |
-| 7. Fitur AI | [Status atau "Tidak berlaku"] | [Satu kalimat] |
+| 1. Tugas utama: bisakah pengguna menyelesaikan tujuannya? | [Status] | [Satu kalimat] |
+| 2. UX psychology: apakah desain cocok dengan cara orang berpikir dan memutuskan? | [Status] | [Satu kalimat] |
+| 3. Aksesibilitas (WCAG 2.2): bisakah dipakai orang dengan disabilitas? | [Status] | [Contoh: "5 masalah di level AA, 3 hal bisa ditingkatkan ke level AAA"] |
+| 4. Hierarki visual dan konsistensi: apakah yang penting terlihat duluan, dan tampilannya seragam? | [Status] | [Satu kalimat] |
+| 5. UX writing: apakah teksnya jelas dan mudah dipahami? | [Status] | [Satu kalimat] |
+| 6. Responsif dan konteks penggunaan: apakah tetap nyaman di ponsel dan situasi nyata? | [Status] | [Satu kalimat] |
+| 7. Fitur AI: apakah fitur AI-nya jelas dan bisa dipercaya? | [Status atau "Tidak dipakai"] | [Satu kalimat] |
 
 ---
 
 ## 3. Daftar temuan
 
-<!-- Urutkan dari severity tertinggi. Usaha: Kecil (kurang dari 1 hari), Sedang (beberapa hari), Besar (lebih dari 1 sprint atau butuh riset). -->
+<!--
+Urutkan dari severity paling tinggi.
+Keyakinan: "Terkonfirmasi" = terlihat atau terukur langsung. "Perlu verifikasi" = dugaan kuat, tapi perlu dicek lagi.
+Usaha: Kecil (kurang dari 1 hari), Sedang (beberapa hari), Besar (lebih dari 1 sprint atau perlu riset dulu).
+-->
 
-| ID | Temuan | Lensa | Prinsip atau kriteria | Severity | Keyakinan | Usaha |
+| ID | Temuan | Lensa | Dasar penilaian | Severity | Keyakinan | Usaha |
 |---|---|---|---|---|---|---|
 | K-01 | [Judul singkat] | [6] | [WCAG 1.4.10] | Kritis | Terkonfirmasi | [Sedang] |
 | T-01 | [Judul singkat] | [1, 4] | [Focal point] | Tinggi | Terkonfirmasi | [Kecil] |
@@ -71,96 +78,98 @@ Aturan pengisian (hapus komentar ini di laporan akhir):
 
 ## 4. Detail temuan
 
-### K-01 · [Judul singkat yang menyebut masalahnya]
+### K-01 · [Judul singkat yang langsung menyebut masalahnya]
 
-| Severity | Keyakinan | Lensa | Prinsip atau kriteria | Lokasi | Usaha |
+| Severity | Keyakinan | Lensa | Dasar penilaian | Lokasi | Usaha |
 |---|---|---|---|---|---|
-| Kritis | Terkonfirmasi | [6 Responsif] | [WCAG 1.4.10 Reflow (AA)] | [Elemen spesifik, misalnya "tabel Riwayat Usulan"] | [Sedang] |
+| Kritis | Terkonfirmasi | [6 Responsif] | [WCAG 1.4.10 Reflow (AA)] | [Bagian yang bermasalah, misalnya "tabel Riwayat Usulan"] | [Sedang] |
 
-**Masalah.** [Apa yang terjadi, dengan bahasa sederhana.]
+**Masalahnya apa.** [Ceritakan apa yang terjadi dengan bahasa sehari-hari.]
 
-**Dampak ke pengguna.** [Kenapa ini penting untuk pengguna dan konteks ini. Sebut siapa yang terdampak dan dalam situasi apa.]
+**Akibatnya bagi pengguna.** [Kenapa ini penting. Sebut siapa yang kena dan dalam situasi apa.]
 
-**Bukti.** [Nilai terukur, hasil skrip, atau screenshot. Contoh: "Di lebar 360px, lebar halaman menjadi 844px (responsif-360.png)."]
+**Buktinya.** [Angka hasil ukur, hasil skrip, atau screenshot. Contoh: "Di layar selebar 360px, halaman melebar jadi 844px sehingga harus digeser ke samping (responsif-360.png)."]
 
-**Rekomendasi.**
+**Saran perbaikan.**
 - [Langkah perbaikan utama]
-- [Langkah tambahan bila ada]
+- [Langkah tambahan, kalau ada]
 
-<!-- Untuk temuan copy, tambahkan:
+<!-- Untuk temuan soal teks, tambahkan:
 | Sebelum | Sesudah |
 |---|---|
-| "[teks asli]" | "[usulan]" |
+| "[teks asli]" | "[usulan teks baru]" |
 -->
 
 ---
 
 ## 5. Quick wins
 
-<!-- Perbaikan berdampak besar dengan usaha kecil. Bisa langsung dijadikan tiket. -->
+<!-- Perbaikan yang mudah dan cepat, tapi hasilnya terasa. Bisa langsung dijadikan tiket. -->
 
-- [ ] **[ID]** [Tindakan konkret]
-- [ ] **[ID]** [Tindakan konkret]
+- [ ] **[ID]** [Apa yang harus dilakukan]
+- [ ] **[ID]** [Apa yang harus dilakukan]
 
 ---
 
 ## 6. Yang sudah baik dan perlu dipertahankan
 
-- [Hal yang baik dan alasannya]
-- [Hal yang baik dan alasannya]
+- [Hal yang sudah baik, dan kenapa itu baik]
+- [Hal yang sudah baik, dan kenapa itu baik]
 
 ---
 
 ## 7. Perlu diverifikasi
 
-| Hal yang dicek | Kenapa belum bisa dipastikan | Cara mengecek |
+<!-- Hal yang belum bisa dipastikan dari bahan yang ada. -->
+
+| Yang perlu dicek | Kenapa belum bisa dipastikan | Cara mengeceknya |
 |---|---|---|
-| [Contoh: urutan baca pembaca layar] | [Input hanya screenshot] | [Uji dengan NVDA atau VoiceOver] |
+| [Contoh: urutan baca screen reader] | [Bahan yang diterima hanya screenshot] | [Coba langsung dengan NVDA atau VoiceOver] |
 
 ---
 
 ## 8. Konteks dan asumsi
 
-**Profil konteks**
+**Profil konteks** (gambaran siapa penggunanya dan bagaimana mereka memakai produk ini)
 
-| Dimensi | Isi | Sumber |
+| Hal | Isi | Sumber informasi |
 |---|---|---|
-| Pengguna | [Siapa, keahlian domain, keakraban teknologi] | [Dari pengguna skill / asumsi] |
-| Frekuensi pemakaian | [Harian / sesekali] | |
-| Keterikatan | [Wajib memakai / bisa pindah] | |
-| Tugas dominan | [Mengisi form, membaca, membandingkan, memantau] | |
-| Kepadatan informasi | [Rendah sampai tinggi] | |
-| Perangkat dan kondisi | [Desktop, ponsel, jaringan, lingkungan] | |
-| Muatan emosional | [Rutin / menegangkan, misalnya tenggat] | |
+| Pengguna | [Siapa mereka, seberapa paham bidangnya, seberapa terbiasa dengan teknologi] | [Dari pengguna skill / asumsi] |
+| Frekuensi pemakaian | [Setiap hari / sesekali] | |
+| Keterikatan (wajib pakai atau bisa pindah?) | [Wajib memakai / bisa pindah ke produk lain] | |
+| Tugas yang paling sering | [Mengisi form, membaca, membandingkan, memantau] | |
+| Kepadatan informasi | [Sedikit sampai sangat banyak] | |
+| Perangkat dan kondisi | [Laptop, ponsel, kualitas internet, lingkungan sekitar] | |
+| Muatan emosional (suasana hati saat memakai) | [Santai dan rutin / tegang, misalnya dikejar tenggat] | |
 
-**Asumsi yang dibuat:** [Daftar asumsi yang memengaruhi penilaian.]
+**Asumsi yang dipakai:** [Hal-hal yang dianggap benar karena belum ada datanya, dan ikut memengaruhi penilaian.]
 
-**Prinsip yang dikesampingkan**
+**Prinsip yang dikesampingkan** (prinsip yang sengaja tidak dinilai)
 
 | Prinsip | Alasan |
 |---|---|
-| [Contoh: Rule of thirds] | [Layar ini form kerja, prinsip komposisi tidak relevan] |
+| [Contoh: Rule of thirds] | [Layar ini form untuk bekerja, jadi aturan komposisi foto tidak relevan] |
 
 ---
 
 ## 9. Ringkasan untuk stakeholder (opsional)
 
-<!-- Pakai bila laporan dibawa ke manajemen, tim bisnis, atau klien. -->
+<!-- Pakai kalau laporan ini akan dibawa ke manajemen, tim bisnis, atau klien. -->
 
-- **Dasar temuan:** [Prinsip, kriteria WCAG, atau data riset yang dipakai.]
-- **Bila diperbaiki:** Bila kita [perbaikan], masalah [masalah pengguna] teratasi dan [nilai bisnis atau operasional] meningkat.
-- **Dari sudut pandang pengguna:** [Satu skenario konkret pengguna yang terdampak.]
+- **Dasar temuan:** [Prinsip, kriteria WCAG, atau data riset yang dijadikan pegangan.]
+- **Kalau diperbaiki:** Kalau kita [perbaikan], maka [masalah pengguna] selesai dan [manfaat bisnis atau operasional] meningkat.
+- **Dari sisi pengguna:** [Satu cerita nyata tentang pengguna yang kena masalah ini.]
 
 ---
 
 ## Lampiran
 
-**Hasil pemeriksaan otomatis:** [Path ke ringkasan-otomatis.md dan laporan detail, atau "Tidak dijalankan karena input berupa screenshot".]
+**Hasil pengecekan otomatis:** [Lokasi file ringkasan-otomatis.md dan laporan detailnya, atau "Tidak dijalankan karena bahan yang diterima hanya screenshot".]
 
-**Cara review dilakukan:** Review memakai 7 lensa skill Comprehensive Design Review. Prinsip dipilih dan diberi bobot sesuai profil konteks. Pemeriksaan otomatis hanya menangkap sebagian masalah; hal yang butuh pengguna nyata tercantum di bagian 7.
+**Cara review ini dilakukan:** Desain dicek dari 7 sudut pandang (lensa) menurut skill Comprehensive Design Review. Prinsip yang dipakai dipilih dan diberi bobot sesuai profil konteks di bagian 8. Pengecekan otomatis hanya bisa menangkap sebagian masalah. Hal yang perlu diuji dengan pengguna sungguhan ada di bagian 7.
 
 **Glosarium**
 
-| Istilah | Arti singkat |
+| Istilah | Artinya |
 |---|---|
-| [Contoh: Reflow] | [Konten menyesuaikan lebar layar tanpa perlu menggeser ke samping] |
+| [Contoh: Reflow] | [Isi halaman menyesuaikan lebar layar, jadi tidak perlu digeser ke samping] |
