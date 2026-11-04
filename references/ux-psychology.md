@@ -198,6 +198,8 @@ Prinsip Gestalt menjelaskan bagaimana orang menyimpulkan elemen mana yang saling
 
 **E. Navigation, information foraging, dan mental model**
 
+Penerapan kelompok ini pada struktur menu, label navigasi, wayfinding, pencarian, filter, dan sort ada di pemeriksaan pola Navigasi (`references/navigation-search.md`). Temuan perilaku navigasi dilaporkan di lensa ini dengan label "2 · Navigasi".
+
 - Mental model
   - Inti: mental model adalah keyakinan pengguna tentang cara kerja sistem. Keyakinan ini dibentuk dari pengalaman di produk lain dan di dunia nyata, sehingga bisa berbeda dari cara kerja sistem yang sebenarnya. Tim pembuat punya mental model yang jauh lebih lengkap daripada pengguna. Mental model juga punya inersia (sulit berubah): satu salah paham di awal bisa membuat pengguna salah menafsirkan seluruh sesi tanpa pernah mempertanyakan asumsinya.
   - Cek: perilaku yang melanggar ekspektasi umum (item atau biaya ditambahkan ke keranjang secara otomatis; tombol Back browser tidak menutup overlay tetapi melompat dua halaman; tombol Back di aplikasi naik ke level atas, bukan kembali ke layar sebelumnya); lebih dari satu kotak pencarian di satu halaman dengan cakupan berbeda; pengelompokan menu yang mengikuti struktur organisasi, bukan cara pengguna mencari; perbedaan konsep yang hanya dipahami orang dalam.
@@ -250,7 +252,7 @@ Prinsip Gestalt menjelaskan bagaimana orang menyimpulkan elemen mana yang saling
 
 - Interaction cost dan expected utility
   - Inti: interaction cost adalah total usaha mental dan fisik untuk mencapai tujuan: membaca, scroll, mencari dengan mata, memahami, klik atau tap, mengetik, menunggu, berpindah perhatian, dan mengingat. Pengguna memilih tindakan dengan manfaat terbesar dikurangi usaha terkecil (expected utility). Bila usaha di satu produk terlihat terlalu besar, mereka pindah ke produk lain, kecuali motivasinya sangat tinggi atau mereka tidak punya pilihan.
-  - Teknik: untuk flow atau tugas utama, uraikan langkah demi langkah termasuk sub-langkah mental (menemukan, memindai, memutuskan, menunggu), lalu tandai sub-langkah yang bisa dihapus atau dipercepat. Teknik yang sama dipakai untuk membandingkan dua alternatif desain.
+  - Teknik: untuk flow atau tugas utama, uraikan langkah demi langkah termasuk sub-langkah mental (menemukan, memindai, memutuskan, menunggu), lalu tandai sub-langkah yang bisa dihapus atau dipercepat. Teknik yang sama dipakai untuk membandingkan dua alternatif desain. Pemetaan flow lengkap, area cek level flow dan journey, dan format peta flow ada di `references/task-flow.md` (Lensa 1). Temuan tentang panjang atau urutan flow dilaporkan di Lensa 1 dengan prinsip ini sebagai dasar penilaian; temuan di level satu kontrol tetap di lensa ini.
   - Cek: splash screen atau layar tunggu yang tidak perlu; informasi yang disembunyikan di tab horizontal atau bagian yang tidak terlihat; daftar saran atau riwayat yang menambah beban memindai; jumlah langkah yang bisa dipangkas; perpindahan antar jendela atau halaman yang memaksa pengguna menyatukan informasi sendiri.
   - Catatan konteks: bobot setiap komponen berbeda menurut pengguna (pengguna disleksia lebih terbebani membaca, pengguna dengan hambatan motorik lebih terbebani klik) dan perangkat (menunggu terasa jauh lebih mahal di koneksi lambat). Pengguna yang wajib memakai sistem akan bertahan walau usahanya besar, tetapi itu tidak membuat usaha besar dapat diterima, karena biayanya muncul sebagai waktu kerja yang hilang, kesalahan, dan permintaan bantuan.
 

@@ -1,6 +1,6 @@
 ---
 name: comprehensive-design-review
-description: "Review UI dan UX secara menyeluruh dari screenshot, mockup Figma, flow, URL, kode, atau copy deck, dengan 7 lensa yang disesuaikan konteks pengguna: tugas utama, UX psychology, aksesibilitas WCAG 2.2 (A, AA, AAA) yang diuji otomatis, hierarki visual dan konsistensi, UX writing, responsif dan konteks penggunaan, serta fitur AI bila ada. Menghasilkan laporan temuan berprioritas (severity, bukti, rekomendasi, quick wins) yang mudah dibaca. Gunakan saat pengguna meminta design review, UI review, UX review, audit UX, design critique, audit aksesibilitas atau WCAG, cek hierarki visual atau konsistensi, review copy atau microcopy, cek tampilan mobile atau responsif, atau bertanya apa yang kurang dari sebuah desain."
+description: "Review UI dan UX secara menyeluruh dari screenshot, mockup Figma, flow, URL, kode, atau copy deck, dengan 7 lensa yang disesuaikan konteks pengguna: tugas utama serta flow dan user journey (interaction cost, touchpoint), UX psychology, aksesibilitas WCAG 2.2 (A, AA, AAA) yang diuji otomatis, hierarki visual dan konsistensi, UX writing, responsif dan konteks penggunaan, serta fitur AI bila ada, ditambah pemeriksaan pola state, form, navigasi, dan data display. Menghasilkan laporan temuan berprioritas (severity, bukti, rekomendasi, quick wins) yang mudah dibaca. Gunakan saat pengguna meminta design review, UI atau UX review, audit UX, design critique, review flow, user journey, form, empty state, navigasi, pencarian, tabel, dashboard, atau grafik, audit aksesibilitas atau WCAG, cek hierarki visual, review copy atau microcopy, cek tampilan mobile, atau bertanya apa yang kurang dari sebuah desain."
 ---
 
 # Comprehensive Design Review
@@ -13,11 +13,16 @@ SKILL.md berisi alur kerja dan aturan utama. Detail setiap lensa ada di file ref
 
 | File | Isi | Dibaca saat |
 |---|---|---|
+| `references/task-flow.md` | Cakupan flow menurut input, bobot per konteks, pemetaan flow dan interaction cost, area cek (panjang, urutan, dead end, pemulihan, titik masuk, touchpoint, onboarding, notifikasi), penyajian peta flow, severity | Lensa 1 |
 | `references/ux-psychology.md` | Profil konteks, tabel bobot prinsip, pertentangan antar prinsip, kartu prinsip kelompok A sampai I | Lensa 2 |
 | `references/wcag-22-automated.md` | Katalog 86 kriteria WCAG 2.2 dan cara sistem mengujinya | Lensa 3 |
-| `references/visual-hierarchy.md` | Prinsip hierarki visual, bobot per konteks, konsistensi dan token desain | Lensa 4 |
+| `references/visual-hierarchy.md` | Prinsip hierarki visual, bobot per konteks, konsistensi dan token desain, format data lokal | Lensa 4 |
 | `references/ux-writing.md` | Keterbacaan, nada, istilah, struktur konten, label, pesan error, pola konten panjang | Lensa 5 |
 | `references/responsive.md` | Profil perangkat dan kondisi, bobot per konteks, lebar yang diuji, pola komponen di layar kecil, sentuhan, performa, stress test data, lingkungan pemakaian | Lensa 6 |
+| `references/states-feedback.md` | Inventaris state layar, umpan balik sistem, empty state, loading, error dan offline, izin, pencegahan kesalahan, konfirmasi atau undo | Pemeriksaan pola: State |
+| `references/forms.md` | Keperluan field, pemilihan kontrol, label dan petunjuk, wajib dan opsional, struktur, format toleran, waktu validasi, default, unggah berkas, data sensitif | Pemeriksaan pola: Form |
+| `references/navigation-search.md` | Struktur dan label navigasi, wayfinding, findability, pencarian, filter dan sort | Pemeriksaan pola: Navigasi |
+| `references/data-display.md` | Tujuan dashboard, KPI dan pembanding, pemilihan jenis grafik, kejujuran dan warna grafik, tabel data di desktop, kesegaran data, drill-down, alternatif grafik | Pemeriksaan pola: Data |
 | `assets/report-template.md` | Template laporan akhir yang mudah dibaca | Saat menulis laporan |
 | `scripts/run_all.mjs` | Menjalankan semua skrip sekaligus dan membuat `ringkasan-otomatis.md` | Input URL, kode, atau copy deck |
 | `scripts/a11y_scan.mjs` | Scan aksesibilitas otomatis (axe-core dan pemeriksaan tambahan) | Lensa 3, input URL atau kode |
@@ -62,16 +67,40 @@ Satu batasan untuk aksesibilitas: konteks boleh mengubah relevansi kriteria, tar
 - File gambar yang tersedia di workspace: hitung rasio kontras warna dengan sampling piksel memakai Python (lihat bagian 6), jangan hanya menebak.
 - Kode HTML/JSX/CSS: periksa semantik, label, atribut alt, struktur heading, role, dan state fokus langsung dari kode, lalu render file itu secara lokal dan jalankan skrip scan aksesibilitas (Lensa 3).
 - URL produk atau prototipe: ambil screenshot di lebar desktop dan mobile, jalankan skrip scan aksesibilitas (Lensa 3), lalu tetap lakukan review lensa lainnya.
-- Beberapa layar sekaligus (sebuah flow): nilai juga konsistensi antar layar, informasi yang harus diingat pengguna antar langkah, dan apa yang berubah di layar setelah setiap aksi.
+- Beberapa layar sekaligus (sebuah flow), prototipe, atau URL multi-halaman: jalankan Lensa 1B (flow) penuh. Nilai juga konsistensi antar layar, informasi yang harus diingat pengguna antar langkah, dan apa yang berubah di layar setelah setiap aksi. Untuk prototipe atau URL, telusuri flow-nya langsung dari titik masuk yang realistis.
 
 ## 3. Lensa review
 
-Kerjakan Lensa 1 sampai 6 untuk setiap review, kecuali pengguna skill membatasi cakupan (misalnya hanya meminta review aksesibilitas atau hierarki visual); dalam hal itu kerjakan lensa yang diminta saja dan sebutkan lensa yang tidak dikerjakan di bagian asumsi. Lensa 7 hanya dikerjakan bila layar memuat fitur AI atau konten yang disusun algoritma. Setiap lensa dijalankan menurut aturan "Konteks berlaku untuk semua lensa" di bagian 1: nilai hanya prinsip yang relevan, dan sesuaikan bobot serta rekomendasinya dengan konteks. Catat temuan hanya bila benar-benar terlihat atau beralasan kuat; jangan mengisi lensa dengan temuan generik supaya terlihat lengkap.
+Kerjakan Lensa 1 sampai 6 untuk setiap review, kecuali pengguna skill membatasi cakupan (misalnya hanya meminta review aksesibilitas atau hierarki visual); dalam hal itu kerjakan lensa yang diminta saja dan sebutkan lensa yang tidak dikerjakan di bagian asumsi. Lensa 7 hanya dikerjakan bila layar memuat fitur AI atau konten yang disusun algoritma. Setelah lensa, jalankan pemeriksaan pola yang relevan (state, form, navigasi, data display) seperti dijelaskan di akhir bagian ini; temuannya masuk ke lensa yang sudah ada. Setiap lensa dijalankan menurut aturan "Konteks berlaku untuk semua lensa" di bagian 1: nilai hanya prinsip yang relevan, dan sesuaikan bobot serta rekomendasinya dengan konteks. Catat temuan hanya bila benar-benar terlihat atau beralasan kuat; jangan mengisi lensa dengan temuan generik supaya terlihat lengkap.
 
-### Lensa 1: Pemahaman tugas utama
+### Lensa 1: Tugas utama, flow, dan journey
+
+Lensa ini menilai dua hal: apakah tugas utama bisa diselesaikan, dan berapa biaya (interaction cost) yang harus dibayar pengguna untuk menyelesaikannya, dari satu layar sampai seluruh journey lintas touchpoint. Panjang flow selalu dinilai terhadap konteks (frekuensi, risiko, profil pengguna), tidak terhadap angka ideal yang seragam. Penjelasan lengkap, tabel bobot, area cek, dan format peta flow ada di `references/task-flow.md`. Baca file itu setiap kali menjalankan lensa ini.
+
+#### 1A. Pemahaman tugas di layar (selalu dikerjakan)
 - Apakah tindakan utama (primary action) langsung terlihat dalam 5 detik pertama?
 - Apakah ada lebih dari satu tombol yang bersaing sebagai tindakan utama?
 - Apakah pengguna tahu sedang berada di mana dan langkah apa berikutnya?
+- Untuk input satu layar: dari mana pengguna datang, berapa langkah tersisa, dan apakah ada langkah di layar ini yang bisa dihapus, digabung, atau diisi otomatis? Hal yang tidak terlihat masuk "Perlu diverifikasi".
+
+#### 1B. Flow (dikerjakan bila input berupa beberapa layar, prototipe, URL multi-halaman, atau tugas multi-langkah)
+1. **Rumuskan tugas dan definisi selesai** dari sudut pandang pengguna, lalu tentukan titik masuk yang realistis (beranda, link email, notifikasi, pencarian).
+2. **Petakan happy path** langkah demi langkah: layar, aksi, sub-langkah mental, data yang diminta, waktu tunggu.
+3. **Hitung biaya:** layar, klik atau tap, field, keputusan, waktu tunggu, perpindahan konteks, dan informasi yang harus dicari di luar produk. Bandingkan dengan jumlah langkah minimum yang benar-benar dibutuhkan.
+4. **Uji setiap langkah:** hapus, gabung, isi otomatis, tunda, pindah urutan, atau lindungi (langkah pengaman seperti konfirmasi hapus dan tinjau sebelum kirim dipertahankan, dibuat ringan).
+5. **Petakan unhappy path:** error, Back, keluar lalu kembali, timeout, data belum lengkap, revisi setelah ditolak.
+6. **Periksa area** di bagian 5 file referensi sesuai bobot konteks: panjang flow, urutan langkah, data berulang, orientasi dan progres, dead end dan detour, jeda dan pemulihan, penutupan, titik masuk, efisiensi untuk pengguna berulang, pemakaian pertama dan onboarding, serta notifikasi dan pengingat.
+
+#### 1C. Journey dan touchpoint (dikerjakan bila bahan atau konteks menyebut touchpoint di luar layar, atau pengguna memintanya)
+- Petakan tahapan journey dan touchpoint-nya (email, notifikasi, WhatsApp, persetujuan atasan, petugas, loket, dokumen fisik). Tandai titik ketika pengguna terputus: tidak tahu status, harus bertanya ke petugas, langkah offline yang tidak diberitahukan di awal, atau informasi yang berbeda antar channel.
+- Bagian journey yang tidak terlihat di bahan review ditulis sebagai asumsi dengan confidence "Perlu verifikasi".
+
+#### 1D. Hubungan dengan lensa lain dan aturan penulisan
+- Lensa 2 kelompok G (interaction cost) adalah dasar teori. Temuan tentang panjang atau urutan flow dilaporkan di Lensa 1; temuan di level satu kontrol (misalnya posisi tombol submit) tetap di Lensa 2. Sludge dan deceptive patterns di dalam flow (forced registration, roach motel) mengikuti severity kelompok I.
+- WCAG 3.3.7, 3.3.4, 2.2.1, 2.4.5, 3.2.6, dan 3.3.8 dilaporkan di Lensa 3 dan dirujuk dari sini.
+- Setiap temuan flow menyebut tugas, langkah, layar, dan angkanya, serta alasan kontekstual (contoh: "staf memproses sekitar 40 pengajuan per hari, jadi 3 klik tambahan menjadi 120 klik per hari").
+- Ringkas hasil 1B dengan angka sebelum dan sesudah, lalu isi bagian "Peta flow dan interaction cost" di laporan. Usulan perbaikan ditulis sebagai daftar langkah flow baru, bukan hanya "sederhanakan flow".
+- Langkah yang ada karena regulasi atau aturan bisnis dicatat sebagai batasan, dengan rekomendasi yang bekerja di dalam batasan itu.
 
 ### Lensa 2: UX psychology yang disesuaikan konteks
 
@@ -277,6 +306,22 @@ Kedua dimensi ini tidak selalu tumbuh bersamaan. Pengguna yang lancar memakai AI
 - Cek: rekomendasi tanpa penjelasan asal-usulnya; tidak ada cara memberi umpan balik atas rekomendasi yang buruk, terutama yang memakan banyak ruang atau waktu; item yang sama muncul berulang di beberapa daftar; urutan yang tidak bisa dipahami dan tidak bisa diubah ke urutan yang wajar (misalnya kronologis); tata letak atau gambar sampul yang berubah tiap sesi.
 - Rekomendasi: jelaskan alasan rekomendasi ("Karena Anda membuka..."); sediakan kontrol untuk mengurutkan, memfilter, atau menyembunyikan, dengan tombol umpan balik yang makin menonjol bila rekomendasi buruk makin merugikan; hindari duplikasi; personalisasi per pengguna lalu pertahankan stabil antar sesi (lihat spatial memory di Lensa 2); taruh informasi kunci di awal judul dan deskripsi supaya mudah dipindai.
 
+### Pemeriksaan pola (lintas lensa)
+
+Pemeriksaan pola menyatukan aspek yang tersebar di beberapa lensa menjadi satu alur review untuk pola antarmuka yang sering bermasalah. Pemeriksaan ini bukan lensa baru: setiap temuan dilaporkan di lensa yang sudah ada menurut tabel pemetaan di file referensinya, dengan kolom Lensa ditulis sebagai nomor lensa dan nama pola (misalnya "1 · State", "5 · Form", "2 · Navigasi", "4 · Data"). Satu akar masalah dilaporkan sekali. Kedalaman dan bobot setiap pemeriksaan mengikuti konteks pengguna skill (bagian 1) dan tabel bobot di file referensinya. Bila pengguna skill membatasi cakupan, pemeriksaan pola ikut dibatasi, kecuali pola yang menyangkut lensa yang diminta.
+
+| Pola | Dijalankan bila | File referensi | Inti pemeriksaan |
+|---|---|---|---|
+| **State dan umpan balik** | Setiap review layar atau flow (kedalamannya mengikuti bahan) | `references/states-feedback.md` | Inventaris state (kosong, loading, sebagian, error, offline, tanpa izin, diproses, sukses, kedaluwarsa, terkunci); apakah sistem memberi tahu apa yang terjadi dan apakah aksi berhasil; pencegahan kesalahan; konfirmasi atau undo untuk aksi destruktif |
+| **Form** | Layar memuat form atau field isian | `references/forms.md` | Keperluan setiap field, kontrol yang cocok, label dan petunjuk, wajib dan opsional, struktur dan posisi tombol, format input yang toleran, waktu validasi, default, unggah berkas, data sensitif |
+| **Navigasi dan pencarian** | Bahan memuat menu, struktur halaman, pencarian, filter, atau sort | `references/navigation-search.md` | Struktur dan label menurut tujuan pengguna, wayfinding, findability, pencarian yang toleran dengan hasil kosong yang membantu, filter aktif yang terlihat dan bisa direset |
+| **Data display** | Bahan memuat tabel data, dashboard, kartu KPI, atau grafik | `references/data-display.md` | Pertanyaan pengguna yang terjawab dalam 5 detik, KPI dengan pembanding dan satuan, jenis grafik yang cocok, grafik yang jujur dan bisa dibaca tanpa warna saja, perataan angka dan aksi di tabel, tanggal pembaruan data |
+
+Aturan umum:
+- Untuk screenshot atau mockup yang hanya menampilkan satu state, susun daftar state yang seharusnya ada dan masukkan state yang tidak tersedia ke "Perlu diverifikasi" sebagai satu baris, kecuali state itu menyangkut tugas utama atau proses berisiko.
+- Untuk kode, prototipe, atau URL, picu state dan uji form, pencarian, serta filter di lingkungan uji. Jangan mengubah data atau memicu error di lingkungan produksi.
+- Jangan mengulang isi file referensi lensa. Contoh: isi pesan error tetap dinilai dengan `references/ux-writing.md` bagian 10, keyboard mobile dengan `references/responsive.md` bagian 6.3, dan prinsip information scent dengan Lensa 2 kelompok E.
+
 ## 4. Skala severity, confidence, dan effort
 
 Severity:
@@ -298,14 +343,15 @@ Tulis dalam Bahasa Indonesia, kecuali pengguna menulis dalam bahasa lain. Ikuti 
 Susunan laporan:
 1. **Ringkasan satu menit:** kesimpulan, status (siap dipakai sampai perlu dirancang ulang), jumlah temuan per severity, tiga hal yang paling perlu diperbaiki, dan satu hal yang sudah baik.
 2. **Kondisi per lensa:** status Baik, Perlu perhatian, atau Bermasalah dengan satu kalimat. Skor 1 sampai 5 hanya bila pengguna memintanya.
-3. **Daftar temuan:** tabel yang diurutkan dari severity tertinggi dengan kolom ID, Temuan, Lensa, Dasar penilaian (prinsip atau kriteria), Severity, Confidence, dan Effort.
-4. **Detail temuan:** kartu untuk setiap temuan Kritis dan Tinggi berisi Masalahnya apa, Akibatnya bagi pengguna dalam konteks ini, Buktinya, dan Saran perbaikan (dengan tabel sebelum dan sesudah untuk temuan copy).
-5. **Quick wins:** daftar centang perbaikan berdampak besar dengan effort Kecil, siap dijadikan tiket.
-6. **Yang sudah baik:** 2 sampai 4 hal yang perlu dipertahankan supaya tidak hilang saat redesign.
-7. **Perlu diverifikasi:** tabel hal yang dicek, alasan belum bisa dipastikan, dan cara mengeceknya.
-8. **Konteks dan asumsi:** profil konteks (Lensa 2) dan profil perangkat (Lensa 6), asumsi, serta prinsip yang dikesampingkan beserta alasannya.
-9. **Ringkasan untuk stakeholder (opsional):** dipakai bila laporan dibawa ke manajemen, tim bisnis, atau klien, dengan rhetorical triangle: ethos (dasar temuan: prinsip, kriteria, data), logos (pola "Bila kita [perbaikan], masalah [masalah pengguna] teratasi dan [nilai bisnis] meningkat"), dan pathos (satu skenario konkret dari sudut pandang pengguna).
-10. **Lampiran:** hasil pemeriksaan otomatis, cara review dilakukan, dan glosarium istilah.
+3. **Peta flow dan interaction cost (bila Lensa 1B atau 1C dikerjakan):** tabel langkah dengan biaya dan ID temuan, ringkasan angka sebelum dan sesudah, flow usulan, serta peta journey bila 1C dikerjakan. Hapus bagian ini bila review hanya satu layar.
+4. **Daftar temuan:** tabel yang diurutkan dari severity tertinggi dengan kolom ID, Temuan, Lensa, Dasar penilaian (prinsip atau kriteria), Severity, Confidence, dan Effort.
+5. **Detail temuan:** kartu untuk setiap temuan Kritis dan Tinggi berisi Masalahnya apa, Akibatnya bagi pengguna dalam konteks ini, Buktinya, dan Saran perbaikan (dengan tabel sebelum dan sesudah untuk temuan copy).
+6. **Quick wins:** daftar centang perbaikan berdampak besar dengan effort Kecil, siap dijadikan tiket.
+7. **Yang sudah baik:** 2 sampai 4 hal yang perlu dipertahankan supaya tidak hilang saat redesign.
+8. **Perlu diverifikasi:** tabel hal yang dicek, alasan belum bisa dipastikan, dan cara mengeceknya.
+9. **Konteks dan asumsi:** profil konteks (Lensa 2) dan profil perangkat (Lensa 6), asumsi, serta prinsip yang dikesampingkan beserta alasannya.
+10. **Ringkasan untuk stakeholder (opsional):** dipakai bila laporan dibawa ke manajemen, tim bisnis, atau klien, dengan rhetorical triangle: ethos (dasar temuan: prinsip, kriteria, data), logos (pola "Bila kita [perbaikan], masalah [masalah pengguna] teratasi dan [nilai bisnis] meningkat"), dan pathos (satu skenario konkret dari sudut pandang pengguna).
+11. **Lampiran:** hasil pemeriksaan otomatis, cara review dilakukan, dan glosarium istilah.
 
 Aturan supaya laporan mudah dibaca:
 - **ID temuan** memakai huruf severity dan nomor: K-01 (Kritis), T-01 (Tinggi), S-01 (Sedang), R-01 (Rendah). Pakai ID yang sama di semua bagian.

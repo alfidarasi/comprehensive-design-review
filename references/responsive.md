@@ -167,6 +167,7 @@ Tabel lebar adalah masalah paling umum di aplikasi kerja yang diakses lewat mobi
 - Date picker: input tanggal yang bisa diketik selain kalender, terutama untuk tanggal lahir atau tanggal lama.
 - **Unggah berkas di mobile:** dukung pilihan dari kamera, galeri, dan penyimpanan file; jelaskan format dan batas ukuran sebelum memilih; tampilkan progres unggah; dan bila berkasnya harus PDF, sediakan cara untuk foto dokumen atau beri panduan.
 - Form panjang: bagi menjadi langkah atau bagian, simpan draf otomatis, tampilkan progres.
+- Pemeriksaan form di luar aspek layar kecil (keperluan field, kontrol, validasi, default) ada di `references/forms.md`.
 
 ### 6.4 Modal dan dialog
 - Di mobile, modal besar sebaiknya menjadi layar penuh atau bottom sheet (panel dari bawah).

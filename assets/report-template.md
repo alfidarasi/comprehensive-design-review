@@ -6,8 +6,8 @@ Cara mengisi (hapus komentar ini dari laporan akhir):
 - Pakai kalimat pendek dan kata sehari-hari. Istilah teknis bahasa Inggris (misalnya severity, flow, quick wins)
   tetap dipakai, lalu dijelaskan singkat di Glosarium.
 - ID temuan = huruf severity + nomor urut. K = Kritis, T = Tinggi, S = Sedang, R = Rendah. Contoh: K-01, T-03.
-- Temuan Kritis dan Tinggi wajib punya kartu detail di bagian 4. Temuan Sedang dan Rendah cukup ditulis di tabel
-  bagian 3, kecuali perlu contoh sebelum dan sesudah.
+- Temuan Kritis dan Tinggi wajib punya kartu detail di bagian 5. Temuan Sedang dan Rendah cukup ditulis di tabel
+  bagian 4, kecuali perlu contoh sebelum dan sesudah.
 - Satu kartu = satu masalah. Kalau masalah yang sama muncul di banyak tempat, jadikan satu kartu dengan beberapa contoh.
 - Hapus bagian opsional yang tidak dipakai. Jangan tinggalkan placeholder [ ... ] di laporan akhir.
 -->
@@ -18,7 +18,7 @@ Cara mengisi (hapus komentar ini dari laporan akhir):
 |---|---|
 | **Yang direview** | [Nama layar atau flow, plus versi atau tanggal desainnya] |
 | **Bahan yang diterima** | [Screenshot / Figma / URL / kode / copy deck] |
-| **Yang dicek** | [Lensa yang dipakai, misalnya "Lensa 1 sampai 6. Lensa 7 tidak dipakai karena tidak ada fitur AI"] |
+| **Yang dicek** | [Lensa dan pemeriksaan pola yang dipakai, misalnya "Lensa 1 sampai 6, ditambah pola State dan Form. Lensa 7 tidak dipakai karena tidak ada fitur AI"] |
 | **Tanggal review** | [Tanggal] |
 
 ---
@@ -50,7 +50,7 @@ Cara mengisi (hapus komentar ini dari laporan akhir):
 
 | Lensa (sudut pandang yang dicek) | Status | Catatan singkat |
 |---|---|---|
-| 1. Tugas utama: bisakah pengguna menyelesaikan tujuannya? | [Status] | [Satu kalimat] |
+| 1. Tugas utama, flow, dan journey: bisakah pengguna menyelesaikan tujuannya tanpa langkah yang berlebihan? | [Status] | [Contoh: "Pengajuan bisa selesai, tetapi butuh 7 layar; 3 di antaranya bisa dihapus atau digabung"] |
 | 2. UX psychology: apakah desain cocok dengan cara orang berpikir dan memutuskan? | [Status] | [Satu kalimat] |
 | 3. Aksesibilitas (WCAG 2.2): bisakah dipakai orang dengan disabilitas? | [Status] | [Contoh: "5 masalah di level AA, 3 hal bisa ditingkatkan ke level AAA"] |
 | 4. Hierarki visual dan konsistensi: apakah yang penting terlihat duluan, dan tampilannya seragam? | [Status] | [Satu kalimat] |
@@ -60,11 +60,52 @@ Cara mengisi (hapus komentar ini dari laporan akhir):
 
 ---
 
-## 3. Daftar temuan
+## 3. Peta flow dan interaction cost
+
+<!--
+Isi bagian ini bila review mencakup flow (Lensa 1B) atau journey (Lensa 1C). Hapus bila review hanya satu layar.
+Satu tabel per tugas utama, maksimal dua tugas. Biaya: Rendah / Sedang / Tinggi.
+Tulis "perkiraan" bila angka berasal dari screenshot, bukan dari menelusuri prototipe atau URL.
+-->
+
+**Tugas:** [Tugas dari sudut pandang pengguna, misalnya "Pegawai tahu pengajuan cutinya sudah diterima atasan"]
+**Titik masuk:** [Dari mana pengguna biasanya mulai, misalnya "link di email pengingat" atau "menu Layanan di beranda"]
+
+| Langkah | Layar | Aksi pengguna | Biaya | Bisa diperbaiki? | ID temuan |
+|---|---|---|---|---|---|
+| 1 | [Beranda] | [Mencari menu Cuti di dalam menu Layanan] | [Sedang] | [Pindah urutan: taruh di beranda] | [S-03] |
+| 2 | [Form cuti] | [Mengisi 12 field, 5 sudah ada di profil] | [Tinggi] | [Isi otomatis 5 field] | [T-02] |
+| 3 | [Konfirmasi] | [Klik "Lanjut" tanpa informasi baru] | [Rendah] | [Hapus] | [S-04] |
+
+**Ringkasan biaya:**
+
+| | Sekarang | Usulan |
+|---|:---:|:---:|
+| Layar | [7] | [4] |
+| Klik atau tap | [n] | [n] |
+| Field yang diisi manual | [31] | [18] |
+| Keputusan | [n] | [n] |
+| Perpindahan ke aplikasi atau tab lain | [1] | [0] |
+
+**Flow usulan:**
+1. [Langkah 1 baru]
+2. [Langkah 2 baru]
+3. [Langkah 3 baru]
+
+<!-- Peta journey: pakai hanya bila Lensa 1C dikerjakan (ada touchpoint di luar layar). -->
+
+| Tahap | Touchpoint | Yang dilakukan atau dirasakan pengguna | Titik terputus | ID temuan |
+|---|---|---|---|---|
+| [Menunggu persetujuan] | [Email, aplikasi] | [Tidak tahu apakah atasan sudah membaca pengajuan] | [Status hanya "Diproses" selama 5 hari] | [T-04] |
+
+---
+
+## 4. Daftar temuan
 
 <!--
 Urutkan dari severity paling tinggi.
 Isi kolom Confidence dengan "Terkonfirmasi" atau "Perlu verifikasi", dan kolom Effort dengan Kecil, Sedang, atau Besar.
+Temuan dari pemeriksaan pola ditulis di kolom Lensa sebagai nomor lensa dan nama pola, misalnya "1 · State" atau "5 · Form".
 Keterangan di bawah tabel tetap ditampilkan di laporan supaya pembaca paham arti kedua kolom itu.
 -->
 
@@ -73,13 +114,14 @@ Keterangan di bawah tabel tetap ditampilkan di laporan supaya pembaca paham arti
 | K-01 | [Judul singkat] | [6] | [WCAG 1.4.10] | Kritis | Terkonfirmasi | [Sedang] |
 | T-01 | [Judul singkat] | [1, 4] | [Focal point] | Tinggi | Terkonfirmasi | [Kecil] |
 | S-01 | [Judul singkat] | [5] | [Inverted pyramid] | Sedang | Perlu verifikasi | [Kecil] |
+| S-02 | [Judul singkat] | [1 · State] | [Empty state tanpa arahan] | Sedang | Terkonfirmasi | [Kecil] |
 
 **Confidence** (seberapa pasti temuan ini): *Terkonfirmasi* berarti terlihat atau terukur langsung; *Perlu verifikasi* berarti dugaan kuat yang masih perlu dicek.
 **Effort** (perkiraan besar pekerjaan perbaikan): *Kecil* kurang dari 1 hari, *Sedang* beberapa hari, *Besar* lebih dari 1 sprint atau perlu riset dulu.
 
 ---
 
-## 4. Detail temuan
+## 5. Detail temuan
 
 ### K-01 · [Judul singkat yang langsung menyebut masalahnya]
 
@@ -105,7 +147,7 @@ Keterangan di bawah tabel tetap ditampilkan di laporan supaya pembaca paham arti
 
 ---
 
-## 5. Quick wins
+## 6. Quick wins
 
 <!-- Perbaikan yang mudah dan cepat, tapi hasilnya terasa. Bisa langsung dijadikan tiket. -->
 
@@ -114,14 +156,14 @@ Keterangan di bawah tabel tetap ditampilkan di laporan supaya pembaca paham arti
 
 ---
 
-## 6. Yang sudah baik dan perlu dipertahankan
+## 7. Yang sudah baik dan perlu dipertahankan
 
 - [Hal yang sudah baik, dan kenapa itu baik]
 - [Hal yang sudah baik, dan kenapa itu baik]
 
 ---
 
-## 7. Perlu diverifikasi
+## 8. Perlu diverifikasi
 
 <!-- Hal yang belum bisa dipastikan dari bahan yang ada. -->
 
@@ -131,7 +173,7 @@ Keterangan di bawah tabel tetap ditampilkan di laporan supaya pembaca paham arti
 
 ---
 
-## 8. Konteks dan asumsi
+## 9. Konteks dan asumsi
 
 **Profil konteks** (gambaran siapa penggunanya dan bagaimana mereka memakai produk ini)
 
@@ -155,7 +197,7 @@ Keterangan di bawah tabel tetap ditampilkan di laporan supaya pembaca paham arti
 
 ---
 
-## 9. Ringkasan untuk stakeholder (opsional)
+## 10. Ringkasan untuk stakeholder (opsional)
 
 <!-- Pakai kalau laporan ini akan dibawa ke manajemen, tim bisnis, atau klien. -->
 
@@ -169,7 +211,7 @@ Keterangan di bawah tabel tetap ditampilkan di laporan supaya pembaca paham arti
 
 **Hasil pengecekan otomatis:** [Lokasi file ringkasan-otomatis.md dan laporan detailnya, atau "Tidak dijalankan karena bahan yang diterima hanya screenshot".]
 
-**Cara review ini dilakukan:** Desain dicek dari 7 sudut pandang (lensa) menurut skill Comprehensive Design Review. Prinsip yang dipakai dipilih dan diberi bobot sesuai profil konteks di bagian 8. Pengecekan otomatis hanya bisa menangkap sebagian masalah. Hal yang perlu diuji dengan pengguna sungguhan ada di bagian 7.
+**Cara review ini dilakukan:** Desain dicek dari 7 sudut pandang (lensa) menurut skill Comprehensive Design Review, ditambah pemeriksaan pola (state, form, navigasi, data display) yang temuannya dimasukkan ke lensa terkait. Prinsip yang dipakai dipilih dan diberi bobot sesuai profil konteks di bagian 9. Pengecekan otomatis hanya bisa menangkap sebagian masalah. Hal yang perlu diuji dengan pengguna sungguhan ada di bagian 8.
 
 **Glosarium**
 

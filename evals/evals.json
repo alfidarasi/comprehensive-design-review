@@ -68,6 +68,43 @@
         { "name": "plain-language", "description": "Istilah teknis dihindari atau dijelaskan" },
         { "name": "prioritized", "description": "Menonjolkan 3 prioritas dan quick wins, tanpa mengulang semua temuan" }
       ]
+    },
+    {
+      "id": 7,
+      "prompt": "Ini 6 screenshot alur pengajuan cuti pegawai dari beranda sampai layar sukses. Pegawai mengajukan cuti beberapa kali setahun; atasan menyetujui lewat email. Menurutmu flow-nya kepanjangan nggak?",
+      "expected_output": "Lensa 1B dan 1C dikerjakan: peta flow dengan biaya per langkah, ringkasan angka sebelum dan sesudah, flow usulan, dan peta journey yang memasukkan persetujuan atasan lewat email sebagai asumsi yang perlu diverifikasi.",
+      "assertions": [
+        { "name": "flow-map", "description": "Laporan berisi bagian Peta flow dan interaction cost dengan tabel langkah, biaya, dan ID temuan" },
+        { "name": "counts-before-after", "description": "Menyebut angka sekarang dan usulan (layar, field, klik atau keputusan), ditandai perkiraan karena berasal dari screenshot" },
+        { "name": "context-weighting", "description": "Panjang flow dinilai terhadap pemakaian sesekali (orientasi, syarat di awal, bisa dilanjutkan), tidak memakai angka langkah ideal yang seragam" },
+        { "name": "keeps-safeguards", "description": "Tidak menyarankan menghapus langkah tinjau atau konfirmasi yang melindungi pengguna; menyarankan membuatnya ringan" },
+        { "name": "journey-assumption", "description": "Touchpoint email persetujuan atasan masuk peta journey sebagai asumsi dengan confidence Perlu verifikasi" },
+        { "name": "no-double-report", "description": "Temuan panjang flow dilaporkan di Lensa 1 dengan dasar interaction cost, tidak diulang sebagai temuan terpisah di Lensa 2" }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Ini mockup Figma halaman daftar pengajuan dan form tambah pengajuan untuk staf administrasi yang memakainya setiap hari. Ada kolom pencarian dan filter status. Tolong review.",
+      "expected_output": "Lensa 1 sampai 6 dikerjakan, ditambah pemeriksaan pola State, Form, dan Navigasi dengan bobot untuk pemakaian harian. Temuan pola dimasukkan ke lensa yang sudah ada.",
+      "assertions": [
+        { "name": "pattern-labels", "description": "Temuan dari pemeriksaan pola ditulis di kolom Lensa dengan format nomor lensa dan nama pola (misalnya '1 · State', '5 · Form'), tanpa membuat lensa baru" },
+        { "name": "state-inventory", "description": "Menyusun daftar state yang seharusnya ada (kosong, hasil filter kosong, loading, error, sukses) dan memasukkan state yang tidak ada di mockup ke Perlu diverifikasi sebagai satu baris" },
+        { "name": "filter-visibility", "description": "Memeriksa apakah filter aktif terlihat dan bisa direset, serta apakah hasil pencarian kosong memberi saran" },
+        { "name": "daily-use-form", "description": "Form dinilai untuk kecepatan entri pengguna harian (default, urutan Tab, isian terakhir), tidak hanya untuk pengguna baru" },
+        { "name": "no-double-report", "description": "Satu akar masalah (misalnya pesan error) dilaporkan sekali, tidak berulang di pola Form dan Lensa 5" }
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Ini screenshot dashboard rekap pengajuan untuk rapat pimpinan fakultas setiap bulan. Ada kartu KPI, grafik batang per prodi, pie chart status, dan tabel rincian. Tolong review.",
+      "expected_output": "Pemeriksaan pola Data display dengan bobot untuk ringkasan pimpinan: pertanyaan yang terjawab dalam 5 detik, pembanding pada KPI, kejujuran grafik, dan format data lokal.",
+      "assertions": [
+        { "name": "user-questions", "description": "Menulis pertanyaan yang seharusnya dijawab dashboard dan menilai mana yang langsung terjawab" },
+        { "name": "kpi-comparison", "description": "Memeriksa apakah KPI punya pembanding (target atau periode lalu), satuan, periode, dan jumlah dasar untuk persentase" },
+        { "name": "chart-honesty", "description": "Memeriksa sumbu batang yang tidak mulai dari nol, jumlah irisan pie, label langsung, dan warna yang tidak menjadi satu-satunya penanda" },
+        { "name": "freshness", "description": "Memeriksa keterangan tanggal pembaruan atau periode data" },
+        { "name": "pattern-labels", "description": "Temuan ditulis dengan label lensa yang sudah ada dan nama pola (misalnya '4 · Data'), tanpa lensa baru" }
+      ]
     }
   ]
 }

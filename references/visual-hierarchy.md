@@ -310,7 +310,7 @@ Token desain adalah nilai dasar yang diberi nama dan dipakai ulang di seluruh pr
 - Apakah semua tombol punya state focus yang terlihat (juga Lensa 3, 2.4.7)?
 - Apakah state disabled konsisten dan bisa dibedakan dari state normal tanpa hanya mengandalkan warna?
 - Apakah pesan error tampil di posisi dan gaya yang sama di semua form?
-- Apakah layar punya empty state, loading state, dan error state?
+- Apakah layar punya empty state, loading state, dan error state? Inventaris state lengkap dan perilakunya dinilai di pemeriksaan pola State (`references/states-feedback.md`); di sini cukup nilai konsistensi tampilannya.
 
 ### 8.4 Ikonografi
 **Cek.**
@@ -327,6 +327,16 @@ Token desain adalah nilai dasar yang diberi nama dan dipakai ulang di seluruh pr
 
 ### 8.6 Format data
 **Cek.** Tanggal (misalnya 3 Nov 2026 atau 03/11/2026, pilih satu), jam (24 jam atau 12 jam), angka (pemisah ribuan titik untuk konteks Indonesia), mata uang (Rp 150.000), satuan, dan zona waktu ditulis dengan format yang sama di semua tempat.
+
+**Format lokal untuk pengguna Indonesia.** Konsistensi saja tidak cukup; formatnya juga harus sesuai kebiasaan pengguna target.
+- **Tanggal:** nama bulan dalam bahasa Indonesia (Mei, Agu, Okt, Des, bukan May, Aug, Oct, Dec) bila antarmuka berbahasa Indonesia. Hindari format angka saja yang ambigu untuk pengguna lintas negara (03/11 bisa dibaca 3 November atau 11 Maret). Untuk tenggat, sertakan hari ("Jumat, 14 Nov 2026").
+- **Jam dan zona waktu:** format 24 jam dengan titik (09.00, 14.30) lazim di Indonesia. Untuk layanan nasional, sebut zona waktu (WIB, WITA, WIT) pada tenggat, jadwal, dan batas waktu, karena pengguna di tiga zona bisa salah menghitung tenggat.
+- **Waktu relatif:** "2 jam lalu" cocok untuk aktivitas terbaru; untuk tenggat, catatan resmi, dan data yang dirujuk ulang, tampilkan tanggal pasti (bisa di tooltip atau di samping waktu relatif).
+- **Angka dan mata uang:** titik untuk ribuan, koma untuk desimal (detail di `references/ux-writing.md` bagian 6.6). Field nominal sebaiknya memformat ribuan saat diketik dan menerima input tanpa titik.
+- **Nomor telepon, nama, dan alamat:** terima +62, 62, atau 0 di depan nomor ponsel; dukung nama satu kata dan nama dengan gelar; struktur alamat mengikuti kebiasaan lokal (RT/RW, kelurahan atau desa, kecamatan) bila sistem memang membutuhkan rinciannya. Penanganan input ada di `references/forms.md` bagian 4.6.
+- **Produk dua bahasa:** format mengikuti bahasa antarmuka yang dipilih, bukan bercampur dalam satu layar.
+
+Format yang tidak sesuai kebiasaan lokal dan berdampak pada tenggat atau uang dinilai minimal Sedang; ketidakkonsistenan murni tanpa dampak tetap Rendah.
 
 ### 8.7 Terminologi
 Istilah yang sama untuk hal yang sama, misalnya tidak bergantian antara "Hapus", "Buang", dan "Delete". Detailnya di Lensa 5 (UX writing).

@@ -40,6 +40,7 @@ Berikan screenshot, mockup Figma, flow, URL, kode, atau copy deck, lalu ceritaka
 "Cek aksesibilitas halaman pendaftaran ini sampai level AAA."
 "Review hierarki visual dashboard admin ini saja. Dipakai staf HR setiap hari di komputer kantor."
 "Review copy alur checkout ini dan beri usulan pengganti."
+"Flow pendaftaran ini kepanjangan nggak? Mana langkah yang bisa dipangkas?"
 "Ini mockup chatbot layanan akademik. Apa yang perlu diperbaiki dari sisi UX?"
 ```
 
@@ -111,13 +112,22 @@ Satu hal tidak ikut berubah: pelanggaran WCAG level A dan AA pada kriteria yang 
 
 | # | Lensa | Yang dinilai | Cara diuji |
 |---|---|---|---|
-| 1 | **Tugas utama** | Apakah aksi utama terlihat dan pengguna tahu langkah berikutnya | Penilaian Claude |
+| 1 | **Tugas utama, flow, dan journey** | Apakah aksi utama terlihat; berapa langkah, field, dan keputusan untuk menyelesaikan tugas; langkah yang bisa dihapus, digabung, atau diisi otomatis; dead end, pemulihan, titik masuk, dan touchpoint lintas channel (email, notifikasi, petugas) | Peta flow dan hitungan interaction cost, dengan bobot sesuai konteks |
 | 2 | **UX psychology** | 9 kelompok prinsip: change blindness, Gestalt, memory dan cognitive load, perception, navigation, information foraging, mental model, decision making, interaction cost, motivation, serta persuasion, trust, dan deceptive patterns | Profil konteks dengan 7 dimensi dan tabel bobot |
 | 3 | **Aksesibilitas** | Seluruh 86 kriteria WCAG 2.2 level A, AA, dan AAA | `a11y_scan.mjs` (axe-core dan pemeriksaan tambahan) |
 | 4 | **Hierarki visual dan konsistensi** | 20 prinsip (focal point, kontras, alignment, whitespace, tipografi, dan lainnya) serta token desain | `style_audit.mjs` dan squint test |
 | 5 | **UX writing** | Keterbacaan, nada, jargon, struktur konten, label perintah dan link, pesan error, copy manipulatif | `copy_audit.mjs` |
 | 6 | **Responsif dan konteks penggunaan** | Layout, pola komponen di layar kecil, sentuhan, input, performa, data nyata, lingkungan pemakaian | `responsive_audit.mjs` |
 | 7 | **Fitur AI** (bila ada) | Anthropomorphism, trust, verifikasi jawaban, user control, personalisasi | Penilaian Claude |
+
+Selain tujuh lensa, ada **pemeriksaan pola** untuk pola antarmuka yang paling sering bermasalah. Pemeriksaan ini bukan lensa tambahan: temuannya dimasukkan ke lensa yang sesuai (misalnya "5 · Form"), dan kedalamannya mengikuti konteks.
+
+| Pola | Dijalankan bila | Yang dinilai |
+|---|---|---|
+| **State dan umpan balik** | Setiap review | Kosong, loading, sebagian, error, offline, tanpa izin, sukses; umpan balik setelah aksi; pencegahan kesalahan; konfirmasi atau undo |
+| **Form** | Ada form atau field isian | Keperluan field, kontrol, label dan petunjuk, wajib dan opsional, format yang toleran, waktu validasi, default, unggah berkas, data sensitif |
+| **Navigasi dan pencarian** | Ada menu, pencarian, filter, atau sort | Struktur dan label menurut tujuan pengguna, penanda lokasi, findability, hasil pencarian kosong, filter aktif dan reset |
+| **Data display** | Ada tabel data, dashboard, atau grafik | Pertanyaan yang terjawab dalam 5 detik, KPI dengan pembanding, jenis grafik, grafik yang jujur dan tidak bergantung pada warna, tabel kerja, tanggal pembaruan data |
 
 Setiap temuan memuat **severity** (Kritis, Tinggi, Sedang, Rendah), **confidence** (seberapa pasti temuannya: Terkonfirmasi atau Perlu verifikasi), **effort** (perkiraan besar pekerjaan perbaikan: Kecil, Sedang, Besar), bukti, dan rekomendasi.
 
@@ -166,13 +176,14 @@ Susunan laporan:
 |---|---|
 | 1. Ringkasan satu menit | Kesimpulan, status, jumlah temuan, tiga prioritas |
 | 2. Kondisi per lensa | Baik, Perlu perhatian, atau Bermasalah |
-| 3. Daftar temuan | Tabel dengan ID (K-01, T-01, ...), severity, confidence, effort |
-| 4. Detail temuan | Masalah, dampak, bukti, rekomendasi, serta sebelum dan sesudah untuk copy |
-| 5. Quick wins | Daftar centang yang siap dijadikan tiket |
-| 6. Yang sudah baik | Hal yang perlu dipertahankan |
-| 7. Perlu diverifikasi | Apa yang dicek, kenapa, dan caranya |
-| 8. Konteks dan asumsi | Profil konteks dan prinsip yang dikesampingkan |
-| 9. Ringkasan stakeholder | Opsional, untuk manajemen atau klien |
+| 3. Peta flow dan interaction cost | Langkah, biaya, angka sebelum dan sesudah, flow usulan (bila review mencakup flow) |
+| 4. Daftar temuan | Tabel dengan ID (K-01, T-01, ...), severity, confidence, effort |
+| 5. Detail temuan | Masalah, dampak, bukti, rekomendasi, serta sebelum dan sesudah untuk copy |
+| 6. Quick wins | Daftar centang yang siap dijadikan tiket |
+| 7. Yang sudah baik | Hal yang perlu dipertahankan |
+| 8. Perlu diverifikasi | Apa yang dicek, kenapa, dan caranya |
+| 9. Konteks dan asumsi | Profil konteks dan prinsip yang dikesampingkan |
+| 10. Ringkasan stakeholder | Opsional, untuk manajemen atau klien |
 
 ---
 
@@ -205,7 +216,7 @@ Review copy di file copy-onboarding.md. Nada produk kami serius tapi santai.
 Ini 5 screenshot alur pengajuan cuti pegawai dari awal sampai selesai.
 Penggunanya pegawai administrasi, dipakai beberapa kali setahun.
 ```
-→ Review per layar dan antar layar: informasi yang harus diingat antar langkah, perubahan status, konsistensi.
+→ Peta flow dengan jumlah layar, field, dan keputusan; langkah yang bisa dihapus, digabung, atau diisi otomatis; flow usulan; serta review antar layar (informasi yang harus diingat antar langkah, perubahan status, konsistensi).
 
 **URL produk dengan performa**
 ```
@@ -238,10 +249,16 @@ comprehensive-design-review/
 ├── SKILL.md                          ← Alur kerja dan aturan utama (dibaca Claude)
 │   ├── Konteks berlaku untuk semua lensa
 │   ├── Lensa 1 sampai 7               ← Alur kerja ringkas per lensa
+│   ├── Pemeriksaan pola               ← State, form, navigasi, data display (lintas lensa)
 │   ├── Severity, confidence, effort
 │   └── Format laporan
 │
 ├── references/                        ← Detail per lensa, dibaca saat lensa dijalankan
+│   ├── task-flow.md                   ← Flow, journey, touchpoint, dan interaction cost
+│   ├── states-feedback.md             ← Pola: state layar, umpan balik, pencegahan kesalahan
+│   ├── forms.md                       ← Pola: desain form
+│   ├── navigation-search.md           ← Pola: navigasi, pencarian, filter, sort
+│   ├── data-display.md                ← Pola: tabel data, dashboard, grafik
 │   ├── ux-psychology.md               ← Profil konteks, bobot, kartu prinsip A sampai I
 │   ├── wcag-22-automated.md           ← 86 kriteria WCAG 2.2 dan cara mengujinya
 │   ├── visual-hierarchy.md            ← 20 prinsip hierarki visual dan konsistensi
@@ -284,4 +301,4 @@ Isi skill ditulis dalam Bahasa Indonesia. Laporan mengikuti bahasa yang dipakai 
 
 ## Kata kunci
 
-design review, UI review, UX review, UX audit, design critique, UX psychology, accessibility audit, WCAG 2.2, visual hierarchy, design consistency, design tokens, UX writing, microcopy, error messages, responsive design, mobile UX, Core Web Vitals, AI UX, deceptive patterns, Claude skill
+design review, UI review, UX review, UX audit, user flow, user journey, touchpoint, interaction cost, empty state, form design, navigation, information architecture, search and filter, dashboard, data visualization, onboarding, notifications, design critique, UX psychology, accessibility audit, WCAG 2.2, visual hierarchy, design consistency, design tokens, UX writing, microcopy, error messages, responsive design, mobile UX, Core Web Vitals, AI UX, deceptive patterns, Claude skill
