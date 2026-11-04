@@ -8,13 +8,13 @@ File ini dibaca saat menjalankan Lensa 2. Isinya: cara menyusun profil konteks (
 - 2C. Periksa prinsip
   - A. Change blindness
   - B. Gestalt: cara mata mengelompokkan elemen
-  - C. Memori dan beban kognitif
-  - D. Persepsi, ekspektasi, dan kesan
-  - E. Navigasi, pencarian informasi, dan pemahaman sistem
-  - F. Pengambilan keputusan
-  - G. Usaha dan gerakan
-  - H. Motivasi dan kebutuhan psikologis
-  - I. Persuasi, kepercayaan, dan etika
+  - C. Memory dan cognitive load
+  - D. Perception, expectation, dan first impression
+  - E. Navigation, information foraging, dan mental model
+  - F. Decision making
+  - G. Interaction cost dan motor behavior
+  - H. Motivation dan psychological needs
+  - I. Persuasion, trust, dan ethics
 - Aturan khusus Lensa 2
 
 ---
@@ -25,13 +25,13 @@ Prinsip psikologi kognitif tidak berlaku sama kuat di semua produk. Prinsip yang
 
 Tentukan tujuh dimensi berikut dari keterangan pengguna skill atau dari bukti di input:
 
-1. Frekuensi pemakaian: harian atau berulang (aplikasi kerja, sistem internal, dashboard), atau sesekali (pendaftaran tahunan, pengajuan yang jarang, situs pemasaran).
-2. Keterikatan pengguna: apakah pengguna wajib memakai produk ini (sistem kantor, layanan resmi institusi) atau bisa dengan mudah pindah ke produk lain.
-3. Jenis tugas dominan: mengisi form atau transaksi, membaca konten, membandingkan pilihan, memantau data, atau menjelajah.
-4. Kepadatan informasi: rendah (landing page, layar tunggal sederhana) sampai tinggi (tabel data, aplikasi dengan banyak kontrol).
-5. Kondisi pemakaian: perangkat utama, apakah ukuran layar bervariasi (layout responsif), gangguan lingkungan, dan tekanan waktu.
-6. Profil pengguna: keahlian domain, keakraban dengan teknologi, rentang usia. Kapasitas working memory (kapasitas otak untuk menahan informasi sementara saat mengerjakan tugas) berbeda antar orang dan cenderung menurun seiring usia. Tim pembuat produk biasanya punya kapasitas dan pengalaman teknologi di atas pengguna rata-rata, sehingga desain yang "terasa mudah bagi tim" belum tentu mudah bagi pengguna. Untuk produk dengan fitur AI, perkirakan juga literasi AI pengguna (lihat Lensa 7).
-7. Muatan emosional: apakah layar ini bagian dari proses yang menegangkan atau berisiko (pengajuan, pembayaran, tenggat waktu, data penting) atau kegiatan rutin.
+1. Usage frequency: harian atau berulang (aplikasi kerja, sistem internal, dashboard), atau sesekali (pendaftaran tahunan, pengajuan yang jarang, situs pemasaran).
+2. Switching cost: apakah pengguna wajib memakai produk ini (sistem kantor, layanan resmi institusi) atau bisa dengan mudah pindah ke produk lain.
+3. Primary task: mengisi form atau transaksi, membaca konten, membandingkan pilihan, memantau data, atau menjelajah.
+4. Information density: rendah (landing page, layar tunggal sederhana) sampai tinggi (tabel data, aplikasi dengan banyak kontrol).
+5. Usage context: perangkat utama, apakah ukuran layar bervariasi (layout responsif), gangguan lingkungan, dan tekanan waktu.
+6. User profile: domain expertise (keahlian di bidangnya), tech literacy (keakraban dengan teknologi), rentang usia. Kapasitas working memory (kapasitas otak untuk menahan informasi sementara saat mengerjakan tugas) berbeda antar orang dan cenderung menurun seiring usia. Tim pembuat produk biasanya punya kapasitas dan pengalaman teknologi di atas pengguna rata-rata, sehingga desain yang "terasa mudah bagi tim" belum tentu mudah bagi pengguna. Untuk produk dengan fitur AI, perkirakan juga AI literacy pengguna (lihat Lensa 7).
+7. Emotional load: apakah layar ini bagian dari proses yang menegangkan atau berisiko (pengajuan, pembayaran, tenggat waktu, data penting) atau kegiatan rutin.
 
 Tulis profil ini secara ringkas di bagian awal laporan. Dimensi yang tidak diketahui ditulis sebagai asumsi.
 
@@ -48,7 +48,7 @@ Gunakan tabel ini untuk memilih kelompok prinsip yang diperiksa paling dalam. Pr
 | Data padat atau dashboard | Common region dan proximity, cognitive load ekstrinsik, interaction cost, spatial memory, landmark dan overview | Closure sebagai ajakan scroll, imagery |
 | Konten, pemasaran, atau onboarding | Information scent, satisficing (ringkasan di depan), picture superiority dan imagery, priming ekspektasi, chunking teks, closure untuk mencegah ilusi halaman sudah habis | Spatial memory |
 | Navigasi dan pencarian konten | Information scent, mental model (letak item dan cakupan pencarian), satisficing, recognition over recall | Prospect theory |
-| Memilih paket, layanan, atau opsi berbiaya | Perbedaan opsi yang eksplisit, compensatory decision, prospect theory dan pemeriksaan pola menipu, choice overload | Spatial memory |
+| Memilih paket, layanan, atau opsi berbiaya | Perbedaan opsi yang eksplisit, compensatory decision, prospect theory dan pemeriksaan deceptive patterns, choice overload | Spatial memory |
 | Daftar pilihan berjumlah besar | Strategi noncompensatory (filter dan pencarian), satisficing (urutan default dan opsi sort), choice overload | Compensatory decision sebelum daftar menyempit |
 | Perangkat sentuh (mobile, tablet) | Fitts's law (ukuran target, jarak antar target, posisi submit), interaction cost (menunggu dan scroll), information scent pada label yang konteksnya terpotong | Keunggulan target di tepi layar (tidak berlaku untuk sentuh) |
 | Perangkat mouse (desktop) | Fitts's law termasuk pemanfaatan tepi layar, jarak menu kontekstual dari pemicunya | (tidak ada) |
@@ -64,12 +64,12 @@ Gunakan tabel ini untuk memilih kelompok prinsip yang diperiksa paling dalam. Pr
 | Notifikasi, pengingat, email, atau kampanye | Relatedness (pesan relevan dan tepat waktu), fresh start effect (momen awal periode), selective attention (pesan yang mirip iklan diabaikan) | Fitts's law |
 | Dipakai di lebih dari satu perangkat | Device inertia (tugas penting harus bisa selesai di perangkat yang sedang dipakai), sinkronisasi pekerjaan antar perangkat | (tidak ada) |
 | Fitur canggih yang jarang ditemukan pengguna | Momentum behavior, selective attention, information scent, competence | (tidak ada) |
-| Halaman awal atau kunjungan pertama | Kesan pertama dan aesthetic-usability, faktor kredibilitas, prominence-interpretation, hierarki kepercayaan, reciprocity | Spatial memory |
-| Pendaftaran, permintaan data pribadi, atau izin perangkat | Hierarki kepercayaan, reciprocity, commitment dan consistency, creepiness-convenience | Picture superiority |
-| Langganan, pembayaran berulang, atau checkout | Pemeriksaan pola menipu (forced continuity, hidden costs, preselection), keterbukaan biaya, anchoring | Spatial memory |
-| Produk yang bersaing merebut waktu dan perhatian | Attention capture dan the Vortex, notifikasi, pemeriksaan pola menipu | (tidak ada) |
+| Halaman awal atau kunjungan pertama | Kesan pertama dan aesthetic-usability, faktor kredibilitas, prominence-interpretation, trust pyramid, reciprocity | Spatial memory |
+| Pendaftaran, permintaan data pribadi, atau izin perangkat | Trust pyramid, reciprocity, commitment dan consistency, creepiness-convenience | Picture superiority |
+| Langganan, pembayaran berulang, atau checkout | Pemeriksaan deceptive patterns (forced continuity, hidden costs, preselection), keterbukaan biaya, anchoring | Spatial memory |
+| Produk yang bersaing merebut waktu dan perhatian | Attention capture dan the Vortex, notifikasi, pemeriksaan deceptive patterns | (tidak ada) |
 | Ulasan, komunitas, atau marketplace | Social proof, authority, scarcity yang jujur, faktor kredibilitas | (tidak ada) |
-| Antarmuka percakapan atau AI | Antropomorfisme dan kepercayaan pada AI, mental model tentang kemampuan sistem, information foraging, halo effect pada jawaban yang rapi, autonomy (jalur alternatif); kerjakan juga Lensa 7 | Gestalt pada tata letak statis |
+| Antarmuka percakapan atau AI | Anthropomorphism dan trust pada AI, mental model tentang kemampuan sistem, information foraging, halo effect pada jawaban yang rapi, autonomy (jalur alternatif); kerjakan juga Lensa 7 | Gestalt pada tata letak statis |
 | Rekomendasi, feed, atau personalisasi berbasis algoritma | Mental model (algoritma sebagai kotak hitam), creepiness-convenience, spatial memory (tata letak yang stabil antar sesi), autonomy (kontrol urutan dan umpan balik); kerjakan juga Lensa 7F | (tidak ada) |
 | Produk untuk anak atau yang diatur orang tua | Attention capture, kontrol orang tua yang terbuka, mental model sederhana, ukuran target | Persuasi untuk konversi |
 | Layanan resmi atau institusi dengan pengguna wajib | Liking (wajah petugas nyata), faktor kredibilitas, nada yang sesuai situasi, delight yang tidak dipaksakan | Scarcity, social proof untuk konversi |
@@ -85,9 +85,9 @@ Bila dua prinsip memberi saran yang bertentangan, pilih berdasarkan profil konte
 - Autonomy versus kesederhanaan: tidak ada pilihan sama sekali mengekang pengguna, tetapi terlalu banyak pilihan membebani. Jalan tengahnya adalah sedikit opsi yang bermakna, default yang masuk akal, dan opsi "lainnya" atau isian bebas untuk kebutuhan di luar pilihan yang disediakan.
 - Wizard (alur langkah demi langkah yang dipandu sistem) versus autonomy: wizard menaikkan competence untuk proses rumit dan jarang dilakukan, tetapi mengambil kendali dari pengguna. Untuk proses yang sering diulang oleh pengguna mahir, sediakan jalur cepat atau mode ringkas.
 - Efisiensi versus ekspektasi: alur yang lebih pendek tetapi tidak lazim bisa terasa lebih sulit daripada alur yang lebih panjang tetapi sesuai harapan pengguna. Jangan merekomendasikan pemangkasan langkah tanpa memeriksa mental model pengguna.
-- Persuasi versus penipuan: social proof, scarcity, anchoring, dan authority sah dipakai bila datanya benar dan tidak disaring secara menyesatkan. Bila datanya dipalsukan atau sebagian informasi sengaja disembunyikan, laporkan sebagai pola menipu.
+- Persuasi versus penipuan: social proof, scarcity, anchoring, dan authority sah dipakai bila datanya benar dan tidak disaring secara menyesatkan. Bila datanya dipalsukan atau sebagian informasi sengaja disembunyikan, laporkan sebagai deceptive pattern.
 - Engagement versus kendali pengguna: metrik waktu pakai yang tinggi belum tentu berarti pengalaman baik. Bila pengguna kemungkinan besar merasa terseret, utamakan rasa kendali.
-- Estetika versus kepadatan informasi: visual besar memberi kesan pertama yang baik, tetapi bisa menghambat tugas yang berulang. Untuk aplikasi kerja, utamakan kepadatan informasi yang cukup.
+- Estetika versus information density: visual besar memberi kesan pertama yang baik, tetapi bisa menghambat tugas yang berulang. Untuk aplikasi kerja, utamakan information density yang cukup.
 - Delight versus kondisi emosi pengguna: elemen jenaka atau perayaan hanya cocok di momen positif. Di momen sulit, utamakan bantuan yang praktis dan nada yang tenang.
 - Default dan nilai saran sebagai bantuan versus manipulasi: anchoring yang membantu memakai nilai yang mewakili kebutuhan mayoritas pengguna. Nilai default yang sengaja dipasang tinggi demi metrik organisasi dinilai sebagai temuan.
 
@@ -124,7 +124,7 @@ Prinsip Gestalt menjelaskan bagaimana orang menyimpulkan elemen mana yang saling
   - Cek: konten di atas lipatan layar (bagian yang terlihat tanpa scroll) terlihat sudah lengkap sehingga pengguna tidak tahu ada konten di bawahnya (illusion of completeness); carousel horizontal yang item terpotongnya terlalu kecil sehingga tidak terlihat sebagai item; ikon minimalis yang memakai efek ini tetapi tanpa label teks.
   - Rekomendasi: tampilkan potongan item berikutnya dengan porsi yang cukup besar untuk dikenali (kira-kira sepertiga sampai setengah item); untuk layar yang ukurannya sangat bervariasi, jangan hanya mengandalkan potongan ini sebagai satu-satunya sinyal; tetap beri label pada ikon.
 
-**C. Memori dan beban kognitif**
+**C. Memory dan cognitive load**
 
 - Working memory dan external memory
   - Inti: working memory punya kapasitas kecil dan cepat hilang (sekitar belasan sampai dua puluh detik tanpa diulang). Bila layar memaksa pengguna mengingat informasi dari langkah sebelumnya, mereka akan lupa, melambat, atau salah. External memory adalah fitur yang menyimpan informasi itu untuk pengguna, sehingga mereka tidak perlu mengingatnya.
@@ -158,7 +158,7 @@ Prinsip Gestalt menjelaskan bagaimana orang menyimpulkan elemen mana yang saling
   - Cek: pola yang menyimpang dari kebiasaan umum (posisi logo, letak pencarian, arah scroll, navigasi tersembunyi di desktop) tanpa manfaat yang jelas; inkonsistensi antar layar dalam produk yang sama.
   - Rekomendasi: gunakan pola umum sebagai bawaan. Pola baru hanya layak bila memenuhi tiga syarat: jauh lebih efisien setelah dipelajari, pengguna akan mengulanginya cukup sering (misalnya alat kerja harian), dan ada bantuan belajar seperti tips kontekstual dan progressive disclosure (menampilkan fitur lanjutan secara bertahap). Untuk tugas yang dilakukan setahun sekali, pilih desain yang langsung bisa dipahami walaupun bukan yang tercepat bagi pengguna mahir.
 
-**D. Persepsi, ekspektasi, dan kesan**
+**D. Perception, expectation, dan first impression**
 
 - Priming
   - Inti: elemen yang dilihat lebih dulu memengaruhi perilaku dan penilaian berikutnya, sering tanpa disadari.
@@ -196,7 +196,7 @@ Prinsip Gestalt menjelaskan bagaimana orang menyimpulkan elemen mana yang saling
   - Cek: elemen jenaka atau dekoratif yang muncul di atas alur yang masih bermasalah; nada ceria atau lucu di momen yang sedang menegangkan atau menyedihkan bagi pengguna (misalnya saat pengajuan ditolak atau saat ada masalah data); animasi yang memperlambat tugas; gaya yang tidak sesuai karakter organisasi (misalnya terlalu main-main untuk layanan resmi).
   - Rekomendasi: prioritaskan fungsi, keandalan, dan kemudahan sebelum menambah elemen pemanis; sesuaikan nada dengan kondisi emosi pengguna di momen itu; untuk momen sulit, pilih bantuan praktis (misalnya opsi dihubungi balik) daripada hiburan.
 
-**E. Navigasi, pencarian informasi, dan pemahaman sistem**
+**E. Navigation, information foraging, dan mental model**
 
 - Mental model
   - Inti: mental model adalah keyakinan pengguna tentang cara kerja sistem. Keyakinan ini dibentuk dari pengalaman di produk lain dan di dunia nyata, sehingga bisa berbeda dari cara kerja sistem yang sebenarnya. Tim pembuat punya mental model yang jauh lebih lengkap daripada pengguna. Mental model juga punya inersia (sulit berubah): satu salah paham di awal bisa membuat pengguna salah menafsirkan seluruh sesi tanpa pernah mempertanyakan asumsinya.
@@ -208,14 +208,14 @@ Prinsip Gestalt menjelaskan bagaimana orang menyimpulkan elemen mana yang saling
   - Inti: pengguna memperkirakan apakah sebuah link akan membawa mereka ke yang dicari berdasarkan label link, teks dan gambar pendampingnya, konteks halaman, posisi link, dan pengetahuan mereka sebelumnya. Perkiraan ini disebut information scent. Pengguna terus mengklik selama mereka merasa makin dekat ke tujuan, dan pergi bila petunjuknya melemah. Mereka menimbang manfaat yang diharapkan terhadap usaha yang diperkirakan.
   - Cek: label samar seperti "Selengkapnya", "Klik di sini", atau "Lihat detail" tanpa objek; jargon, nama program internal, singkatan, atau istilah merek sebagai label navigasi; teks ringkasan yang tidak menambah informasi; gambar kategori yang generik atau bukan contoh paling khas dari kategorinya; label yang hanya bisa dipahami bila konteks di sekitarnya terlihat, padahal di mobile konteks itu terpotong; halaman tujuan yang layar pertamanya tidak menegaskan bahwa pengguna berada di jalur yang benar; konten penting di kolom kanan yang mudah dianggap iklan; tidak ada penanda lokasi saat pengguna masuk lebih dalam (breadcrumb, judul halaman, menu aktif).
   - Rekomendasi: label spesifik dengan bahasa pengguna; ringkasan yang menjelaskan isi tujuan; gambar yang mewakili kategori dengan contoh paling umum; penanda lokasi di setiap tingkat; halaman awal yang menampilkan contoh konten bernilai sekaligus navigasi dan pencarian yang menonjol; janji di label harus ditepati di halaman tujuan, karena label yang menjebak menghabiskan kepercayaan pengguna.
-  - Catatan konteks: untuk pengguna yang sudah memahami domain, istilah teknis bisa berbau kuat. Untuk pengguna baru, istilah yang sama bisa sama sekali tidak bermakna. Sesuaikan penilaian dengan profil pengguna di 2A.
+  - Catatan konteks: untuk pengguna yang sudah memahami domain, istilah teknis bisa berbau kuat. Untuk pengguna baru, istilah yang sama bisa sama sekali tidak bermakna. Sesuaikan penilaian dengan user profile di 2A.
 
 - Satisficing
   - Inti: kebanyakan pengguna tidak mencari jawaban terbaik. Mereka berhenti pada jawaban yang cukup baik, karena setiap langkah tambahan punya biaya. Keputusan berisiko tinggi membuat pengguna lebih teliti, tetapi mereka tetap memindai lebih dulu.
   - Cek: informasi terpenting tidak berada di awal halaman atau di awal paragraf; judul tidak deskriptif; tidak ada ringkasan untuk konten panjang; daftar panjang tanpa urutan default yang masuk akal atau tanpa opsi pengurutan.
   - Rekomendasi: struktur piramida terbalik (kesimpulan dulu, detail kemudian); ringkasan poin kunci di awal; daftar isi dengan link ke setiap bagian; urutan default yang dibutuhkan mayoritas pengguna ditambah opsi urutan lain (terbaru, terpopuler, relevansi).
 
-**F. Pengambilan keputusan**
+**F. Decision making**
 
 - Strategi noncompensatory dan compensatory
   - Inti: saat pilihannya banyak, pengguna memakai strategi noncompensatory, yaitu langsung membuang opsi yang tidak memenuhi syarat wajib (misalnya ukuran atau harga). Saat pilihannya tinggal sedikit (sekitar 5 sampai 7), pengguna beralih ke strategi compensatory, yaitu menimbang kelebihan dan kekurangan setiap opsi, sehingga kelebihan satu atribut bisa menutup kekurangan atribut lain. Strategi kedua membebani working memory. Kebanyakan keputusan memakai keduanya berurutan.
@@ -238,7 +238,7 @@ Prinsip Gestalt menjelaskan bagaimana orang menyimpulkan elemen mana yang saling
   - Inti: pengguna tidak memutuskan secara murni rasional. Untuk keuntungan, mereka memilih yang pasti walaupun lebih kecil (certainty). Untuk kerugian, mereka berani mengambil risiko demi menghindari kerugian pasti. Rasa rugi terasa lebih kuat daripada rasa untung yang sama besar (loss aversion). Saat membandingkan, mereka mengabaikan hal yang sama di semua opsi dan fokus pada perbedaannya (isolation effect), sehingga cara penyajian (framing) bisa mengubah keputusan.
   - Cek: kekhawatiran pengguna yang tidak dijawab sebelum mereka memulai proses (berapa lama, dokumen apa yang dibutuhkan, apakah bisa disimpan di tengah jalan); insentif berupa undian yang kurang menarik dibanding imbalan kecil yang pasti; penyajian angka yang bisa dibaca sebagai untung atau rugi; momen frustrasi kecil yang menumpuk, karena pengalaman buruk diingat lebih kuat.
   - Rekomendasi: tampilkan estimasi waktu dan daftar dokumen di awal proses; pilih imbalan pasti daripada undian; sajikan perbandingan dengan menonjolkan pembeda; perbaiki hambatan kecil karena dampaknya ke persepsi lebih besar daripada kelihatannya.
-  - Batas etis: prinsip ini tidak boleh dipakai untuk menakut-nakuti atau menjebak. Periksa pola menipu dengan daftar lengkap di kelompok I.
+  - Batas etis: prinsip ini tidak boleh dipakai untuk menakut-nakuti atau menjebak. Periksa deceptive patterns dengan daftar lengkap di kelompok I.
 
 - Anchoring
   - Inti: saat kekurangan informasi, orang bertumpu pada informasi pertama yang mereka lihat (jangkar) untuk memperkirakan nilai dan mengambil keputusan berikutnya, walaupun jangkar itu tidak relevan.
@@ -246,7 +246,7 @@ Prinsip Gestalt menjelaskan bagaimana orang menyimpulkan elemen mana yang saling
   - Rekomendasi: beri default atau nilai saran yang mewakili kebutuhan umum pengguna, dengan pilihan untuk mengubahnya; tampilkan estimasi waktu yang akurat atau sedikit konservatif, karena estimasi yang meleset membuat pengguna merasa tertipu; gunakan angka pembanding yang jujur.
   - Catatan: anchoring paling membantu pengguna baru. Pengguna yang sangat ahli di domainnya biasanya sudah punya jangkar sendiri yang akurat.
 
-**G. Usaha dan gerakan**
+**G. Interaction cost dan motor behavior**
 
 - Interaction cost dan expected utility
   - Inti: interaction cost adalah total usaha mental dan fisik untuk mencapai tujuan: membaca, scroll, mencari dengan mata, memahami, klik atau tap, mengetik, menunggu, berpindah perhatian, dan mengingat. Pengguna memilih tindakan dengan manfaat terbesar dikurangi usaha terkecil (expected utility). Bila usaha di satu produk terlihat terlalu besar, mereka pindah ke produk lain, kecuali motivasinya sangat tinggi atau mereka tidak punya pilihan.
@@ -268,7 +268,7 @@ Prinsip Gestalt menjelaskan bagaimana orang menyimpulkan elemen mana yang saling
   - Cek: tugas penting yang hanya nyaman dikerjakan di desktop padahal pengguna sering memakai ponsel; pekerjaan yang tidak tersinkron antar perangkat; fitur yang lebih efisien tetapi tidak terlihat di jalur yang biasa dilalui pengguna; jalan pintas yang ada tetapi tidak pernah ditawarkan di saat relevan; elemen penting yang bentuk, ukuran, atau posisinya mirip iklan.
   - Rekomendasi: pastikan tugas utama bisa diselesaikan di perangkat yang paling sering dipakai; sinkronkan pekerjaan antar perangkat; tawarkan cara yang lebih efisien tepat di titik pengguna sedang memakai cara lama; jangan membuat elemen penting tampil seperti iklan. Saat menulis temuan, jangan menyalahkan pengguna; jelaskan mengapa desainnya membuat jalan yang lebih baik tidak terlihat.
 
-**H. Motivasi dan kebutuhan psikologis**
+**H. Motivation dan psychological needs**
 
 - Self-determination theory: autonomy, relatedness, dan competence
   - Inti: orang paling termotivasi memakai produk yang memenuhi tiga kebutuhan dasar. Autonomy adalah kebebasan memakai produk sesuai preferensi dan prioritas sendiri. Relatedness adalah rasa dipahami dan terhubung, baik dengan organisasi pembuat produk maupun dengan orang lain. Competence adalah rasa mampu menyelesaikan tugas dengan berhasil dan efisien.
@@ -284,11 +284,11 @@ Prinsip Gestalt menjelaskan bagaimana orang menyimpulkan elemen mana yang saling
   - Rekomendasi: selaraskan pengingat dan ajakan dengan awal periode yang bermakna bagi pengguna; beri nama yang menonjolkan awal baru (misalnya "Semester baru dimulai" alih-alih hanya tanggal); hubungkan ajakan dengan tujuan yang memang ingin dicapai pengguna.
   - Batas etis: hanya rekomendasikan efek ini untuk mendorong tindakan yang menguntungkan pengguna. Jangan menyarankan meminta data pribadi (misalnya tanggal lahir) hanya untuk memanfaatkan efek ini.
 
-**I. Persuasi, kepercayaan, dan etika**
+**I. Persuasion, trust, dan ethics**
 
-Prinsip persuasi sah dipakai bila informasinya benar dan tindakan yang didorong menguntungkan pengguna. Prinsip yang sama menjadi pola menipu bila informasinya dipalsukan atau tindakan yang didorong merugikan pengguna. Setiap temuan di kelompok ini harus menyebut ke arah mana penggunaannya.
+Prinsip persuasi sah dipakai bila informasinya benar dan tindakan yang didorong menguntungkan pengguna. Prinsip yang sama menjadi deceptive pattern bila informasinya dipalsukan atau tindakan yang didorong merugikan pengguna. Setiap temuan di kelompok ini harus menyebut ke arah mana penggunaannya.
 
-- Hierarki kepercayaan (trust pyramid)
+- Trust pyramid
   - Inti: kepercayaan pengguna naik bertahap melalui lima tingkat: (1) yakin produk relevan dan kredibel, (2) lebih memilih produk ini dibanding alternatif, (3) bersedia memberi data pribadi, (4) bersedia memberi data sensitif atau keuangan, (5) bersedia berkomitmen jangka panjang (langganan, menghubungkan akun lain). Permintaan di tingkat atas akan ditolak bila tingkat bawah belum terpenuhi. Pengguna jarang menyadari keraguan ini, sehingga masalahnya terlihat dari perilaku (pergi, mengisi data palsu) dan jarang dari ucapan.
   - Cek: login wall atau pendaftaran sebelum pengguna bisa melihat apa yang ditawarkan; formulir yang meminta alamat lengkap, nomor telepon, atau akun media sosial di layar pertama; permintaan izin lokasi, notifikasi, kamera, atau mikrofon sebelum fiturnya dipakai; tombol ajakan mendaftar yang muncul berkali-kali sebelum nilai produk jelas.
   - Rekomendasi: beri kesempatan menjelajah dulu; tunda permintaan data sampai pengguna melihat nilainya; minta izin tepat saat fitur yang membutuhkannya dipakai, beserta alasan dan apa yang akan dikirim (misalnya jenis notifikasi); bila data dibutuhkan untuk menampilkan konten, minta versi paling ringan dulu (misalnya kode pos sebelum alamat lengkap).
@@ -311,8 +311,8 @@ Prinsip persuasi sah dipakai bila informasinya benar dan tindakan yang didorong 
   - Cek: data yang dikumpulkan tanpa penjelasan untuk apa; fitur personalisasi yang menunjukkan pengetahuan tentang pengguna secara mengejutkan; tidak ada cara mematikan fitur yang memakai data pribadi.
   - Rekomendasi: minta data bertahap seiring manfaat terlihat; jelaskan data apa yang dikumpulkan dan untuk apa; beri kendali untuk mematikan atau mengatur fitur tersebut.
 
-- Pemeriksaan pola menipu (deceptive patterns)
-  - Inti: pola menipu mendorong pengguna mengambil tindakan yang menguntungkan organisasi dengan cara menipu, mengalihkan, mempermalukan, atau menghalangi pilihan lain. Pola ini paling berhasil pada pengguna yang paling rentan: sedang terburu-buru, literasi rendah, atau literasi digital rendah. Banyak di antaranya juga bermasalah secara hukum perlindungan konsumen dan data pribadi.
+- Pemeriksaan deceptive patterns
+  - Inti: deceptive patterns mendorong pengguna mengambil tindakan yang menguntungkan organisasi dengan cara menipu, mengalihkan, mempermalukan, atau menghalangi pilihan lain. Pola ini paling berhasil pada pengguna yang paling rentan: sedang terburu-buru, literasi rendah, atau literasi digital rendah. Banyak di antaranya juga bermasalah secara hukum perlindungan konsumen dan data pribadi.
   - Jenis yang dicek:
     - Sneaking: forced continuity (masa coba gratis yang otomatis jadi berbayar tanpa pemberitahuan jelas, tagihan berulang tanpa pengingat), hidden costs (biaya tambahan baru muncul di langkah akhir), sneak into basket atau preselection (item, tahun langganan, atau persetujuan yang sudah tercentang).
     - Obstruction: membatalkan, berhenti berlangganan, atau menolak dibuat jauh lebih sulit daripada mendaftar.
@@ -321,7 +321,7 @@ Prinsip persuasi sah dipakai bila informasinya benar dan tindakan yang didorong 
     - Emotional manipulation: confirmshaming (link penolakan yang mempermalukan, misalnya "Tidak, saya tidak suka hemat"), urgensi atau kelangkaan palsu, scare tactics yang menonjolkan kerugian, dan emotional framing (pilihan biasa dibingkai sebagai cerminan karakter pengguna).
     - Ketidakcocokan copy dan pilihan: teks menjanjikan sesuatu (misalnya "bukan langganan") yang tidak tersedia di pilihan sebenarnya. Contoh copy per pola ada di `references/ux-writing.md` bagian 11.
   - Pertanyaan pemeriksaan: apakah pengguna bisa membayar atau memberi data lebih dari yang mereka maksudkan; apakah pertukaran (data atau persetujuan dengan fitur) adil; apakah informasi tiap pilihan benar; apakah pilihan bisa disalahpahami atau terlewat; apakah informasi penting mudah diakses; apakah pilihan yang diinginkan pengguna bisa dijalankan tanpa langkah berlebihan; apakah pengguna didesak atau dibuat merasa bersalah saat menolak. Jawab pertanyaan ini dengan membayangkan pengguna paling rentan dalam profil konteks.
-  - Severity: setiap pola menipu minimal Tinggi; yang menyebabkan kerugian uang atau data tanpa persetujuan jelas dinilai Kritis.
+  - Severity: setiap deceptive pattern minimal Tinggi; yang menyebabkan kerugian uang atau data tanpa persetujuan jelas dinilai Kritis.
 
 - Attention capture dan the Vortex
   - Inti: the Vortex adalah pola ketika satu interaksi yang disengaja berubah menjadi rangkaian interaksi yang tidak direncanakan, sehingga pengguna merasa ditarik masuk dan kehilangan kendali atas waktunya. Pemicunya antara lain notifikasi, konten tanpa akhir, putar otomatis, FOMO (takut ketinggalan), dan teknik foot-in-the-door (ajakan "cukup satu klik" yang membuka rangkaian interaksi panjang).
@@ -329,9 +329,9 @@ Prinsip persuasi sah dipakai bila informasinya benar dan tindakan yang didorong 
   - Rekomendasi: notifikasi yang bisa diatur dan langsung membuka konteksnya; titik henti yang jelas; opsi mematikan putar otomatis; akhiri tugas dengan konfirmasi yang tuntas.
   - Catatan konteks: untuk produk yang dipakai anak, orang tua adalah pengambil keputusan dan khawatir soal pemakaian berlebihan. Periksa mekanisme pencegah pemakaian berlebihan, kontrol orang tua yang mudah ditemukan dan dijelaskan secara terus terang, serta komponen edukatif.
 
-- Antropomorfisme dan kepercayaan pada AI
+- Anthropomorphism dan trust pada AI
   - Inti: pengguna cepat menganggap sistem percakapan punya sifat manusia (ELIZA effect), mulai dari sekadar sopan santun, memuji atau menegur, memberi peran ("bertindaklah sebagai manajer proyek"), sampai menjadikannya teman. Kecenderungan ini sudah bawaan teknologi model bahasa. Humanisasi adalah keputusan desain yang memperkuatnya, misalnya nama dan avatar manusia, kepribadian yang bisa dipilih, bahasa emosional, dan basa-basi pembuka. Riset menunjukkan pengguna lebih mau mengikuti saran AI yang terlihat cerdas, dan justru kurang mau mengikuti AI yang terlihat punya emosi. Model yang diarahkan supaya lebih hangat juga cenderung lebih sering salah dan lebih sering sekadar mengiyakan pengguna (sycophancy).
-  - Inti (kepercayaan berlebihan): jawaban AI selalu terdengar yakin, rapi, dan benar secara tata bahasa. Lewat halo effect, kerapian ini membuat pengguna menganggap isinya juga akurat, lalu menerima jawaban tanpa memeriksa (magic-8-ball thinking). Risiko ini paling tinggi saat pengguna bertanya di luar keahliannya, saat jawaban sebelumnya sering benar, dan pada pengguna yang menganggap AI seperti sihir. Pengguna yang paling antusias belum tentu yang paling kritis.
+  - Inti (overtrust): jawaban AI selalu terdengar yakin, rapi, dan benar secara tata bahasa. Lewat halo effect, kerapian ini membuat pengguna menganggap isinya juga akurat, lalu menerima jawaban tanpa memeriksa (magic-8-ball thinking). Risiko ini paling tinggi saat pengguna bertanya di luar keahliannya, saat jawaban sebelumnya sering benar, dan pada pengguna yang menganggap AI seperti sihir. Pengguna yang paling antusias belum tentu yang paling kritis.
   - Cek: nama, avatar, atau salinan teks yang memposisikan AI sebagai orang atau teman; basa-basi atau pujian di awal jawaban yang tidak membawa informasi; klaim AI memahami, peduli, atau berpikir; nada santai untuk topik serius; chatbot sebagai satu-satunya jalur bantuan; tidak ada penjelasan batas kemampuan; tidak ada jalur ke petugas manusia untuk masalah sensitif; peringatan akurasi yang hanya berupa teks kecil statis.
   - Rekomendasi: posisikan AI sebagai alat kerja dengan nama yang menjelaskan fungsinya; boleh memakai kata "saya" dan nada yang ramah, tetapi jangan mengklaim punya perasaan; boleh mengakui perasaan pengguna bila pengguna menyampaikannya; persempit cakupan fitur supaya kompetensinya terlihat; nyatakan apa yang tidak bisa dilakukan dengan andal; sediakan jalur alternatif (menu, FAQ, petugas manusia). Cara mendukung pemeriksaan jawaban dibahas di Lensa 7.
   - Catatan konteks: humanisasi hanya relevan untuk produk yang memang dirancang untuk relasi (pendamping belajar, mitra kreatif), dan tetap harus aman. Untuk produk kerja dan layanan resmi, prioritaskan kompetensi dan ketepatan.
@@ -339,4 +339,4 @@ Prinsip persuasi sah dipakai bila informasinya benar dan tindakan yang didorong 
 ## Aturan khusus Lensa 2
 - Setiap temuan wajib menyebut alasan kontekstual, yaitu mengapa prinsip itu penting untuk produk dan pengguna ini (contoh: "karena layar ini dibuka setiap hari oleh staf administrasi, perubahan urutan menu akan merusak kebiasaan mereka").
 - Jangan memaksakan semua prinsip. Prinsip yang tidak relevan dengan profil konteks cukup disebut singkat di laporan sebagai "dikesampingkan" beserta alasannya dalam satu kalimat.
-- Bedakan dugaan perilaku dari bukti. Dampak psikologis yang disimpulkan dari tampilan statis diberi keyakinan "Perlu verifikasi" kecuali sangat jelas, dan sarankan cara memvalidasinya (usability testing, 5-second test, analytics).
+- Bedakan dugaan perilaku dari bukti. Dampak psikologis yang disimpulkan dari tampilan statis diberi confidence "Perlu verifikasi" kecuali sangat jelas, dan sarankan cara memvalidasinya (usability testing, 5-second test, analytics).

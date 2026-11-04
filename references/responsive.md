@@ -6,7 +6,7 @@ Semua aturan di sini diterapkan sesuai konteks dari pengguna skill (SKILL.md bag
 
 ## Daftar isi
 1. Definisi
-2. Profil perangkat dan kondisi pemakaian
+2. Profil perangkat dan usage context
 3. Bobot menurut konteks
 4. Lebar layar yang diuji
 5. Layout dan prioritas konten
@@ -35,7 +35,7 @@ Lensa ini menilai apakah produk tetap bisa dipakai untuk tugas utamanya di semua
 
 ---
 
-## 2. Profil perangkat dan kondisi pemakaian
+## 2. Profil perangkat dan usage context
 
 Sebelum menilai, tentukan profil berikut dari keterangan pengguna skill, data analitik bila ada, atau bukti di input. Bagian yang tidak diketahui ditulis sebagai asumsi.
 
@@ -58,7 +58,7 @@ Sebelum menilai, tentukan profil berikut dari keterangan pengguna skill, data an
 
 | Konteks | Bobot tinggi | Bobot rendah atau disesuaikan |
 |---|---|---|
-| Aplikasi kerja internal yang dipakai di desktop (admin, dashboard, back office) | Lebar 1280 sampai 1920 dan laptop kecil (1280 x 720 atau 1366 x 768), kepadatan data, tabel lebar, multi-jendela atau jendela setengah layar, zoom browser 125 sampai 200 persen, shortcut keyboard | Thumb zone, gestur, kuota data. Mobile cukup dicek bahwa tidak rusak total dan fungsi darurat (lihat status, setujui) masih bisa |
+| Aplikasi kerja internal yang dipakai di desktop (admin, dashboard, back office) | Lebar 1280 sampai 1920 dan laptop kecil (1280 x 720 atau 1366 x 768), information density, tabel lebar, multi-jendela atau jendela setengah layar, zoom browser 125 sampai 200 persen, shortcut keyboard | Thumb zone, gestur, kuota data. Mobile cukup dicek bahwa tidak rusak total dan fungsi darurat (lihat status, setujui) masih bisa |
 | Layanan publik atau pengguna umum | Mobile lebih dulu (360 sampai 412), perangkat kelas bawah, jaringan lambat, data hemat, form mobile, bahasa sederhana | Layar sangat lebar |
 | Aplikasi mobile native atau PWA | Thumb zone, gestur dan alternatifnya, safe area (area aman di sekitar notch dan garis navigasi), tombol Back Android, konvensi iOS dan Android, offline | Hover |
 | Multi-perangkat (mulai di ponsel, lanjut di laptop) | Sinkronisasi status, simpan draf, link dari email atau notifikasi yang bekerja di semua perangkat, unggah berkas dari ponsel | (tidak ada) |
@@ -108,10 +108,10 @@ Uji juga di lebar di antara breakpoint (misalnya 900px). Tata letak sering rusak
 - Apakah urutan kolom saat bertumpuk masuk akal, dan sesuai urutan DOM (urutan kode) sehingga urutan baca pembaca layar dan fokus keyboard tetap logis (WCAG 1.3.2 dan 2.4.3)?
 - Apakah banner, hero, atau promosi menghabiskan seluruh layar pertama di mobile? Ini bisa menciptakan **ilusi halaman sudah habis**: pengguna tidak sadar ada konten di bawah dan berhenti (terkait closure di Lensa 2 kelompok B).
 
-### 5.3 Ruang dan kepadatan
+### 5.3 Ruang dan density
 - Mobile: margin samping sekitar 16px, jarak antar bagian cukup untuk membedakan kelompok.
 - Desktop lebar: panjang baris tetap terbatas (sekitar 45 sampai 75 karakter untuk teks), konten tidak meregang ke seluruh 1920px, dan ruang kosong tidak berlebihan.
-- Aplikasi kerja: kepadatan yang sesuai untuk pengguna harian; sediakan mode tampilan padat bila pengguna beragam.
+- Aplikasi kerja: density yang sesuai untuk pengguna harian; sediakan mode tampilan padat bila pengguna beragam.
 
 ### 5.4 Elemen fixed dan sticky
 **Penjelasan.** Header, footer, banner cookie, tombol chat, dan bar aksi yang menempel di layar mengurangi ruang konten. Di ponsel dengan keyboard terbuka, ruang yang tersisa bisa sangat kecil.

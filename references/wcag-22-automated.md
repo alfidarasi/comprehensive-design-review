@@ -4,8 +4,8 @@ Katalog ini memetakan semua 86 kriteria keberhasilan WCAG 2.2 berdasarkan sebera
 
 ## Kategori pengujian
 
-- **O (otomatis)**: sistem bisa memutuskan lulus atau gagal dengan keyakinan tinggi. Temuan diberi keyakinan "Terkonfirmasi".
-- **S (semi-otomatis)**: sistem menemukan kandidat pelanggaran atau sebagian kasus, lalu Claude menilai lebih lanjut dari kode, teks, atau gambar. Temuan yang belum bisa dipastikan diberi keyakinan "Perlu verifikasi".
+- **O (otomatis)**: sistem bisa memutuskan lulus atau gagal dengan confidence tinggi. Temuan diberi confidence "Terkonfirmasi".
+- **S (semi-otomatis)**: sistem menemukan kandidat pelanggaran atau sebagian kasus, lalu Claude menilai lebih lanjut dari kode, teks, atau gambar. Temuan yang belum bisa dipastikan diberi confidence "Perlu verifikasi".
 - **M (manual)**: butuh penilaian manusia, pengujian dengan screen reader, atau pengguna disabilitas. Sistem tidak menilai kriteria ini; cukup masukkan ke bagian "Perlu diverifikasi" di laporan bila kriterianya relevan dengan layar yang direview.
 
 Label sumber pengujian:

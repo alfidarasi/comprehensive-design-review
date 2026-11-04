@@ -100,7 +100,7 @@ Prinsip desain tidak berlaku sama kuat di semua produk. Skill ini selalu mulai d
 | Yang disesuaikan | Contoh |
 |---|---|
 | **Prinsip yang dinilai** | Rule of thirds dinilai untuk landing page, tidak untuk tabel data. Kriteria WCAG soal video dilewati bila tidak ada video. |
-| **Bobot dan severity** | Kepadatan informasi bisa menjadi kelebihan di dashboard harian untuk pengguna ahli, dan menjadi masalah di halaman yang dikunjungi sekali oleh pengguna awam. |
+| **Bobot dan severity** | Information density (banyaknya informasi di satu layar) bisa menjadi kelebihan di dashboard harian untuk pengguna ahli, dan menjadi masalah di halaman yang dikunjungi sekali oleh pengguna awam. |
 | **Bentuk rekomendasi** | Singkatan "PAK" atau "SKP" wajar untuk dosen dan staf kepegawaian, tetapi perlu dijelaskan untuk masyarakat umum. |
 
 Satu hal tidak ikut berubah: pelanggaran WCAG level A dan AA pada kriteria yang relevan tetap dilaporkan, termasuk untuk aplikasi internal, karena disabilitas sering tidak terlihat atau bersifat sementara.
@@ -112,14 +112,14 @@ Satu hal tidak ikut berubah: pelanggaran WCAG level A dan AA pada kriteria yang 
 | # | Lensa | Yang dinilai | Cara diuji |
 |---|---|---|---|
 | 1 | **Tugas utama** | Apakah aksi utama terlihat dan pengguna tahu langkah berikutnya | Penilaian Claude |
-| 2 | **UX psychology** | 9 kelompok prinsip: change blindness, Gestalt, memori dan beban kognitif, persepsi, navigasi, keputusan, usaha, motivasi, serta persuasi, kepercayaan, dan pola menipu | Profil konteks dengan 7 dimensi dan tabel bobot |
+| 2 | **UX psychology** | 9 kelompok prinsip: change blindness, Gestalt, memory dan cognitive load, perception, navigation, information foraging, mental model, decision making, interaction cost, motivation, serta persuasion, trust, dan deceptive patterns | Profil konteks dengan 7 dimensi dan tabel bobot |
 | 3 | **Aksesibilitas** | Seluruh 86 kriteria WCAG 2.2 level A, AA, dan AAA | `a11y_scan.mjs` (axe-core dan pemeriksaan tambahan) |
 | 4 | **Hierarki visual dan konsistensi** | 20 prinsip (focal point, kontras, alignment, whitespace, tipografi, dan lainnya) serta token desain | `style_audit.mjs` dan squint test |
 | 5 | **UX writing** | Keterbacaan, nada, jargon, struktur konten, label perintah dan link, pesan error, copy manipulatif | `copy_audit.mjs` |
 | 6 | **Responsif dan konteks penggunaan** | Layout, pola komponen di layar kecil, sentuhan, input, performa, data nyata, lingkungan pemakaian | `responsive_audit.mjs` |
-| 7 | **Fitur AI** (bila ada) | Antropomorfisme, kepercayaan, verifikasi jawaban, kendali pengguna, personalisasi | Penilaian Claude |
+| 7 | **Fitur AI** (bila ada) | Anthropomorphism, trust, verifikasi jawaban, user control, personalisasi | Penilaian Claude |
 
-Setiap temuan memuat **severity** (Kritis, Tinggi, Sedang, Rendah), **keyakinan** (Terkonfirmasi atau Perlu verifikasi), **usaha perbaikan** (Kecil, Sedang, Besar), bukti, dan rekomendasi.
+Setiap temuan memuat **severity** (Kritis, Tinggi, Sedang, Rendah), **confidence** (seberapa pasti temuannya: Terkonfirmasi atau Perlu verifikasi), **effort** (perkiraan besar pekerjaan perbaikan: Kecil, Sedang, Besar), bukti, dan rekomendasi.
 
 ---
 
@@ -166,7 +166,7 @@ Susunan laporan:
 |---|---|
 | 1. Ringkasan satu menit | Kesimpulan, status, jumlah temuan, tiga prioritas |
 | 2. Kondisi per lensa | Baik, Perlu perhatian, atau Bermasalah |
-| 3. Daftar temuan | Tabel dengan ID (K-01, T-01, ...), severity, keyakinan, usaha |
+| 3. Daftar temuan | Tabel dengan ID (K-01, T-01, ...), severity, confidence, effort |
 | 4. Detail temuan | Masalah, dampak, bukti, rekomendasi, serta sebelum dan sesudah untuk copy |
 | 5. Quick wins | Daftar centang yang siap dijadikan tiket |
 | 6. Yang sudah baik | Hal yang perlu dipertahankan |
@@ -224,7 +224,7 @@ Ringkas hasil review ini untuk dibawa ke rapat manajemen besok.
 
 **Fitur AI**
 ```
-Ini mockup chatbot asisten akademik. Review UX-nya, termasuk soal kepercayaan pengguna ke AI.
+Ini mockup chatbot asisten akademik. Review UX-nya, termasuk soal trust pengguna ke AI.
 ```
 → Lensa 7: posisi AI, batas kemampuan, cara memverifikasi jawaban, dan jalur ke petugas manusia.
 
@@ -238,7 +238,7 @@ comprehensive-design-review/
 ├── SKILL.md                          ← Alur kerja dan aturan utama (dibaca Claude)
 │   ├── Konteks berlaku untuk semua lensa
 │   ├── Lensa 1 sampai 7               ← Alur kerja ringkas per lensa
-│   ├── Severity, keyakinan, usaha
+│   ├── Severity, confidence, effort
 │   └── Format laporan
 │
 ├── references/                        ← Detail per lensa, dibaca saat lensa dijalankan

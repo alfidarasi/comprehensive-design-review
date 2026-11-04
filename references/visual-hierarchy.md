@@ -22,7 +22,7 @@ File ini dibaca saat menjalankan Lensa 4. Isinya: definisi, pola pemindaian, tab
 
 Hierarki penting karena tiga hal:
 - **Mengarahkan perhatian.** Pengguna memindai (scan), mereka jarang membaca semua. Hierarki menentukan bagian mana yang tertangkap saat pemindaian singkat itu.
-- **Mengurangi beban kognitif.** Saat semua elemen sama kuatnya, otak harus memilah sendiri. Saat urutannya jelas, pemilahan itu sudah dilakukan oleh desain (terkait Lensa 2 kelompok C, beban kognitif).
+- **Mengurangi beban kognitif.** Saat semua elemen sama kuatnya, otak harus memilah sendiri. Saat urutannya jelas, pemilahan itu sudah dilakukan oleh desain (terkait Lensa 2 kelompok C, cognitive load).
 - **Membangun kepercayaan.** Tata letak yang rapi dan terarah memberi kesan produk dikerjakan dengan serius (terkait efek estetika-kegunaan dan kesan pertama di Lensa 2 kelompok D).
 
 Kutipan acuan dari Kelley Gordon (Nielsen Norman Group): jika sulit menentukan harus melihat ke mana pada sebuah halaman, kemungkinan besar tata letaknya tidak punya hierarki visual yang jelas.
@@ -57,7 +57,7 @@ Tidak semua prinsip sama pentingnya di semua konteks. Prinsip komposisi seperti 
 |---|---|---|
 | Aplikasi kerja, dashboard, admin, tabel data | Alignment dan grid, proximity, spacing, repetisi, kontras, tipografi, konsistensi komponen dan state | Rule of thirds, golden ratio, rule of odds, tekstur, random, perspektif |
 | Formulir dan alur transaksi | Titik fokus (satu aksi utama), proximity label dan input, alignment, kontras, konsistensi state | Komposisi artistik |
-| Landing page, marketing, onboarding, halaman kampanye | Titik fokus, ukuran, warna, kontras, whitespace, arah gerak (movement), balance, rule of thirds, pola Z | Kepadatan informasi |
+| Landing page, marketing, onboarding, halaman kampanye | Titik fokus, ukuran, warna, kontras, whitespace, arah gerak (movement), balance, rule of thirds, pola Z | Information density |
 | Konten artikel, dokumentasi, help center | Tipografi (skala, panjang baris, line height), layer-cake, whitespace, heading | Tekstur, random |
 | Slide presentasi | Titik fokus tunggal per slide, ukuran, kontras, whitespace, rule of thirds | Pola F |
 | E-commerce, katalog | Repetisi dan pola (kartu produk seragam), titik fokus per kartu, kontras harga dan aksi | Golden ratio |
@@ -158,7 +158,7 @@ Kelompok ini menjawab: setelah titik fokus, ke mana mata bergerak, dan apakah ta
 **Rekomendasi.** Jangan jadikan temuan jika tidak dipakai. Yang lebih penting adalah proporsi mengikuti satu sistem.
 
 ### B4. Balance (keseimbangan)
-**Penjelasan.** Keseimbangan adalah distribusi bobot visual di area tampilan. Bobot visual adalah seberapa kuat elemen menarik mata, ditentukan ukuran, warna, kontras, dan kepadatan.
+**Penjelasan.** Keseimbangan adalah distribusi bobot visual di area tampilan. Bobot visual adalah seberapa kuat elemen menarik mata, ditentukan ukuran, warna, kontras, dan density.
 - **Simetris:** kedua sisi mirip. Terasa stabil, formal, dan tenang. Cocok untuk institusi resmi, halaman login.
 - **Asimetris:** sisi berbeda tetapi bobotnya setara (misalnya satu gambar besar di kiri diseimbangkan beberapa elemen kecil di kanan). Terasa dinamis dan modern.
 - **Radial:** elemen menyebar dari titik pusat.
@@ -213,9 +213,9 @@ Kelompok ini menjawab: apakah pengguna bisa melihat elemen mana yang saling berh
 Ruang kosong membingkai elemen penting, menenangkan tampilan, dan meningkatkan pemahaman teks. Halaman pencarian Google adalah contoh terkenal: hampir seluruhnya kosong sehingga kotak pencarian menjadi titik fokus mutlak.
 **Cek.**
 - Apakah titik fokus punya cukup ruang di sekitarnya?
-- Apakah tampilan terasa sesak? Untuk aplikasi kerja, kepadatan tinggi bisa wajar (pengguna ahli butuh banyak data). Bedakan "padat tapi teratur" dari "sesak".
+- Apakah tampilan terasa sesak? Untuk aplikasi kerja, information density tinggi bisa wajar (pengguna ahli butuh banyak data). Bedakan "padat tapi teratur" dari "sesak".
 - Apakah ada ruang kosong besar yang terlihat seperti konten gagal dimuat?
-**Rekomendasi.** Tambah ruang makro di sekitar aksi utama. Untuk dashboard, sediakan pilihan kepadatan (comfortable dan compact) jika pengguna beragam.
+**Rekomendasi.** Tambah ruang makro di sekitar aksi utama. Untuk dashboard, sediakan pilihan density (comfortable dan compact) jika pengguna beragam.
 
 ### C4. Repetition (repetisi)
 **Penjelasan.** Bentuk, warna, atau gaya yang diulang memberi tahu pengguna bahwa elemen-elemen itu berhubungan atau punya fungsi sama. Repetisi juga membangun identitas visual. Karena pengguna cepat membuat asosiasi ini, repetisi harus disengaja: jika tombol dan badge non-interaktif memakai gaya sama, pengguna akan mencoba mengklik badge.
@@ -375,7 +375,7 @@ Setiap selisih antara keduanya adalah kandidat temuan. Selisih di posisi pertama
 ## 10. Kesalahan umum saat menilai
 
 - **Menerapkan prinsip komposisi seni ke UI fungsional.** Menyebut dashboard melanggar rule of thirds tidak membantu. Pakai tabel bobot di bagian 3.
-- **Menganggap kepadatan sebagai masalah.** Pengguna ahli yang memakai aplikasi setiap hari sering butuh kepadatan tinggi. Masalahnya ada pada kepadatan yang tidak teratur.
+- **Menganggap information density sebagai masalah.** Pengguna ahli yang memakai aplikasi setiap hari sering butuh density tinggi. Masalahnya ada pada density yang tidak teratur.
 - **Menilai berdasarkan selera.** Setiap temuan harus menyebut dampak pada pengguna (mereka melewatkan aksi, salah mengelompokkan informasi, butuh waktu lebih lama), dan tidak berhenti di "kurang menarik".
 - **Melaporkan setiap angka skrip sebagai temuan.** Gabungkan catatan skrip yang berasal dari satu akar masalah, misalnya "tidak ada skala spacing" sebagai satu temuan dengan contoh nilai.
 - **Mengabaikan hubungan dengan aksesibilitas.** Kontras, warna sebagai satu-satunya penanda, ukuran huruf, dan urutan heading adalah bagian hierarki sekaligus kriteria WCAG. Rujuk silang ke Lensa 3 dan jangan laporkan dua kali.

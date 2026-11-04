@@ -64,15 +64,18 @@ Cara mengisi (hapus komentar ini dari laporan akhir):
 
 <!--
 Urutkan dari severity paling tinggi.
-Keyakinan: "Terkonfirmasi" = terlihat atau terukur langsung. "Perlu verifikasi" = dugaan kuat, tapi perlu dicek lagi.
-Usaha: Kecil (kurang dari 1 hari), Sedang (beberapa hari), Besar (lebih dari 1 sprint atau perlu riset dulu).
+Isi kolom Confidence dengan "Terkonfirmasi" atau "Perlu verifikasi", dan kolom Effort dengan Kecil, Sedang, atau Besar.
+Keterangan di bawah tabel tetap ditampilkan di laporan supaya pembaca paham arti kedua kolom itu.
 -->
 
-| ID | Temuan | Lensa | Dasar penilaian | Severity | Keyakinan | Usaha |
+| ID | Temuan | Lensa | Dasar penilaian | Severity | Confidence | Effort |
 |---|---|---|---|---|---|---|
 | K-01 | [Judul singkat] | [6] | [WCAG 1.4.10] | Kritis | Terkonfirmasi | [Sedang] |
 | T-01 | [Judul singkat] | [1, 4] | [Focal point] | Tinggi | Terkonfirmasi | [Kecil] |
 | S-01 | [Judul singkat] | [5] | [Inverted pyramid] | Sedang | Perlu verifikasi | [Kecil] |
+
+**Confidence** (seberapa pasti temuan ini): *Terkonfirmasi* berarti terlihat atau terukur langsung; *Perlu verifikasi* berarti dugaan kuat yang masih perlu dicek.
+**Effort** (perkiraan besar pekerjaan perbaikan): *Kecil* kurang dari 1 hari, *Sedang* beberapa hari, *Besar* lebih dari 1 sprint atau perlu riset dulu.
 
 ---
 
@@ -80,7 +83,7 @@ Usaha: Kecil (kurang dari 1 hari), Sedang (beberapa hari), Besar (lebih dari 1 s
 
 ### K-01 · [Judul singkat yang langsung menyebut masalahnya]
 
-| Severity | Keyakinan | Lensa | Dasar penilaian | Lokasi | Usaha |
+| Severity | Confidence | Lensa | Dasar penilaian | Lokasi | Effort |
 |---|---|---|---|---|---|
 | Kritis | Terkonfirmasi | [6 Responsif] | [WCAG 1.4.10 Reflow (AA)] | [Bagian yang bermasalah, misalnya "tabel Riwayat Usulan"] | [Sedang] |
 
@@ -134,13 +137,13 @@ Usaha: Kecil (kurang dari 1 hari), Sedang (beberapa hari), Besar (lebih dari 1 s
 
 | Hal | Isi | Sumber informasi |
 |---|---|---|
-| Pengguna | [Siapa mereka, seberapa paham bidangnya, seberapa terbiasa dengan teknologi] | [Dari pengguna skill / asumsi] |
-| Frekuensi pemakaian | [Setiap hari / sesekali] | |
-| Keterikatan (wajib pakai atau bisa pindah?) | [Wajib memakai / bisa pindah ke produk lain] | |
-| Tugas yang paling sering | [Mengisi form, membaca, membandingkan, memantau] | |
-| Kepadatan informasi | [Sedikit sampai sangat banyak] | |
-| Perangkat dan kondisi | [Laptop, ponsel, kualitas internet, lingkungan sekitar] | |
-| Muatan emosional (suasana hati saat memakai) | [Santai dan rutin / tegang, misalnya dikejar tenggat] | |
+| User profile (siapa penggunanya) | [Siapa mereka, domain expertise (seberapa paham bidangnya), tech literacy (seberapa terbiasa dengan teknologi)] | [Dari pengguna skill / asumsi] |
+| Usage frequency (seberapa sering dipakai) | [Setiap hari / sesekali] | |
+| Switching cost (wajib pakai atau bisa pindah?) | [Wajib memakai / bisa pindah ke produk lain] | |
+| Primary task (tugas yang paling sering) | [Mengisi form, membaca, membandingkan, memantau] | |
+| Information density (seberapa banyak informasi di layar) | [Rendah sampai sangat tinggi] | |
+| Usage context (perangkat dan kondisi pemakaian) | [Laptop, ponsel, kualitas internet, lingkungan sekitar] | |
+| Emotional load (seberapa tegang atau berisiko situasinya) | [Santai dan rutin / tegang, misalnya dikejar tenggat] | |
 
 **Asumsi yang dipakai:** [Hal-hal yang dianggap benar karena belum ada datanya, dan ikut memengaruhi penilaian.]
 

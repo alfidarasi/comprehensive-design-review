@@ -39,17 +39,17 @@ Sebelum menilai, pastikan hal-hal ini jelas:
 2. Pengguna target: siapa mereka, seberapa familiar dengan teknologi dan dengan domain produknya.
 3. Platform: web desktop, web mobile, aplikasi iOS/Android, atau dashboard internal.
 4. Tahap desain: wireframe, mockup final, atau produk live. Tahap ini menentukan seberapa detail kritik visual yang pantas diberikan.
-5. Frekuensi pemakaian: dipakai setiap hari sebagai alat kerja, atau hanya sesekali. Informasi ini sangat menentukan prinsip UX psychology mana yang paling relevan (lihat Lensa 2).
+5. Usage frequency: dipakai setiap hari sebagai alat kerja, atau hanya sesekali. Informasi ini sangat menentukan prinsip UX psychology mana yang paling relevan (lihat Lensa 2).
 
-Kalau informasi ini tidak diberikan, ajukan maksimal satu pertanyaan singkat yang menanyakan hal paling menentukan (biasanya pengguna target dan frekuensi pemakaian). Kalau pengguna tidak sedang menunggu jawaban atau konteks cukup jelas dari input, buat asumsi yang masuk akal dan tulis asumsi itu di bagian atas laporan.
+Kalau informasi ini tidak diberikan, ajukan maksimal satu pertanyaan singkat yang menanyakan hal paling menentukan (biasanya pengguna target dan usage frequency). Kalau pengguna tidak sedang menunggu jawaban atau konteks cukup jelas dari input, buat asumsi yang masuk akal dan tulis asumsi itu di bagian atas laporan.
 
 ### Konteks berlaku untuk semua lensa
 
-Konteks yang diberikan pengguna skill (tujuan layar, pengguna target, platform, tahap desain, frekuensi pemakaian, serta batasan lain seperti regulasi, brand guideline, atau keputusan desain yang sudah dikunci) adalah acuan utama untuk seluruh review. Semua prinsip di skill ini, mulai dari UX psychology, aksesibilitas, hierarki visual, UX writing, responsif, sampai fitur AI, diterapkan sesuai konteks itu. Prinsip tidak diterapkan seragam ke semua layar.
+Konteks yang diberikan pengguna skill (tujuan layar, pengguna target, platform, tahap desain, usage frequency, serta batasan lain seperti regulasi, brand guideline, atau keputusan desain yang sudah dikunci) adalah acuan utama untuk seluruh review. Semua prinsip di skill ini, mulai dari UX psychology, aksesibilitas, hierarki visual, UX writing, responsif, sampai fitur AI, diterapkan sesuai konteks itu. Prinsip tidak diterapkan seragam ke semua layar.
 
 Konteks memengaruhi tiga hal:
 1. **Relevansi:** prinsip mana yang dinilai. Prinsip yang tidak berlaku untuk konteks ini dilewati dan dicatat singkat di bagian "Prinsip yang dikesampingkan" di laporan. Contoh: rule of thirds tidak dinilai untuk tabel data, kriteria WCAG soal video tidak dinilai bila tidak ada video.
-2. **Bobot dan severity:** seberapa besar dampak sebuah temuan. Contoh: kepadatan informasi yang tinggi bisa menjadi kelebihan untuk dashboard yang dipakai setiap hari oleh pengguna ahli, dan menjadi masalah untuk halaman yang dikunjungi sekali oleh pengguna awam.
+2. **Bobot dan severity:** seberapa besar dampak sebuah temuan. Contoh: information density yang tinggi bisa menjadi kelebihan untuk dashboard yang dipakai setiap hari oleh pengguna ahli, dan menjadi masalah untuk halaman yang dikunjungi sekali oleh pengguna awam.
 3. **Bentuk rekomendasi:** solusi disesuaikan dengan platform, tahap desain, dan batasan yang ada. Contoh: untuk wireframe, kritik warna dan detail visual dikurangi. Untuk keputusan desain yang sudah dikunci, temuan tetap dicatat dengan rekomendasi yang bekerja di dalam batasan itu.
 
 Bila konteks dari pengguna skill bertentangan dengan bawaan skill, ikuti konteks pengguna dan tulis keputusan itu di bagian asumsi laporan. Contoh: pengguna meminta target WCAG level AAA penuh, atau meminta fokus hanya pada aksesibilitas.
@@ -78,33 +78,33 @@ Kerjakan Lensa 1 sampai 6 untuk setiap review, kecuali pengguna skill membatasi 
 UX psychology adalah penerapan temuan psikologi kognitif dan perilaku (cara orang memperhatikan, mengingat, memutuskan, dan merasa) pada desain. Prinsip ini tidak berlaku sama kuat di semua produk. Prinsip yang sangat penting untuk aplikasi kerja yang dibuka setiap hari bisa hampir tidak relevan untuk halaman pemasaran yang dikunjungi sekali, dan sebaliknya. Penjelasan lengkap, tabel bobot, dan kartu setiap prinsip (inti, cara cek, rekomendasi) ada di `references/ux-psychology.md`. Baca file itu setiap kali menjalankan lensa ini.
 
 #### 2A. Alur kerja
-1. **Susun profil konteks** dengan tujuh dimensi: frekuensi pemakaian, keterikatan pengguna (wajib memakai atau bisa pindah), jenis tugas dominan, kepadatan informasi, kondisi pemakaian, profil pengguna (keahlian, keakraban teknologi, usia, literasi AI bila relevan), dan muatan emosional. Dimensi yang tidak diketahui ditulis sebagai asumsi. Profil ini ditulis ringkas di awal laporan dan juga dipakai oleh lensa lain.
+1. **Susun profil konteks** dengan tujuh dimensi: usage frequency, switching cost (wajib memakai atau bisa pindah), primary task, information density, usage context, user profile (domain expertise, tech literacy, usia, AI literacy bila relevan), dan emotional load. Dimensi yang tidak diketahui ditulis sebagai asumsi. Profil ini ditulis ringkas di awal laporan dan juga dipakai oleh lensa lain.
 2. **Tentukan bobot prinsip** dengan tabel di bagian 2B file referensi. Periksa paling dalam kelompok yang bobotnya naik untuk konteks ini. Prinsip berbobot rendah boleh dilaporkan bila masalahnya jelas terlihat, tetapi jangan dicari-cari.
 3. **Periksa prinsip** yang terpilih dengan kartu di bagian 2C file referensi.
-4. **Selesaikan pertentangan antar prinsip** (misalnya konsistensi versus pola baru yang lebih efisien, atau estetika versus kepadatan informasi) berdasarkan profil konteks, dan tulis alasannya. Daftar pertentangan yang umum ada di bagian 2B file referensi.
+4. **Selesaikan pertentangan antar prinsip** (misalnya konsistensi versus pola baru yang lebih efisien, atau estetika versus information density) berdasarkan profil konteks, dan tulis alasannya. Daftar pertentangan yang umum ada di bagian 2B file referensi.
 
 #### 2B. Kelompok prinsip
 - **A. Change blindness:** perubahan di layar yang tidak disadari pengguna.
 - **B. Gestalt:** proximity, similarity, common region, closure.
-- **C. Memori dan beban kognitif:** working memory, recognition over recall, chunking, cognitive load, spatial memory, power law of learning.
-- **D. Persepsi, ekspektasi, dan kesan:** priming, peak-end, picture superiority, halo effect, negativity bias, aesthetic-usability dan kesan pertama, delight.
-- **E. Navigasi dan pemahaman sistem:** mental model, information scent, satisficing.
-- **F. Pengambilan keputusan:** strategi compensatory dan noncompensatory, perbedaan opsi yang eksplisit, choice overload dan sludge, prospect theory, anchoring.
-- **G. Usaha dan gerakan:** interaction cost, Fitts's law, device inertia, momentum behavior, selective attention.
-- **H. Motivasi:** self-determination theory (autonomy, competence, relatedness), fresh start effect.
-- **I. Persuasi, kepercayaan, dan etika:** trust pyramid, kredibilitas, prinsip Cialdini, creepiness, pola menipu (deceptive patterns), attention capture dan the Vortex, antropomorfisme dan kepercayaan pada AI.
+- **C. Memory dan cognitive load:** working memory, recognition over recall, chunking, cognitive load, spatial memory, power law of learning.
+- **D. Perception, expectation, dan first impression:** priming, peak-end, picture superiority, halo effect, negativity bias, aesthetic-usability dan kesan pertama, delight.
+- **E. Navigation, information foraging, dan mental model:** mental model, information scent, satisficing.
+- **F. Decision making:** strategi compensatory dan noncompensatory, perbedaan opsi yang eksplisit, choice overload dan sludge, prospect theory, anchoring.
+- **G. Interaction cost dan motor behavior:** interaction cost, Fitts's law, device inertia, momentum behavior, selective attention.
+- **H. Motivation:** self-determination theory (autonomy, competence, relatedness), fresh start effect.
+- **I. Persuasion, trust, dan ethics:** trust pyramid, credibility, prinsip Cialdini, creepiness, deceptive patterns, attention capture dan the Vortex, anthropomorphism dan trust pada AI.
 
 #### 2C. Hubungan dengan lensa lain
 - Gestalt (kelompok B) menjadi dasar penilaian pengelompokan di Lensa 4. Nilai dampaknya pada perilaku di sini, dan dampaknya pada urutan baca di Lensa 4, tanpa melaporkan masalah yang sama dua kali.
 - Chunking, information scent, negativity bias, dan peak-end menjadi dasar penjelasan dampak di Lensa 5.
-- Copy manipulatif (Lensa 5 bagian 11 file referensinya) dinilai dengan severity pola menipu di kelompok I.
-- Antropomorfisme dan mental model AI dilanjutkan di Lensa 7 bila produk punya fitur AI.
+- Copy manipulatif (Lensa 5 bagian 11 file referensinya) dinilai dengan severity deceptive patterns di kelompok I.
+- Anthropomorphism dan mental model AI dilanjutkan di Lensa 7 bila produk punya fitur AI.
 
 #### 2D. Aturan penulisan temuan
 - Setiap temuan wajib menyebut alasan kontekstual, yaitu mengapa prinsip itu penting untuk produk dan pengguna ini (contoh: "karena layar ini dibuka setiap hari oleh staf administrasi, perubahan urutan menu akan merusak kebiasaan mereka").
 - Prinsip yang tidak relevan dengan profil konteks cukup disebut singkat di bagian "Prinsip yang dikesampingkan" beserta alasannya dalam satu kalimat.
-- Bedakan dugaan perilaku dari bukti. Dampak psikologis yang disimpulkan dari tampilan statis diberi keyakinan "Perlu verifikasi" kecuali sangat jelas, dan sarankan cara memvalidasinya (usability testing, 5-second test, analytics).
-- Setiap pola menipu minimal bertingkat Tinggi; yang menyebabkan kerugian uang atau data tanpa persetujuan jelas dinilai Kritis.
+- Bedakan dugaan perilaku dari bukti. Dampak psikologis yang disimpulkan dari tampilan statis diberi confidence "Perlu verifikasi" kecuali sangat jelas, dan sarankan cara memvalidasinya (usability testing, 5-second test, analytics).
+- Setiap deceptive pattern minimal ber-severity Tinggi; yang menyebabkan kerugian uang atau data tanpa persetujuan jelas dinilai Kritis.
 
 ### Lensa 3: Aksesibilitas (WCAG 2.2 level A, AA, dan AAA, diuji oleh sistem)
 
@@ -118,7 +118,7 @@ Langkah kerja:
    - Screenshot saja: lakukan pemeriksaan yang bisa dilakukan dari piksel (kontras, ukuran target relatif, teks dalam gambar, informasi yang hanya dibedakan warna, frasa sensorik, panjang baris). Hitung kontras dengan rumus di bagian 6.
    - Bila skrip tidak bisa dijalankan (jaringan terblokir, halaman butuh login), jelaskan dalam satu kalimat, lakukan pemeriksaan yang masih mungkin dari kode atau screenshot, dan sarankan pengguna menjalankan skrip atau alat scan seperti axe DevTools atau WAVE lalu mengirim hasilnya.
 3. Untuk kriteria berkategori S (semi-otomatis), lanjutkan dengan pemeriksaan [Claude] dan [interaksi] yang tercantum di katalog. Jalankan interaksi yang mengubah data (submit form, tambah item) hanya di file lokal, prototipe, atau lingkungan uji.
-4. Tafsirkan hasil. Status `fail` dari skrip masuk tabel temuan dengan keyakinan "Terkonfirmasi" setelah dicek tidak salah konteks. Status `candidate` harus dikonfirmasi dari kode atau screenshot; bila tidak bisa dipastikan, masuk dengan keyakinan "Perlu verifikasi". Gabungkan temuan axe dan skrip yang menunjuk masalah yang sama supaya tidak dobel.
+4. Tafsirkan hasil. Status `fail` dari skrip masuk tabel temuan dengan confidence "Terkonfirmasi" setelah dicek tidak salah konteks. Status `candidate` harus dikonfirmasi dari kode atau screenshot; bila tidak bisa dipastikan, masuk dengan confidence "Perlu verifikasi". Gabungkan temuan axe dan skrip yang menunjuk masalah yang sama supaya tidak dobel.
 5. Kriteria berkategori M (manual) tidak dinilai. Sebutkan hanya yang relevan dengan layar ini di bagian "Perlu diverifikasi", beserta cara mengujinya (screen reader NVDA atau VoiceOver, navigasi keyboard oleh penguji, atau uji dengan pengguna disabilitas).
 
 Aturan penulisan temuan aksesibilitas:
@@ -153,7 +153,7 @@ Hierarki visual adalah penataan elemen supaya pengguna langsung mengenali urutan
 - Proximity, similarity, dan common region adalah prinsip Gestalt di Lensa 2 kelompok B. Di lensa ini nilai dampaknya pada urutan baca dan pengelompokan, tanpa mengulang temuan yang sama.
 - Kontras, warna sebagai satu-satunya penanda, urutan heading, focus visible, dan konsistensi navigasi juga kriteria WCAG (1.4.1, 1.4.3, 1.4.11, 1.3.1, 2.4.7, 3.2.3, 3.2.4). Laporkan sekali di Lensa 3 dan rujuk dari sini.
 - Penonjolan pilihan tertentu (paket "paling populer", tombol tolak yang disamarkan) dicek kejujurannya di Lensa 2 kelompok I.
-- Pertentangan estetika dan kepadatan informasi ditimbang dengan profil konteks di Lensa 2.
+- Pertentangan estetika dan information density ditimbang dengan profil konteks di Lensa 2.
 
 #### 4D. Aturan penulisan temuan
 - Setiap temuan menyebut prinsip, bukti (nilai dari skrip, lokasi elemen, atau hasil squint test), dan dampak pada pengguna. Hindari penilaian selera seperti "kurang menarik".
@@ -187,7 +187,7 @@ Lensa ini menilai semua teks di antarmuka: label perintah, link, heading, microc
 - **Label link:** 4S (spesifik, jujur, cukup isi, ringkas), hindari "Selengkapnya" dan "Mulai" yang umum, link adalah janji yang ditepati halaman tujuan.
 - **Pesan error:** dekat sumbernya, tidak hanya warna, sesuai tingkat dampak, tidak muncul terlalu cepat, bahasa manusia, menjelaskan masalah dan solusi, tidak menyalahkan, menjaga input, mencegah kesalahan yang mudah ditebak.
 - **Empty state dan state lain:** memberi arahan langkah pertama.
-- **Copy yang memengaruhi keputusan:** scare tactics, kelangkaan buatan, emotional framing, confirmshaming, dan copy yang tidak cocok dengan pilihan sebenarnya. Penilaian dan severity mengikuti pola menipu di Lensa 2 kelompok I.
+- **Copy yang memengaruhi keputusan:** scare tactics, kelangkaan buatan, emotional framing, confirmshaming, dan copy yang tidak cocok dengan pilihan sebenarnya. Penilaian dan severity mengikuti deceptive patterns di Lensa 2 kelompok I.
 - **Penyajian konten panjang:** pilihan antara tampil penuh, accordion, in-page link, atau tab, sesuai kebutuhan pengguna dan ukuran layar (bagian 12 file referensi).
 
 #### 5C. Hubungan dengan lensa lain
@@ -244,9 +244,9 @@ Lensa ini menilai apakah tugas utama tetap bisa diselesaikan di semua perangkat,
 
 ### Lensa 7 (bersyarat): Fitur AI, chatbot, dan personalisasi berbasis algoritma
 
-Kerjakan lensa ini hanya bila layar memuat fitur generative AI (chatbot, asisten, ringkasan otomatis, AI search) atau konten yang disusun algoritma (rekomendasi, feed, personalisasi). Prinsip psikologinya ada di Lensa 2 (antropomorfisme dan kepercayaan, mental model, information foraging, working memory). Lensa ini berisi pemeriksaan desain yang spesifik untuk fitur tersebut.
+Kerjakan lensa ini hanya bila layar memuat fitur generative AI (chatbot, asisten, ringkasan otomatis, AI search) atau konten yang disusun algoritma (rekomendasi, feed, personalisasi). Prinsip psikologinya ada di Lensa 2 (anthropomorphism dan trust, mental model, information foraging, working memory). Lensa ini berisi pemeriksaan desain yang spesifik untuk fitur tersebut.
 
-Pertimbangkan dua dimensi literasi AI pengguna target dari profil konteks:
+Pertimbangkan dua dimensi AI literacy pengguna target dari profil konteks:
 - Prompt fluency: kemampuan menyampaikan tujuan, konteks, dan batasan kepada AI. Pengguna yang rendah di sini menulis permintaan seperti kata kunci mesin pencari.
 - Output literacy: kemampuan menilai jawaban AI, misalnya mengenali informasi yang mungkin keliru dan tahu kapan harus memeriksa sumber.
 Kedua dimensi ini tidak selalu tumbuh bersamaan. Pengguna yang lancar memakai AI bisa tetap tidak kritis terhadap jawabannya. Adopsi AI juga masih jauh lebih rendah dan lebih sederhana daripada yang dibayangkan tim teknologi, terutama pada pengguna berusia lebih tua dan di luar bidang teknologi.
@@ -277,19 +277,19 @@ Kedua dimensi ini tidak selalu tumbuh bersamaan. Pengguna yang lancar memakai AI
 - Cek: rekomendasi tanpa penjelasan asal-usulnya; tidak ada cara memberi umpan balik atas rekomendasi yang buruk, terutama yang memakan banyak ruang atau waktu; item yang sama muncul berulang di beberapa daftar; urutan yang tidak bisa dipahami dan tidak bisa diubah ke urutan yang wajar (misalnya kronologis); tata letak atau gambar sampul yang berubah tiap sesi.
 - Rekomendasi: jelaskan alasan rekomendasi ("Karena Anda membuka..."); sediakan kontrol untuk mengurutkan, memfilter, atau menyembunyikan, dengan tombol umpan balik yang makin menonjol bila rekomendasi buruk makin merugikan; hindari duplikasi; personalisasi per pengguna lalu pertahankan stabil antar sesi (lihat spatial memory di Lensa 2); taruh informasi kunci di awal judul dan deskripsi supaya mudah dipindai.
 
-## 4. Skala severity dan tingkat keyakinan
+## 4. Skala severity, confidence, dan effort
 
 Severity:
 - Kritis: menghalangi pengguna menyelesaikan tugas utama, atau melanggar aksesibilitas sehingga sebagian pengguna tidak bisa memakai fitur sama sekali.
-- Tinggi: menyebabkan error, kebingungan berulang, atau risiko keputusan yang salah. Semua pola menipu minimal masuk tingkat ini.
-- Sedang: memperlambat atau menambah beban kognitif, tetapi tugas masih bisa selesai.
+- Tinggi: menyebabkan error, kebingungan berulang, atau risiko keputusan yang salah. Semua deceptive patterns minimal masuk tingkat ini.
+- Sedang: memperlambat atau menambah cognitive load, tetapi tugas masih bisa selesai.
 - Rendah: inkonsistensi kosmetik atau peningkatan kecil.
 
-Tingkat keyakinan untuk setiap temuan:
+Confidence (seberapa pasti temuannya) untuk setiap temuan:
 - Terkonfirmasi: terlihat langsung atau terukur dari input.
 - Perlu verifikasi: dugaan kuat yang butuh kode, data analytics, atau uji dengan pengguna.
 
-Usaha perbaikan untuk setiap temuan: Kecil (kurang dari 1 hari), Sedang (beberapa hari), atau Besar (lebih dari satu sprint atau butuh riset). Quick wins adalah temuan berdampak besar dengan usaha Kecil.
+Effort (perkiraan besar pekerjaan perbaikan) untuk setiap temuan: Kecil (kurang dari 1 hari), Sedang (beberapa hari), atau Besar (lebih dari satu sprint atau butuh riset). Quick wins adalah temuan berdampak besar dengan effort Kecil.
 
 ## 5. Format laporan
 
@@ -298,9 +298,9 @@ Tulis dalam Bahasa Indonesia, kecuali pengguna menulis dalam bahasa lain. Ikuti 
 Susunan laporan:
 1. **Ringkasan satu menit:** kesimpulan, status (siap dipakai sampai perlu dirancang ulang), jumlah temuan per severity, tiga hal yang paling perlu diperbaiki, dan satu hal yang sudah baik.
 2. **Kondisi per lensa:** status Baik, Perlu perhatian, atau Bermasalah dengan satu kalimat. Skor 1 sampai 5 hanya bila pengguna memintanya.
-3. **Daftar temuan:** tabel yang diurutkan dari severity tertinggi dengan kolom ID, Temuan, Lensa, Dasar penilaian (prinsip atau kriteria), Severity, Keyakinan, dan Usaha.
+3. **Daftar temuan:** tabel yang diurutkan dari severity tertinggi dengan kolom ID, Temuan, Lensa, Dasar penilaian (prinsip atau kriteria), Severity, Confidence, dan Effort.
 4. **Detail temuan:** kartu untuk setiap temuan Kritis dan Tinggi berisi Masalahnya apa, Akibatnya bagi pengguna dalam konteks ini, Buktinya, dan Saran perbaikan (dengan tabel sebelum dan sesudah untuk temuan copy).
-5. **Quick wins:** daftar centang perbaikan berdampak besar dengan usaha kecil, siap dijadikan tiket.
+5. **Quick wins:** daftar centang perbaikan berdampak besar dengan effort Kecil, siap dijadikan tiket.
 6. **Yang sudah baik:** 2 sampai 4 hal yang perlu dipertahankan supaya tidak hilang saat redesign.
 7. **Perlu diverifikasi:** tabel hal yang dicek, alasan belum bisa dipastikan, dan cara mengeceknya.
 8. **Konteks dan asumsi:** profil konteks (Lensa 2) dan profil perangkat (Lensa 6), asumsi, serta prinsip yang dikesampingkan beserta alasannya.
@@ -309,11 +309,11 @@ Susunan laporan:
 
 Aturan supaya laporan mudah dibaca:
 - **ID temuan** memakai huruf severity dan nomor: K-01 (Kritis), T-01 (Tinggi), S-01 (Sedang), R-01 (Rendah). Pakai ID yang sama di semua bagian.
-- **Usaha perbaikan:** Kecil (kurang dari 1 hari), Sedang (beberapa hari), Besar (lebih dari satu sprint atau butuh riset).
+- **Effort:** Kecil (kurang dari 1 hari), Sedang (beberapa hari), Besar (lebih dari satu sprint atau butuh riset).
 - **Bagian 1 harus bisa dipahami pembaca non-desainer dalam satu menit.** Hindari istilah teknis di sana, atau jelaskan langsung.
 - **Satu kartu untuk satu masalah.** Masalah yang berulang digabung menjadi satu kartu dengan beberapa contoh. Temuan Sedang dan Rendah cukup di tabel kecuali butuh contoh sebelum dan sesudah.
 - **Kalimat pendek dan spesifik:** sebut elemen, angka, dan pengguna yang terdampak.
-- **Istilah teknis** (reflow, kontras 4,5:1, squint test, dan sejenisnya) dijelaskan di glosarium.
+- **Istilah teknis** (reflow, kontras 4,5:1, squint test, cognitive load, dan sejenisnya) tetap ditulis dengan istilah aslinya, lalu dijelaskan dengan bahasa Indonesia sederhana di glosarium. Jangan menerjemahkan istilah teknis, termasuk istilah psikologi, menjadi kata umum yang maknanya kabur (misalnya "kepercayaan" untuk trust atau "usaha" untuk effort).
 - Hapus bagian template yang tidak dipakai dan jangan menyisakan placeholder.
 - Bila hasil pemeriksaan otomatis dijalankan, sebutkan lokasi file ringkasan dan screenshot sebagai bukti.
 - Laporan panjang yang akan dibagikan sebaiknya disimpan sebagai file atau dokumen (misalnya `laporan-design-review.md`), bila lingkungan kerja memungkinkan. Review singkat untuk satu layar boleh langsung ditulis di percakapan dengan susunan yang sama.
@@ -341,7 +341,7 @@ Cantumkan nilai hex kedua warna dan rasio yang didapat di temuan. Ingat bahwa ko
 
 Peninjau juga manusia (atau model) yang bisa bias. Terapkan pengaman berikut selama review:
 
-- False-consensus effect: jangan menganggap diri sendiri, tim desain, atau pengguna skill ini sebagai wakil pengguna. Nilai dari sudut profil pengguna di 2A, terutama pengguna dengan pengalaman digital dan kapasitas working memory paling rendah dalam kelompok target. Hal yang sama berlaku untuk fitur AI: tim produk dan peninjau biasanya jauh lebih akrab dengan AI daripada pengguna rata-rata.
+- False-consensus effect: jangan menganggap diri sendiri, tim desain, atau pengguna skill ini sebagai wakil pengguna. Nilai dari sudut user profile di 2A, terutama pengguna dengan pengalaman digital dan kapasitas working memory paling rendah dalam kelompok target. Hal yang sama berlaku untuk fitur AI: tim produk dan peninjau biasanya jauh lebih akrab dengan AI daripada pengguna rata-rata.
 - Confirmation bias: bila pengguna skill sudah punya dugaan ("menurutku masalahnya di tombol X"), periksa dugaan itu, tetapi tetap jalankan semua lensa. Cari juga bukti yang membantah dugaan, dan laporkan bila masalah terbesar ternyata ada di tempat lain.
 - Halo effect pada peninjau: tampilan yang rapi dan modern tidak membuktikan alur yang mudah. Nilai setiap lensa terpisah sebelum membuat kesimpulan umum.
 - Aesthetic-usability effect pada data pengguna: bila pengguna skill membawa hasil tes yang berisi pujian visual dari peserta yang kesulitan menyelesaikan tugas, utamakan apa yang peserta lakukan di atas apa yang mereka katakan. Pujian itu bisa muncul karena peserta merasa harus berkomentar, ingin bersikap sopan, atau memang terpengaruh tampilan.
@@ -350,7 +350,7 @@ Peninjau juga manusia (atau model) yang bisa bias. Terapkan pengaman berikut sel
 
 Saat menyusun bagian "Perlu diverifikasi", sarankan cara validasi yang tidak bias:
 - Tugas uji yang realistis dan akrab bagi pengguna target, tanpa memakai kata yang persis sama dengan label di antarmuka.
-- Untuk fitur AI, rekrut peserta dari berbagai kelompok usia dan tingkat literasi AI, dan tanyakan pengalaman AI mereka sebelumnya di tahap penyaringan. Panel rekrutmen online cenderung didominasi pengguna muda yang lebih akrab dengan AI. Jangan beri tahu peserta di awal sesi bahwa studinya tentang AI, supaya pilihan alat mereka tetap alami.
+- Untuk fitur AI, rekrut peserta dari berbagai kelompok usia dan tingkat AI literacy, dan tanyakan pengalaman AI mereka sebelumnya di tahap penyaringan. Panel rekrutmen online cenderung didominasi pengguna muda yang lebih akrab dengan AI. Jangan beri tahu peserta di awal sesi bahwa studinya tentang AI, supaya pilihan alat mereka tetap alami.
 - Pertanyaan terbuka yang tidak mengarahkan (misalnya "Bagaimana proses pengajuannya? Ceritakan bagian yang Anda suka dan tidak suka", alih-alih "Apakah tombol merah sulit ditemukan?").
 - Kurangi Hawthorne effect (perubahan perilaku karena merasa diamati): jelaskan bahwa yang diuji adalah desainnya, tegaskan semua masukan berguna, dan pertimbangkan sesi lebih panjang atau observasi di lingkungan kerja asli.
 - Triangulasi: gabungkan usability testing dengan data lain seperti analytics, log layanan pelanggan, atau tiket bantuan.

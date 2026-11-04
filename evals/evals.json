@@ -18,11 +18,11 @@
     {
       "id": 2,
       "prompt": "Ini screenshot dashboard admin kepegawaian yang dipakai staf HR setiap hari di komputer kantor. Tolong review hierarki visual dan konsistensinya saja.",
-      "expected_output": "Review terbatas pada Lensa 4, dengan bobot untuk aplikasi kerja harian: alignment, spacing, tipografi, konsistensi komponen dan state, serta kepadatan informasi yang wajar.",
+      "expected_output": "Review terbatas pada Lensa 4, dengan bobot untuk aplikasi kerja harian: alignment, spacing, tipografi, konsistensi komponen dan state, serta information density yang wajar.",
       "assertions": [
         { "name": "respects-scope", "description": "Hanya mengerjakan Lensa 4 dan menyebut lensa lain tidak dikerjakan di bagian asumsi" },
         { "name": "context-weighting", "description": "Tidak menilai rule of thirds, golden ratio, atau rule of odds sebagai temuan untuk dashboard" },
-        { "name": "density-not-penalized", "description": "Kepadatan informasi tidak otomatis dianggap masalah, karena pengguna harian ahli" },
+        { "name": "density-not-penalized", "description": "Information density tidak otomatis dianggap masalah, karena pengguna harian ahli" },
         { "name": "screenshot-limits", "description": "Nilai yang tidak bisa diukur dari screenshot ditandai sebagai perkiraan atau masuk Perlu diverifikasi" }
       ]
     },
@@ -40,7 +40,7 @@
     {
       "id": 4,
       "prompt": "Review copy untuk alur checkout ini. Ada tombol 'Mulai sekarang', pesan 'Terjadi kesalahan', dan pilihan 'Tidak, saya tidak suka hemat' untuk menolak promo.",
-      "expected_output": "Review Lensa 5 yang menandai label generik, pesan error yang tidak membantu, dan confirmshaming sebagai pola menipu, dengan usulan copy pengganti.",
+      "expected_output": "Review Lensa 5 yang menandai label generik, pesan error yang tidak membantu, dan confirmshaming sebagai deceptive pattern, dengan usulan copy pengganti.",
       "assertions": [
         { "name": "confirmshaming-high", "description": "Menandai 'Tidak, saya tidak suka hemat' sebagai confirmshaming dengan severity minimal Tinggi" },
         { "name": "generic-cta", "description": "Menjelaskan risiko label 'Mulai sekarang' yang tidak menyebut langkah berikutnya" },
@@ -51,10 +51,10 @@
     {
       "id": 5,
       "prompt": "Ini mockup halaman chatbot asisten layanan akademik kampus. Tolong review UX-nya.",
-      "expected_output": "Review yang mengerjakan Lensa 7 karena ada fitur AI, termasuk antropomorfisme, kepercayaan, batas kemampuan, dan jalur ke petugas manusia.",
+      "expected_output": "Review yang mengerjakan Lensa 7 karena ada fitur AI, termasuk anthropomorphism, trust, batas kemampuan, dan jalur ke petugas manusia.",
       "assertions": [
         { "name": "runs-lens-7", "description": "Mengerjakan Lensa 7 untuk fitur AI" },
-        { "name": "anthropomorphism", "description": "Menilai cara AI diposisikan (nama, klaim perasaan, nada) dan kepercayaan pengguna" },
+        { "name": "anthropomorphism", "description": "Menilai cara AI diposisikan (nama, klaim perasaan, nada) dan trust pengguna" },
         { "name": "human-fallback", "description": "Memeriksa jalur alternatif ke petugas manusia atau menu biasa" },
         { "name": "verification", "description": "Memeriksa dukungan untuk memverifikasi jawaban AI dan penjelasan batas kemampuan" }
       ]

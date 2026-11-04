@@ -43,7 +43,7 @@ Implikasi untuk review: nilai copy dari bagian yang paling mungkin dibaca (headi
 |---|---|---|
 | Layanan publik, pengguna awam, literasi beragam | Bahasa sederhana, kalimat pendek, istilah dijelaskan, pesan error yang membimbing, angka digit, nada tenang dan hormat | Jargon (hindari kecuali wajib dipelajari pengguna) |
 | Aplikasi kerja untuk pengguna ahli domain (misalnya sistem kepegawaian untuk staf HR dan dosen) | Istilah domain yang tepat dan konsisten, label perintah ringkas, efisiensi, konsistensi terminologi, pesan error yang spesifik | Penjelasan istilah dasar (bisa membuat pengguna ahli merasa konten bukan untuk mereka), nada antusias |
-| Pengguna baru di domain (pegawai baru, mahasiswa, onboarding) | Istilah domain dengan penjelasan dalam konteks, tooltip definisi, ringkasan, contoh | Kepadatan informasi |
+| Pengguna baru di domain (pegawai baru, mahasiswa, onboarding) | Istilah domain dengan penjelasan dalam konteks, tooltip definisi, ringkasan, contoh | Information density |
 | Marketing, landing page, onboarding produk | Front-loading, microcontent, tagline yang menjelaskan produk, label CTA yang spesifik, kejujuran klaim | Daftar panjang, detail teknis di atas lipatan layar |
 | Konten panjang (bantuan, dokumentasi, artikel, kebijakan) | Inverted pyramid, ringkasan, heading deskriptif, chunking, daftar isi, in-page link | Label perintah |
 | Konten ilmiah atau teknis untuk ahli | Fakta di atas interpretasi, sumber dan sitasi, tanggal terbit atau pembaruan, grafik dan tabel, judul akurat tanpa hype, desain visual yang tidak terlalu "promosi" | Penjelasan konsep dasar bidang |
@@ -125,7 +125,7 @@ Setiap dimensi adalah skala dengan titik tengah netral. Gabungan posisi di keemp
 ## 5. Istilah, jargon, dan singkatan
 
 ### 5.1 Jargon itu relatif
-**Penjelasan.** Jargon adalah istilah khusus suatu profesi atau kelompok yang tidak dimengerti orang di luar kelompok itu. Satu istilah bisa sangat jelas bagi satu pembaca dan tidak bermakna bagi pembaca lain. Karena itu, istilah tidak bisa dinilai tanpa profil pengguna.
+**Penjelasan.** Jargon adalah istilah khusus suatu profesi atau kelompok yang tidak dimengerti orang di luar kelompok itu. Satu istilah bisa sangat jelas bagi satu pembaca dan tidak bermakna bagi pembaca lain. Karena itu, istilah tidak bisa dinilai tanpa user profile.
 
 ### 5.2 Pohon keputusan istilah
 Ajukan dua pertanyaan:
@@ -329,7 +329,7 @@ Saat sistem sama sekali tidak bisa melayani (server tumbang), permintaan maaf ya
 
 **Penjelasan.** Tidak ada penyajian pilihan yang benar-benar netral (choice architecture, Thaler dan Sunstein). Kata-kata di pilihan ikut menentukan apa yang dipilih pengguna. Copy bisa mendukung keputusan yang baik atau mendorong pengguna memilih hal yang merugikan mereka. Dalam usability testing, pengguna sering membaca pilihan dari sudut pandang orang pertama ("Saya mau..."), sehingga pilihan adalah pernyataan yang diminta mereka setujui.
 
-Pola manipulatif yang dicek di copy (detail penilaian dan severity di Lensa 2 kelompok I, pola menipu):
+Pola manipulatif yang dicek di copy (detail penilaian dan severity di Lensa 2 kelompok I, deceptive patterns):
 | Pola | Bentuk di copy | Contoh |
 |---|---|---|
 | Scare tactics dan penonjolan kerugian | Copy yang mengulang besarnya kerugian untuk menakut-nakuti | Menyebut ulang total biaya yang akan hilang di samping opsi menolak proteksi |
@@ -447,9 +447,9 @@ Semua hasil skrip harus dinilai terhadap konteks. Contoh: singkatan "PAK" ditand
 
 ## 16. Kesalahan umum saat menilai
 
-- **Menilai istilah tanpa profil pengguna.** Menandai semua jargon sebagai masalah di aplikasi untuk pengguna ahli, atau sebaliknya membiarkan jargon di layanan publik.
+- **Menilai istilah tanpa user profile.** Menandai semua jargon sebagai masalah di aplikasi untuk pengguna ahli, atau sebaliknya membiarkan jargon di layanan publik.
 - **Menandai semua kalimat pasif.** Dalam bahasa Indonesia, pasif wajar. Tandai hanya bila pelaku menjadi tidak jelas atau kalimat berbelit.
 - **Menuntut semua copy sesingkat mungkin.** Kejelasan lebih penting daripada jumlah kata. Link yang panjang tetapi spesifik lebih baik daripada "Selengkapnya".
 - **Menyarankan accordion untuk semua konten panjang.** Pengguna scroll bila kontennya relevan. Accordion menambah klik dan menyembunyikan informasi.
 - **Menulis ulang dengan nada Claude sendiri.** Rekomendasi harus mengikuti nada produk.
-- **Melaporkan masalah yang sama dua kali.** Link generik juga masalah WCAG 2.4.4, error tanpa teks juga masalah WCAG 3.3.1, dan copy manipulatif juga pola menipu di Lensa 2. Laporkan di satu tempat dan rujuk silang.
+- **Melaporkan masalah yang sama dua kali.** Link generik juga masalah WCAG 2.4.4, error tanpa teks juga masalah WCAG 3.3.1, dan copy manipulatif juga deceptive pattern di Lensa 2. Laporkan di satu tempat dan rujuk silang.
