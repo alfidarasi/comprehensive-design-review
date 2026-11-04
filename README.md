@@ -271,9 +271,8 @@ comprehensive-design-review/
 
 - **Pemeriksaan otomatis menangkap sekitar sepertiga masalah aksesibilitas.** Sisanya butuh pembaca layar, navigasi keyboard oleh manusia, atau uji dengan pengguna disabilitas. Skill menuliskannya di bagian "Perlu diverifikasi".
 - **Review dari screenshot** tidak bisa mengukur urutan fokus, label pembaca layar, atau perilaku interaksi. Nilai yang diperkirakan ditandai.
-- **Dampak psikologis dari tampilan statis adalah dugaan.** Validasi dengan usability testing, analitik, atau 5-second test.
+- **Dampak psikologis dari tampilan statis adalah dugaan.** Validasi lebih lanjut diperlukan dengan usability testing, analitik, atau 5-second test.
 - **Emulasi tetap berbeda dari perangkat nyata.** Keyboard di layar, in-app browser, dan performa perangkat kelas bawah tetap perlu dicek di perangkat sungguhan.
-- **Skill ini tidak memakai heuristik usability Nielsen** sebagai kerangka utama.
 
 ---
 
