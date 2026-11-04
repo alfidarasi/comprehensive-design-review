@@ -2,15 +2,11 @@
 
 <br/>
 
-```
-  ◈ KONTEKS → 7 LENSA → TEMUAN BERPRIORITAS ◈
-```
-
 # Comprehensive Design Review
 
-**Claude skill untuk review UI dan UX secara menyeluruh yang akan menyesuaikan konteks produk dan penggunanya.**
+**Claude skill untuk review UI dan UX secara menyeluruh yang akan menyesuaikan dengan konteks produk dan penggunanya.**
 
-Dibuat untuk product designer, UX researcher, UX writer, product manager, dan developer front-end.
+Dibuat untuk product designer, UX researcher, UX writer, product manager, dan developer.
 
 </div>
 
@@ -69,12 +65,30 @@ Claude mengenali skill ini secara otomatis saat Anda meminta design review, UI r
 
 ### Pemeriksaan otomatis (opsional)
 
-Skill tetap bisa dipakai tanpa langkah ini, misalnya untuk review screenshot. Untuk menjalankan skrip pada URL atau kode, butuh Node.js 18 atau lebih baru:
+Skill tetap bisa dipakai tanpa langkah ini, misalnya untuk review screenshot. Untuk menjalankan skrip pada URL atau kode, butuh Node.js 18 atau lebih baru. Masuk ke folder tempat skill di-clone, lalu pasang dependensinya.
+
+Bila di-clone ke `~/.claude/skills/` (semua proyek):
 
 ```bash
-cd comprehensive-design-review
+cd ~/.claude/skills/comprehensive-design-review
 npm install
-npx playwright install chromium   # bila browser Playwright belum terpasang
+npx playwright install chromium
+```
+
+Bila di-clone ke `.claude/skills/` di dalam proyek, jalankan dari folder proyek:
+
+```bash
+cd .claude/skills/comprehensive-design-review
+npm install
+npx playwright install chromium
+```
+
+Perintah terakhir mengunduh browser Chromium untuk Playwright. Lewati bila sudah pernah dipasang.
+
+Cek apakah semuanya jalan:
+
+```bash
+node ~/.claude/skills/comprehensive-design-review/scripts/run_all.mjs https://example.com --out ~/hasil-cek
 ```
 
 ---
