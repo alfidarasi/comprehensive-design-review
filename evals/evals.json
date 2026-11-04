@@ -8,8 +8,9 @@
       "expected_output": "Laporan lengkap mengikuti assets/report-template.md, dengan hasil pemeriksaan otomatis sebagai bukti, temuan berprioritas, dan penilaian yang memperhitungkan pemakaian sesekali dan akses ponsel.",
       "assertions": [
         { "name": "runs-automated-checks", "description": "Menjalankan run_all.mjs atau skrip per lensa, lalu merujuk hasilnya sebagai bukti" },
-        { "name": "one-minute-summary", "description": "Laporan dibuka dengan ringkasan satu menit: kesimpulan, status, jumlah temuan per severity, dan tiga prioritas" },
-        { "name": "finding-ids", "description": "Temuan memakai ID K-, T-, S-, R- yang konsisten di semua bagian" },
+        { "name": "one-minute-summary", "description": "Laporan dibuka dengan ringkasan satu menit: kesimpulan, status, jumlah masalah per label prioritas (Harus diperbaiki sebelum dipakai, Segera, Perlu, Penyempurnaan kecil), dan tiga prioritas" },
+        { "name": "plain-numbering", "description": "Temuan memakai nomor biasa (1, 2, 3) yang sama di isi utama, penanda screenshot, dan Lampiran A; tidak ada kode K-, T-, S-, R-" },
+        { "name": "two-layer", "description": "Isi utama tanpa nama lensa, nomor kriteria WCAG, atau istilah teknis yang tidak dijelaskan; detail teknis (severity, lensa, kriteria, confidence, effort) ada di Lampiran A" },
         { "name": "mobile-critical", "description": "Masalah tampilan ponsel (tabel lebar, zoom dikunci) dinilai Kritis atau Tinggi karena dosen kadang memakai ponsel" },
         { "name": "domain-terms-ok", "description": "Singkatan JAD, PAK, SKP, atau NIDN tidak dijadikan temuan untuk pengguna dosen, dan disebut di bagian prinsip yang dikesampingkan atau catatan" },
         { "name": "before-after-copy", "description": "Temuan copy memberi contoh sebelum dan sesudah" }
@@ -74,7 +75,7 @@
       "prompt": "Ini 6 screenshot alur pengajuan cuti pegawai dari beranda sampai layar sukses. Pegawai mengajukan cuti beberapa kali setahun; atasan menyetujui lewat email. Menurutmu flow-nya kepanjangan nggak?",
       "expected_output": "Lensa 1B dan 1C dikerjakan: peta flow dengan biaya per langkah, ringkasan angka sebelum dan sesudah, flow usulan, dan peta journey yang memasukkan persetujuan atasan lewat email sebagai asumsi yang perlu diverifikasi.",
       "assertions": [
-        { "name": "flow-map", "description": "Laporan berisi bagian Peta flow dan interaction cost dengan tabel langkah, biaya, dan ID temuan" },
+        { "name": "flow-map", "description": "Laporan berisi bagian Alur tugas: sekarang dan usulan, dengan tabel langkah, beban, dan nomor masalah" },
         { "name": "counts-before-after", "description": "Menyebut angka sekarang dan usulan (layar, field, klik atau keputusan), ditandai perkiraan karena berasal dari screenshot" },
         { "name": "context-weighting", "description": "Panjang flow dinilai terhadap pemakaian sesekali (orientasi, syarat di awal, bisa dilanjutkan), tidak memakai angka langkah ideal yang seragam" },
         { "name": "keeps-safeguards", "description": "Tidak menyarankan menghapus langkah tinjau atau konfirmasi yang melindungi pengguna; menyarankan membuatnya ringan" },
@@ -87,7 +88,7 @@
       "prompt": "Ini mockup Figma halaman daftar pengajuan dan form tambah pengajuan untuk staf administrasi yang memakainya setiap hari. Ada kolom pencarian dan filter status. Tolong review.",
       "expected_output": "Lensa 1 sampai 6 dikerjakan, ditambah pemeriksaan pola State, Form, dan Navigasi dengan bobot untuk pemakaian harian. Temuan pola dimasukkan ke lensa yang sudah ada.",
       "assertions": [
-        { "name": "pattern-labels", "description": "Temuan dari pemeriksaan pola ditulis di kolom Lensa dengan format nomor lensa dan nama pola (misalnya '1 · State', '5 · Form'), tanpa membuat lensa baru" },
+        { "name": "pattern-labels", "description": "Di Lampiran A, temuan dari pemeriksaan pola ditulis di kolom Lensa dengan format nomor lensa dan nama pola (misalnya '1 · State', '5 · Form'), tanpa membuat lensa baru" },
         { "name": "state-inventory", "description": "Menyusun daftar state yang seharusnya ada (kosong, hasil filter kosong, loading, error, sukses) dan memasukkan state yang tidak ada di mockup ke Perlu diverifikasi sebagai satu baris" },
         { "name": "filter-visibility", "description": "Memeriksa apakah filter aktif terlihat dan bisa direset, serta apakah hasil pencarian kosong memberi saran" },
         { "name": "daily-use-form", "description": "Form dinilai untuk kecepatan entri pengguna harian (default, urutan Tab, isian terakhir), tidak hanya untuk pengguna baru" },
@@ -103,7 +104,18 @@
         { "name": "kpi-comparison", "description": "Memeriksa apakah KPI punya pembanding (target atau periode lalu), satuan, periode, dan jumlah dasar untuk persentase" },
         { "name": "chart-honesty", "description": "Memeriksa sumbu batang yang tidak mulai dari nol, jumlah irisan pie, label langsung, dan warna yang tidak menjadi satu-satunya penanda" },
         { "name": "freshness", "description": "Memeriksa keterangan tanggal pembaruan atau periode data" },
-        { "name": "pattern-labels", "description": "Temuan ditulis dengan label lensa yang sudah ada dan nama pola (misalnya '4 · Data'), tanpa lensa baru" }
+        { "name": "pattern-labels", "description": "Di Lampiran A, temuan ditulis dengan label lensa yang sudah ada dan nama pola (misalnya '4 · Data'), tanpa lensa baru" }
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Ini screenshot halaman pendaftaran layanan. Laporannya nanti dibaca kepala dinas yang bukan orang desain, tapi tim developer juga perlu detailnya.",
+      "expected_output": "Laporan dua lapis: isi utama berbahasa awam per prioritas dengan screenshot berpenanda nomor, dan Lampiran A berisi detail teknis dengan nomor yang sama.",
+      "assertions": [
+        { "name": "annotated-screenshot", "description": "Membuat screenshot dengan penanda bernomor memakai scripts/annotate_screenshot.py dan memeriksa hasilnya sebelum dipakai" },
+        { "name": "plain-cards", "description": "Temuan prioritas tertinggi ditulis sebagai kartu Di mana, Masalahnya, Akibatnya, Saran, dengan judul yang menyebut masalah, bukan nama prinsip" },
+        { "name": "stakeholder-on", "description": "Ringkasan untuk stakeholder diaktifkan karena pembacanya pimpinan" },
+        { "name": "dev-appendix", "description": "Lampiran A berisi tabel teknis dengan severity, lensa, kriteria, confidence, effort, dan bukti, memakai nomor yang sama dengan isi utama" }
       ]
     }
   ]

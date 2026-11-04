@@ -129,7 +129,7 @@ Selain tujuh lensa, ada **pemeriksaan pola** untuk pola antarmuka yang paling se
 | **Navigasi dan pencarian** | Ada menu, pencarian, filter, atau sort | Struktur dan label menurut tujuan pengguna, penanda lokasi, findability, hasil pencarian kosong, filter aktif dan reset |
 | **Data display** | Ada tabel data, dashboard, atau grafik | Pertanyaan yang terjawab dalam 5 detik, KPI dengan pembanding, jenis grafik, grafik yang jujur dan tidak bergantung pada warna, tabel kerja, tanggal pembaruan data |
 
-Setiap temuan memuat **severity** (Kritis, Tinggi, Sedang, Rendah), **confidence** (seberapa pasti temuannya: Terkonfirmasi atau Perlu verifikasi), **effort** (perkiraan besar pekerjaan perbaikan: Kecil, Sedang, Besar), bukti, dan rekomendasi.
+Setiap temuan memuat prioritas, letak masalah, akibatnya bagi pengguna, dan saran perbaikan. Untuk tim teknis, lampiran laporan juga mencatat **severity** (Kritis, Tinggi, Sedang, Rendah), **confidence** (seberapa pasti temuannya), **effort** (perkiraan besar pekerjaan perbaikan), lensa, kriteria, dan bukti.
 
 ---
 
@@ -148,6 +148,7 @@ Hasilnya `hasil-review/ringkasan-otomatis.md` (ringkasan satu halaman), laporan 
 | `a11y_scan.mjs` | axe-core, ukuran target 24 dan 44 px, reflow 320 px, spasi teks, zoom 200%, urutan dan visibilitas fokus keyboard, fokus yang tertutup, orientasi, reduced motion, dan lainnya |
 | `style_audit.mjs` | Jumlah ukuran dan ketebalan huruf, warna aksen, skala spacing, radius, bayangan, variasi tombol, urutan heading, serta screenshot normal dan blur |
 | `copy_audit.mjs` | Label generik, istilah yang tidak konsisten, pesan error teknis, kalimat panjang, angka yang ditulis kata, singkatan, daftar, in-page link, accordion. Bisa membaca copy deck `.txt` atau `.md` |
+| `annotate_screenshot.py` | Menggambar penanda bernomor di screenshot sesuai nomor temuan, untuk bagian "Letak masalah di layar" di laporan. Butuh Python 3 dan Pillow (`python3 -m pip install pillow`) |
 | `responsive_audit.mjs` | Render di beberapa lebar, scroll horizontal, teks terpotong, tabel, input di ponsel, elemen sticky, posisi aksi utama, hover, stress test teks panjang, dan performa di jaringan lambat (`--perf`) |
 
 Semua hasil skrip adalah **bukti atau kandidat**. Claude menilai setiap butir terhadap konteks sebelum menjadikannya temuan.
@@ -156,34 +157,49 @@ Semua hasil skrip adalah **bukti atau kandidat**. Claude menilai setiap butir te
 
 ## Seperti apa hasilnya
 
-Laporan mengikuti [`assets/report-template.md`](assets/report-template.md). Contoh potongan bagian pembuka laporan untuk form pengajuan kenaikan jabatan dosen:
+Laporan mengikuti [`assets/report-template.md`](assets/report-template.md) dan punya **dua lapis**:
 
-> **Kesimpulan:** Dosen bisa mengisi form ini di laptop, tetapi hampir tidak bisa memakainya di ponsel. Selain itu, informasi tenggat (hal terpenting di halaman) justru paling sulit dibaca, dan susunan tombol berisiko membuat usulan terhapus tanpa sengaja.
+- **Isi utama untuk siapa saja**, termasuk pimpinan, PM, atau klien yang bukan desainer. Bahasanya sehari-hari, tanpa kode atau istilah teknis, dikelompokkan menurut prioritas.
+- **Lampiran untuk tim desain dan developer**, berisi lensa, kriteria WCAG, confidence, effort, dan bukti teknis.
+
+Keduanya memakai nomor temuan yang sama (1, 2, 3, ...), termasuk di screenshot yang diberi penanda bernomor, jadi tim teknis tetap bisa merujuk "temuan no. 4" di tiket.
+
+Contoh potongan isi utama untuk form pengajuan kenaikan jabatan dosen:
+
+> **Kesimpulan:** Dosen bisa mengisi form ini di laptop, tetapi hampir tidak bisa memakainya di ponsel. Informasi tenggat, hal terpenting di halaman, justru paling sulit dibaca, dan susunan tombol berisiko membuat usulan terhapus tanpa sengaja.
 >
-> **Status:** Perlu perbaikan sebelum rilis
+> **Status:** Perlu diperbaiki dulu sebelum dipakai
 >
-> | Kritis | Tinggi | Sedang | Rendah |
+> | 🔴 Harus diperbaiki sebelum dipakai | 🟠 Segera diperbaiki | 🟡 Perlu diperbaiki | ⚪ Penyempurnaan kecil |
 > |:---:|:---:|:---:|:---:|
 > | 1 | 6 | 4 | 1 |
 >
-> 1. **[K-01] Halaman rusak di ponsel dan zoom dikunci:** dosen yang membuka link notifikasi dari ponsel melihat halaman yang mengecil dan tidak bisa memperbesarnya.
-> 2. **[T-01] Informasi tenggat paling sulit dibaca:** teks tenggat berukuran 11px dengan kontras 2,3:1.
-> 3. **[T-02] Tombol Hapus sejajar dan setara dengan tombol Simpan.**
+> ### 🔴 Harus diperbaiki sebelum dipakai
+>
+> #### 1. Halaman tidak bisa dipakai di ponsel
+>
+> **Di mana:** seluruh halaman, paling parah di tabel Riwayat Usulan
+> **Masalahnya:** di ponsel, halaman tampil mengecil dan tidak bisa diperbesar. Tabelnya juga harus digeser ke samping.
+> **Akibatnya:** dosen yang membuka link dari notifikasi WhatsApp tidak bisa membaca status usulannya.
+> **Saran:** izinkan halaman diperbesar, dan ubah setiap baris tabel menjadi kartu di layar ponsel.
+>
+> *Perkiraan kerja perbaikan: sedang (beberapa hari)*
 
 Susunan laporan:
 
 | Bagian | Isi |
 |---|---|
-| 1. Ringkasan satu menit | Kesimpulan, status, jumlah temuan, tiga prioritas |
-| 2. Kondisi per lensa | Baik, Perlu perhatian, atau Bermasalah |
-| 3. Peta flow dan interaction cost | Langkah, biaya, angka sebelum dan sesudah, flow usulan (bila review mencakup flow) |
-| 4. Daftar temuan | Tabel dengan ID (K-01, T-01, ...), severity, confidence, effort |
-| 5. Detail temuan | Masalah, dampak, bukti, rekomendasi, serta sebelum dan sesudah untuk copy |
-| 6. Quick wins | Daftar centang yang siap dijadikan tiket |
-| 7. Yang sudah baik | Hal yang perlu dipertahankan |
-| 8. Perlu diverifikasi | Apa yang dicek, kenapa, dan caranya |
-| 9. Konteks dan asumsi | Profil konteks dan prinsip yang dikesampingkan |
-| 10. Ringkasan stakeholder | Opsional, untuk manajemen atau klien |
+| 1. Ringkasan satu menit | Kesimpulan, status, jumlah masalah per prioritas, tiga prioritas, angka flow bila ada |
+| 2. Letak masalah di layar | Screenshot dengan penanda bernomor (bila ada gambar atau URL) |
+| 3. Masalah yang ditemukan | Dikelompokkan per prioritas: di mana, masalahnya, akibatnya, saran |
+| 4. Alur tugas | Langkah sekarang dan usulan, dengan angka (bila review mencakup flow) |
+| 5. Perbaikan cepat | Daftar centang yang siap dijadikan tiket |
+| 6. Yang sudah baik | Hal yang perlu dipertahankan |
+| 7. Yang belum bisa dipastikan | Apa yang perlu dicek, kenapa, dan caranya |
+| 8. Ringkasan stakeholder | Opsional, untuk manajemen atau klien |
+| Lampiran A | Untuk tim desain dan developer: tabel temuan teknis, kondisi per lensa, aksesibilitas, konteks dan asumsi, hasil otomatis, glosarium |
+
+Format bisa disesuaikan dengan pembacanya, misalnya "laporannya untuk rapat pimpinan" atau "cukup ringkas di chat".
 
 ---
 
@@ -267,6 +283,7 @@ comprehensive-design-review/
 │
 ├── scripts/                           ← Pemeriksaan otomatis (Node.js dan Playwright)
 │   ├── run_all.mjs                    ← Menjalankan semua skrip dan membuat ringkasan
+│   ├── annotate_screenshot.py         ← Penanda bernomor di screenshot untuk laporan
 │   ├── a11y_scan.mjs
 │   ├── style_audit.mjs
 │   ├── copy_audit.mjs

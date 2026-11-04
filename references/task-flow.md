@@ -130,25 +130,25 @@ Catatan penting: **jumlah langkah bukan satu-satunya ukuran.** Lima layar yang m
 
 ## 6. Penyajian di laporan
 
-Bila review mencakup flow (1B) atau journey (1C), isi bagian "Peta flow dan interaction cost" di template laporan.
+Bila review mencakup flow (1B) atau journey (1C), isi bagian "Alur tugas: sekarang dan usulan" di template laporan. Bagian ini ada di isi utama yang dibaca awam, jadi pakai bahasa sehari-hari: "isian" untuk field, "beban" untuk biaya, "lewat apa" untuk touchpoint.
 
-**Peta flow** (satu tabel per tugas utama, maksimal dua tugas di laporan utama):
+**Tabel alur** (satu tabel per tugas utama, maksimal dua tugas):
 
-| Langkah | Layar | Aksi pengguna | Biaya | Bisa diperbaiki? | ID temuan |
+| Langkah | Layar | Yang dilakukan pengguna | Beban | Bisa diperbaiki? | Masalah no. |
 |---|---|---|---|---|---|
-| 1 | Beranda | Mencari menu "Cuti" di menu Layanan | Sedang (menu bertingkat dua) | Pindah urutan: menu di beranda | S-03 |
-| 2 | Form cuti | Mengisi 12 field, 5 sudah ada di profil | Tinggi | Isi otomatis 5 field | T-02 |
-| 3 | Konfirmasi | Klik "Lanjut" tanpa informasi baru | Rendah | Hapus | S-04 |
+| 1 | Beranda | Mencari menu "Cuti" di dalam menu Layanan | Sedang (menu bertingkat dua) | Taruh menu Cuti di beranda | 6 |
+| 2 | Form cuti | Mengisi 12 isian, 5 sudah ada di profil | Berat | Isi otomatis 5 isian | 3 |
+| 3 | Konfirmasi | Klik "Lanjut" tanpa informasi baru | Ringan | Hapus layar ini | 7 |
 
-**Ringkasan biaya:** tulis sebelum dan sesudah dalam angka (layar, klik atau tap, field, keputusan, perpindahan konteks). Tandai "perkiraan" bila berasal dari screenshot.
+**Angka sekarang dan usulan:** jumlah layar, klik atau ketukan, isian yang diketik manual, pilihan yang harus diputuskan, dan perpindahan ke aplikasi atau tab lain. Tandai "perkiraan" bila berasal dari screenshot. Satu kalimat ringkasnya juga ditulis di ringkasan satu menit.
 
-**Peta journey** (hanya untuk 1C):
+**Perjalanan di luar layar** (hanya untuk 1C):
 
-| Tahap | Touchpoint | Yang dilakukan atau dirasakan pengguna | Titik terputus | ID temuan |
+| Tahap | Lewat apa | Yang dialami pengguna | Di mana putusnya | Masalah no. |
 |---|---|---|---|---|
-| Menunggu persetujuan | Email, aplikasi | Tidak tahu pengajuan sudah dibaca atasan | Status hanya "Diproses" selama 5 hari | T-04 |
+| Menunggu persetujuan | Email, aplikasi | Tidak tahu pengajuan sudah dibaca atasan | Status hanya "Diproses" selama 5 hari | 2 |
 
-Temuan dari peta ini tetap masuk tabel temuan utama dengan Lensa "1". Peta hanya membantu pembaca melihat letak masalah di sepanjang flow.
+Nomor masalah sama dengan nomor temuan di bagian "Masalah yang ditemukan" dan di Lampiran A (Lensa "1"). Tabel ini hanya membantu pembaca melihat letak masalah di sepanjang alur.
 
 ## 7. Hubungan dengan lensa lain
 

@@ -33,7 +33,7 @@ Tentukan tujuh dimensi berikut dari keterangan pengguna skill atau dari bukti di
 6. User profile: domain expertise (keahlian di bidangnya), tech literacy (keakraban dengan teknologi), rentang usia. Kapasitas working memory (kapasitas otak untuk menahan informasi sementara saat mengerjakan tugas) berbeda antar orang dan cenderung menurun seiring usia. Tim pembuat produk biasanya punya kapasitas dan pengalaman teknologi di atas pengguna rata-rata, sehingga desain yang "terasa mudah bagi tim" belum tentu mudah bagi pengguna. Untuk produk dengan fitur AI, perkirakan juga AI literacy pengguna (lihat Lensa 7).
 7. Emotional load: apakah layar ini bagian dari proses yang menegangkan atau berisiko (pengajuan, pembayaran, tenggat waktu, data penting) atau kegiatan rutin.
 
-Tulis profil ini secara ringkas di bagian awal laporan. Dimensi yang tidak diketahui ditulis sebagai asumsi.
+Tulis profil ini secara ringkas di Lampiran A4 laporan; isi utama cukup menyebut penggunanya dalam satu kalimat ("Untuk siapa"). Dimensi yang tidak diketahui ditulis sebagai asumsi.
 
 ## 2B. Tentukan bobot prinsip
 

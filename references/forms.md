@@ -94,7 +94,7 @@ Semua aturan diterapkan sesuai konteks dari pengguna skill (SKILL.md bagian 1).
 
 ## 5. Penyajian di laporan
 
-- Untuk form yang menjadi tugas utama, boleh tambahkan tabel inventaris field ringkas di detail temuan atau lampiran: Field | Kontrol | Wajib | Masalah | ID temuan.
+- Untuk form yang menjadi tugas utama, boleh tambahkan tabel inventaris field ringkas di detail temuan atau lampiran: Field | Kontrol | Wajib | Masalah | No. temuan.
 - Gabungkan masalah yang berulang di banyak field menjadi satu temuan dengan beberapa contoh, misalnya "placeholder dipakai sebagai label di 9 field".
 - Sebut jumlah field sekarang dan usulan bila ada field yang bisa dihapus atau diisi otomatis.
 

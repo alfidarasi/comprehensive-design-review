@@ -24,6 +24,7 @@ SKILL.md berisi alur kerja dan aturan utama. Detail setiap lensa ada di file ref
 | `references/navigation-search.md` | Struktur dan label navigasi, wayfinding, findability, pencarian, filter dan sort | Pemeriksaan pola: Navigasi |
 | `references/data-display.md` | Tujuan dashboard, KPI dan pembanding, pemilihan jenis grafik, kejujuran dan warna grafik, tabel data di desktop, kesegaran data, drill-down, alternatif grafik | Pemeriksaan pola: Data |
 | `assets/report-template.md` | Template laporan akhir yang mudah dibaca | Saat menulis laporan |
+| `scripts/annotate_screenshot.py` | Menggambar penanda bernomor di screenshot sesuai nomor temuan | Saat menulis laporan, input gambar atau URL |
 | `scripts/run_all.mjs` | Menjalankan semua skrip sekaligus dan membuat `ringkasan-otomatis.md` | Input URL, kode, atau copy deck |
 | `scripts/a11y_scan.mjs` | Scan aksesibilitas otomatis (axe-core dan pemeriksaan tambahan) | Lensa 3, input URL atau kode |
 | `scripts/style_audit.mjs` | Inventaris gaya visual dan screenshot squint test | Lensa 4, input URL atau kode |
@@ -46,7 +47,7 @@ Sebelum menilai, pastikan hal-hal ini jelas:
 4. Tahap desain: wireframe, mockup final, atau produk live. Tahap ini menentukan seberapa detail kritik visual yang pantas diberikan.
 5. Usage frequency: dipakai setiap hari sebagai alat kerja, atau hanya sesekali. Informasi ini sangat menentukan prinsip UX psychology mana yang paling relevan (lihat Lensa 2).
 
-Kalau informasi ini tidak diberikan, ajukan maksimal satu pertanyaan singkat yang menanyakan hal paling menentukan (biasanya pengguna target dan usage frequency). Kalau pengguna tidak sedang menunggu jawaban atau konteks cukup jelas dari input, buat asumsi yang masuk akal dan tulis asumsi itu di bagian atas laporan.
+Kalau informasi ini tidak diberikan, ajukan maksimal satu pertanyaan singkat yang menanyakan hal paling menentukan (biasanya pengguna target dan usage frequency). Kalau pengguna tidak sedang menunggu jawaban atau konteks cukup jelas dari input, buat asumsi yang masuk akal dan tulis asumsi itu di laporan (Lampiran A4, dan satu kalimat di bagian "Untuk siapa" bila menyangkut pengguna target).
 
 ### Konteks berlaku untuk semua lensa
 
@@ -99,7 +100,7 @@ Lensa ini menilai dua hal: apakah tugas utama bisa diselesaikan, dan berapa biay
 - Lensa 2 kelompok G (interaction cost) adalah dasar teori. Temuan tentang panjang atau urutan flow dilaporkan di Lensa 1; temuan di level satu kontrol (misalnya posisi tombol submit) tetap di Lensa 2. Sludge dan deceptive patterns di dalam flow (forced registration, roach motel) mengikuti severity kelompok I.
 - WCAG 3.3.7, 3.3.4, 2.2.1, 2.4.5, 3.2.6, dan 3.3.8 dilaporkan di Lensa 3 dan dirujuk dari sini.
 - Setiap temuan flow menyebut tugas, langkah, layar, dan angkanya, serta alasan kontekstual (contoh: "staf memproses sekitar 40 pengajuan per hari, jadi 3 klik tambahan menjadi 120 klik per hari").
-- Ringkas hasil 1B dengan angka sebelum dan sesudah, lalu isi bagian "Peta flow dan interaction cost" di laporan. Usulan perbaikan ditulis sebagai daftar langkah flow baru, bukan hanya "sederhanakan flow".
+- Ringkas hasil 1B dengan angka sebelum dan sesudah, lalu isi bagian "Alur tugas: sekarang dan usulan" di laporan. Usulan perbaikan ditulis sebagai daftar langkah flow baru, bukan hanya "sederhanakan flow".
 - Langkah yang ada karena regulasi atau aturan bisnis dicatat sebagai batasan, dengan rekomendasi yang bekerja di dalam batasan itu.
 
 ### Lensa 2: UX psychology yang disesuaikan konteks
@@ -107,7 +108,7 @@ Lensa ini menilai dua hal: apakah tugas utama bisa diselesaikan, dan berapa biay
 UX psychology adalah penerapan temuan psikologi kognitif dan perilaku (cara orang memperhatikan, mengingat, memutuskan, dan merasa) pada desain. Prinsip ini tidak berlaku sama kuat di semua produk. Prinsip yang sangat penting untuk aplikasi kerja yang dibuka setiap hari bisa hampir tidak relevan untuk halaman pemasaran yang dikunjungi sekali, dan sebaliknya. Penjelasan lengkap, tabel bobot, dan kartu setiap prinsip (inti, cara cek, rekomendasi) ada di `references/ux-psychology.md`. Baca file itu setiap kali menjalankan lensa ini.
 
 #### 2A. Alur kerja
-1. **Susun profil konteks** dengan tujuh dimensi: usage frequency, switching cost (wajib memakai atau bisa pindah), primary task, information density, usage context, user profile (domain expertise, tech literacy, usia, AI literacy bila relevan), dan emotional load. Dimensi yang tidak diketahui ditulis sebagai asumsi. Profil ini ditulis ringkas di awal laporan dan juga dipakai oleh lensa lain.
+1. **Susun profil konteks** dengan tujuh dimensi: usage frequency, switching cost (wajib memakai atau bisa pindah), primary task, information density, usage context, user profile (domain expertise, tech literacy, usia, AI literacy bila relevan), dan emotional load. Dimensi yang tidak diketahui ditulis sebagai asumsi. Profil ini ditulis ringkas di Lampiran A4 laporan (isi utama cukup menyebut penggunanya dalam satu kalimat) dan juga dipakai oleh lensa lain.
 2. **Tentukan bobot prinsip** dengan tabel di bagian 2B file referensi. Periksa paling dalam kelompok yang bobotnya naik untuk konteks ini. Prinsip berbobot rendah boleh dilaporkan bila masalahnya jelas terlihat, tetapi jangan dicari-cari.
 3. **Periksa prinsip** yang terpilih dengan kartu di bagian 2C file referensi.
 4. **Selesaikan pertentangan antar prinsip** (misalnya konsistensi versus pola baru yang lebih efisien, atau estetika versus information density) berdasarkan profil konteks, dan tulis alasannya. Daftar pertentangan yang umum ada di bagian 2B file referensi.
@@ -340,29 +341,66 @@ Effort (perkiraan besar pekerjaan perbaikan) untuk setiap temuan: Kecil (kurang 
 
 Tulis dalam Bahasa Indonesia, kecuali pengguna menulis dalam bahasa lain. Ikuti `assets/report-template.md`.
 
-Susunan laporan:
-1. **Ringkasan satu menit:** kesimpulan, status (siap dipakai sampai perlu dirancang ulang), jumlah temuan per severity, tiga hal yang paling perlu diperbaiki, dan satu hal yang sudah baik.
-2. **Kondisi per lensa:** status Baik, Perlu perhatian, atau Bermasalah dengan satu kalimat. Skor 1 sampai 5 hanya bila pengguna memintanya.
-3. **Peta flow dan interaction cost (bila Lensa 1B atau 1C dikerjakan):** tabel langkah dengan biaya dan ID temuan, ringkasan angka sebelum dan sesudah, flow usulan, serta peta journey bila 1C dikerjakan. Hapus bagian ini bila review hanya satu layar.
-4. **Daftar temuan:** tabel yang diurutkan dari severity tertinggi dengan kolom ID, Temuan, Lensa, Dasar penilaian (prinsip atau kriteria), Severity, Confidence, dan Effort.
-5. **Detail temuan:** kartu untuk setiap temuan Kritis dan Tinggi berisi Masalahnya apa, Akibatnya bagi pengguna dalam konteks ini, Buktinya, dan Saran perbaikan (dengan tabel sebelum dan sesudah untuk temuan copy).
-6. **Quick wins:** daftar centang perbaikan berdampak besar dengan effort Kecil, siap dijadikan tiket.
-7. **Yang sudah baik:** 2 sampai 4 hal yang perlu dipertahankan supaya tidak hilang saat redesign.
-8. **Perlu diverifikasi:** tabel hal yang dicek, alasan belum bisa dipastikan, dan cara mengeceknya.
-9. **Konteks dan asumsi:** profil konteks (Lensa 2) dan profil perangkat (Lensa 6), asumsi, serta prinsip yang dikesampingkan beserta alasannya.
-10. **Ringkasan untuk stakeholder (opsional):** dipakai bila laporan dibawa ke manajemen, tim bisnis, atau klien, dengan rhetorical triangle: ethos (dasar temuan: prinsip, kriteria, data), logos (pola "Bila kita [perbaikan], masalah [masalah pengguna] teratasi dan [nilai bisnis] meningkat"), dan pathos (satu skenario konkret dari sudut pandang pengguna).
-11. **Lampiran:** hasil pemeriksaan otomatis, cara review dilakukan, dan glosarium istilah.
+### 5A. Dua lapis: isi utama untuk awam, lampiran untuk tim teknis
 
-Aturan supaya laporan mudah dibaca:
-- **ID temuan** memakai huruf severity dan nomor: K-01 (Kritis), T-01 (Tinggi), S-01 (Sedang), R-01 (Rendah). Pakai ID yang sama di semua bagian.
-- **Effort:** Kecil (kurang dari 1 hari), Sedang (beberapa hari), Besar (lebih dari satu sprint atau butuh riset).
-- **Bagian 1 harus bisa dipahami pembaca non-desainer dalam satu menit.** Hindari istilah teknis di sana, atau jelaskan langsung.
-- **Satu kartu untuk satu masalah.** Masalah yang berulang digabung menjadi satu kartu dengan beberapa contoh. Temuan Sedang dan Rendah cukup di tabel kecuali butuh contoh sebelum dan sesudah.
+Laporan sering dibaca orang yang bukan desainer (pimpinan, PM, klien, pemilik layanan). Karena itu isi utama ditulis dengan bahasa sehari-hari dan tanpa kode, sedangkan detail teknis (lensa, kriteria WCAG, confidence, effort, selector) dipindah ke Lampiran A untuk tim desain dan developer. Tidak ada informasi yang dibuang; hanya letaknya yang dipisah.
+
+Isi utama:
+1. **Ringkasan satu menit:** kesimpulan, status (siap dipakai sampai perlu dirancang ulang), jumlah masalah per prioritas, tiga hal yang paling perlu diperbaiki, satu kalimat angka flow bila ada, dan satu hal yang sudah baik.
+2. **Letak masalah di layar** (bila ada screenshot atau URL): screenshot dengan penanda bernomor yang sama dengan nomor temuan (lihat 5C).
+3. **Masalah yang ditemukan:** dikelompokkan per prioritas. Temuan 🔴 dan 🟠 ditulis sebagai kartu: Di mana, Masalahnya, Akibatnya, Saran, tabel sekarang dan usulan untuk copy, baris "Perlu dicek dulu" bila masih dugaan, dan perkiraan kerja dalam bahasa awam. Temuan 🟡 dan ⚪ cukup satu sampai dua kalimat. Untuk flow dengan tiga layar atau lebih, kelompokkan lagi per layar di dalam setiap prioritas.
+4. **Alur tugas: sekarang dan usulan** (bila Lensa 1B atau 1C dikerjakan): tabel langkah dengan beban dan nomor masalah, angka sekarang dan usulan, alur usulan, serta perjalanan di luar layar bila 1C dikerjakan.
+5. **Perbaikan cepat:** daftar centang perbaikan berdampak besar dengan effort Kecil, siap dijadikan tiket.
+6. **Yang sudah baik:** 2 sampai 4 hal yang perlu dipertahankan supaya tidak hilang saat redesign.
+7. **Yang belum bisa dipastikan (perlu diverifikasi):** apa yang perlu dicek, kenapa, dan caranya, dalam bahasa awam.
+8. **Ringkasan untuk stakeholder (opsional):** dipakai bila laporan dibawa ke manajemen, tim bisnis, atau klien, dengan rhetorical triangle: ethos (dasar temuan), logos (pola "Bila kita [perbaikan], masalah [masalah pengguna] teratasi dan [nilai bisnis] meningkat"), dan pathos (satu skenario konkret dari sudut pandang pengguna).
+
+Lampiran A (untuk tim desain dan developer): A1 tabel temuan teknis dengan kolom No., Temuan, Severity, Lensa, Dasar penilaian, Confidence, Effort, dan Bukti; A2 kondisi per lensa; A3 hasil aksesibilitas yang dipisah menjadi pelanggaran A/AA, peluang AAA, dan uji manual; A4 profil konteks, profil perangkat, asumsi, dan prinsip yang dikesampingkan; A5 hasil pengecekan otomatis dan cara review; A6 glosarium.
+
+### 5B. Nomor dan label prioritas
+
+- **Nomor temuan** adalah angka biasa (1, 2, 3, ...) yang diurutkan dari prioritas tertinggi. Nomor yang sama dipakai di isi utama, penanda screenshot, tabel alur, perbaikan cepat, dan Lampiran A, sehingga tim teknis tetap bisa merujuk "temuan no. 4" di tiket.
+- **Label prioritas** di isi utama ditulis sebagai keputusan, bukan istilah severity. Selalu tulis ikon warna dan teks labelnya bersama-sama: ikon membuat prioritas terlihat sekilas, teks memastikan maknanya tidak hanya bergantung pada warna. Pakai keduanya di tabel jumlah, judul kelompok prioritas, tiga prioritas di ringkasan, dan kolom Severity di Lampiran A.
+
+| Label di isi utama | Severity di Lampiran A |
+|---|---|
+| 🔴 Harus diperbaiki sebelum dipakai | Kritis |
+| 🟠 Segera diperbaiki | Tinggi |
+| 🟡 Perlu diperbaiki | Sedang |
+| ⚪ Penyempurnaan kecil | Rendah |
+
+- **Confidence** di isi utama hanya muncul sebagai baris "Perlu dicek dulu" pada temuan yang masih dugaan. **Effort** ditulis sebagai "Perkiraan kerja perbaikan: kecil (kurang dari sehari) / sedang (beberapa hari) / besar (lebih dari dua minggu atau perlu riset dulu)".
+
+### 5C. Screenshot dengan penanda bernomor
+
+Bila bahan berupa gambar, frame Figma yang diekspor, atau URL, buat satu gambar per layar dengan penanda bernomor di lokasi setiap temuan:
+
+```bash
+python3 scripts/annotate_screenshot.py <gambar.png> <penanda.json> --out <nama>-penanda.png [--scale 2]
+```
+
+- `penanda.json` berisi daftar `{"n": nomor, "x": .., "y": .., "w": .., "h": ..}` dalam piksel gambar; `w` dan `h` opsional (tanpa keduanya hanya nomor yang digambar). Skrip butuh Pillow (`python3 -m pip install pillow`).
+- Input URL atau kode: ambil koordinat dengan Playwright `element.boundingBox()` dan pakai `--scale` sesuai `deviceScaleFactor` screenshot. Input gambar: tentukan koordinat dari gambar.
+- Selalu buka hasilnya dan periksa setiap penanda berada di elemen yang benar sebelum dipakai di laporan. Bila posisi tidak bisa dipastikan, jangan beri penanda untuk temuan itu; cukup sebut lokasinya di teks.
+- Temuan yang tidak punya lokasi di layar (misalnya alur, notifikasi, atau perilaku setelah submit) tidak diberi penanda.
+
+### 5D. Menyesuaikan format dengan pembaca
+
+Format bawaan adalah dua lapis di 5A. Sesuaikan bila pengguna skill menyebut pembacanya, dan tulis keputusannya di A4:
+- **Tim desain atau developer saja:** tetap pakai isi utama, tetapi kartu boleh menyertakan nama prinsip atau kriteria di samping judulnya. Lampiran A tetap lengkap.
+- **Pimpinan atau klien:** isi utama dengan bagian 8 (stakeholder) diaktifkan. Lampiran A tetap disertakan untuk tim teknis, kecuali pengguna skill memintanya dihapus.
+- **Review singkat satu layar di percakapan:** ringkasan satu menit, daftar masalah per prioritas, dan perbaikan cepat. Lampiran cukup disebut bila diminta.
+
+### 5E. Aturan supaya laporan mudah dibaca
+
+- **Isi utama harus bisa dipahami pembaca non-desainer.** Tanpa kode, nama lensa, nomor kriteria WCAG, atau istilah teknis yang tidak dijelaskan. Bila istilah teknis perlu, jelaskan langsung di kalimat yang sama (misalnya "kontras warna terlalu rendah, jadi teks sulit dibaca di bawah sinar matahari").
+- **Judul temuan menyebut masalah dan akibatnya,** bukan nama prinsip. "Tombol Hapus mudah tertekan saat ingin menyimpan" lebih jelas daripada "Pelanggaran Fitts's law".
+- **Satu temuan untuk satu masalah.** Masalah yang berulang digabung menjadi satu temuan dengan beberapa contoh.
 - **Kalimat pendek dan spesifik:** sebut elemen, angka, dan pengguna yang terdampak.
-- **Istilah teknis** (reflow, kontras 4,5:1, squint test, cognitive load, dan sejenisnya) tetap ditulis dengan istilah aslinya, lalu dijelaskan dengan bahasa Indonesia sederhana di glosarium. Jangan menerjemahkan istilah teknis, termasuk istilah psikologi, menjadi kata umum yang maknanya kabur (misalnya "kepercayaan" untuk trust atau "usaha" untuk effort).
+- **Istilah teknis di Lampiran A** (reflow, kontras 4,5:1, squint test, cognitive load, dan sejenisnya) tetap ditulis dengan istilah aslinya dan dijelaskan di glosarium. Jangan menerjemahkan istilah teknis, termasuk istilah psikologi, menjadi kata umum yang maknanya kabur (misalnya "kepercayaan" untuk trust atau "usaha" untuk effort).
 - Hapus bagian template yang tidak dipakai dan jangan menyisakan placeholder.
-- Bila hasil pemeriksaan otomatis dijalankan, sebutkan lokasi file ringkasan dan screenshot sebagai bukti.
-- Laporan panjang yang akan dibagikan sebaiknya disimpan sebagai file atau dokumen (misalnya `laporan-design-review.md`), bila lingkungan kerja memungkinkan. Review singkat untuk satu layar boleh langsung ditulis di percakapan dengan susunan yang sama.
+- Bila hasil pemeriksaan otomatis dijalankan, sebutkan lokasi file ringkasan dan screenshot sebagai bukti di Lampiran A.
+- Laporan panjang yang akan dibagikan sebaiknya disimpan sebagai file atau dokumen (misalnya `laporan-design-review.md`) bersama gambar penandanya, bila lingkungan kerja memungkinkan.
 
 ## 6. Menghitung kontras warna
 
